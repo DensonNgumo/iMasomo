@@ -1,0 +1,34 @@
+﻿<Window
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                x:Name="mainWindow" x:Class="iMasomo.MainWindow"
+                Title="iMasomo" Height="632.089" Width="796.642" WindowStartupLocation="CenterScreen" Cursor="Arrow" BorderBrush="#FF026E15" WindowStyle="ThreeDBorderWindow">
+    <Window.Background>
+        <ImageBrush ImageSource="Images/sun-background.jpg"/>
+    </Window.Background>
+    <Grid Margin="0,0,-8,0">
+
+        <telerik:RadTileList x:Name="menuTileList" SelectionChanged="menuTileList_SelectionChanged">
+            <telerik:RadTileList.Groups>
+                <telerik:TileGroup DisplayIndex="0">
+                    <telerik:TileGroup.Items>
+                        <telerik:Tile Content="Math" Background="Red" />
+                        <telerik:Tile x:Name="englishTile" Content="English" Background="Purple"/>
+                        <telerik:Tile x:Name="kiswahiliTile" Content="Kiswahili" Background="SeaGreen"/>
+                    </telerik:TileGroup.Items>
+                </telerik:TileGroup>
+                <telerik:TileGroup DisplayIndex="1">
+                    <telerik:TileGroup.Items>
+                        <telerik:Tile Content="Games" Background="RoyalBlue"/>
+                        <telerik:Tile Content="Music" Background="DarkGoldenrod"/>
+                        <telerik:Tile Content="Settings" Background="Aqua"/>
+                    </telerik:TileGroup.Items>
+                </telerik:TileGroup>
+            </telerik:RadTileList.Groups>
+        </telerik:RadTileList>
+
+
+    </Grid>
+
+</Window>

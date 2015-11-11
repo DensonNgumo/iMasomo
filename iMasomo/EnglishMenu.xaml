@@ -1,0 +1,27 @@
+﻿<Page x:Class="iMasomo.EnglishMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="632.089" d:DesignWidth="796.642"
+	Title="EnglishMenu">
+
+    <Grid>
+        <telerik:RadTileList Margin="0,-12,-16,0">
+            <telerik:Tile Content="Greetings and Requests"/>
+            <telerik:Tile Content="Home"/>
+            <telerik:Tile Content="Classroom"/>
+            <telerik:Tile Content="Numbers"/>
+            <telerik:Tile Content="Family"/>
+            <telerik:Tile Content="Vocabulary" MouseDown="Tile_MouseDown"/>
+            <telerik:Tile Content="Days of the Week and Weather"/>
+            <telerik:Tile Content="School"/>
+            <telerik:Tile Content="Time"/>
+            <telerik:Tile Content="Months of the Year"/>
+            <telerik:Tile Content="Clothes"/>
+            <telerik:Tile Content="Travel"/>
+        </telerik:RadTileList>
+    </Grid>
+</Page>
