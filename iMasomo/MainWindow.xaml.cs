@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.SQLite;
 using Telerik.Windows.Controls;
 
 namespace iMasomo
@@ -20,9 +21,11 @@ namespace iMasomo
     /// </summary>
     public partial class MainWindow : Window
     {
+               
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();          
+           
         }
 
         private void menuTileList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -37,6 +40,7 @@ namespace iMasomo
                 case "englishTile":
                     myFrame.Content = englishMenu;
                     mainWindow.Content = myFrame;
+                               
                     break;
                 case "kiswahiliTile":
                     myFrame.Content = kiswahiliMenu;
