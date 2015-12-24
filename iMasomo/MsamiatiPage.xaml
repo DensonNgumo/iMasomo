@@ -1,0 +1,33 @@
+﻿<Page x:Class="iMasomo.MsamiatiPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="632.089" d:DesignWidth="796.642"
+	Title="Msamiati">
+
+    <Grid>
+        <telerik:RadTileList Margin="24,10,10,10" x:Name="menuTileList">
+            <telerik:Tile Content="Wanyama na Ndege"/>
+            <telerik:Tile Content="Sehemu za Mwili" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Nyumbani" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Darasani" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Shuleni" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Dunai" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Sokoni" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Mavazi" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Vyakula" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Afya na usafi" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Maumbo" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Angani" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Tarakimu" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Maswala ya Ibuka" MouseDown="OpenMsamiatiImages"/>
+
+
+
+        </telerik:RadTileList>
+           
+    </Grid>
+</Page>

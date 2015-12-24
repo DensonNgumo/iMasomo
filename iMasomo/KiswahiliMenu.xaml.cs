@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Telerik.Windows.Controls;
 
 namespace iMasomo
 {
@@ -23,6 +24,30 @@ namespace iMasomo
         public KiswahiliMenu()
         {
             InitializeComponent();
+        }
+
+        private void kiswahiliMenuTileList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedTile = kiswahiliMenuTileList.SelectedItem as Tile;
+            Frame myFrame = new Frame();
+            MsamiatiPage msamiatiMenu = new MsamiatiPage();
+            ImlaPage imlaPage = new ImlaPage();
+            
+            switch (selectedTile.Name)
+            {
+                case "msamiatiTile":
+                   myFrame.Content = msamiatiMenu;
+                 //  kiswahiliMenuPage.Content = myFrame;
+                    break;
+                case "imlaTile":
+                    myFrame.Content = imlaPage;
+                    
+                    break;
+               
+
+            }
+            kiswahiliMenuPage.Content = myFrame;
+           
         }
     }
 }

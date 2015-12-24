@@ -13,10 +13,7 @@ namespace iMasomo
         private static string dbConnectionString = @"Data Source=iMasomoDB.db;Version=3;";
         private  static SQLiteConnection sqliteConn;
 
-        public Database()
-        {
-            
-        }
+       
         public static void OpenDatabase()
         {
             try

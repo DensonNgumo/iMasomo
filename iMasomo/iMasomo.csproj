@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -43,6 +46,9 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -76,13 +82,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CreationCenter.xaml.cs">
+      <DependentUpon>CreationCenter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="ImlaPage.xaml.cs">
+      <DependentUpon>ImlaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MsamiatiPage.xaml.cs">
+      <DependentUpon>MsamiatiPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MsamiatiImages.xaml.cs">
+      <DependentUpon>MsamiatiImages.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vocabularies.xaml.cs">
       <DependentUpon>Vocabularies.xaml</DependentUpon>
     </Compile>
+    <Page Include="CreationCenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EnglishMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImlaPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MsamiatiPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="KiswahiliMenu.xaml">
       <SubType>Designer</SubType>
@@ -111,6 +141,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MsamiatiImages.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Vocabularies.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +171,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -162,6 +197,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\sun-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\kitabu.jpg" />
+    <Resource Include="Images\macho.jpg" />
+    <Resource Include="Images\pesa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\speaker.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Media\test.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

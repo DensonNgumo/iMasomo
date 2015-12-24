@@ -12,10 +12,10 @@
         <telerik:RadTileList x:Name="menuTileList" SelectionChanged="menuTileList_SelectionChanged">
             <telerik:RadTileList.Groups>
                 <telerik:TileGroup DisplayIndex="0">
-                    <telerik:TileGroup.Items>
-                        <telerik:Tile Content="Math" Background="Red" />
+                    <telerik:TileGroup.Items>                       
                         <telerik:Tile x:Name="englishTile" Content="English" Background="Purple"/>
                         <telerik:Tile x:Name="kiswahiliTile" Content="Kiswahili" Background="SeaGreen"/>
+                        <telerik:Tile Content="My Creation Center" x:Name="creationTile" Background="Red" />
                     </telerik:TileGroup.Items>
                 </telerik:TileGroup>
                 <telerik:TileGroup DisplayIndex="1">

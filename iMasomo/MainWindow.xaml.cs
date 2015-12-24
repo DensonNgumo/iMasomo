@@ -31,21 +31,25 @@ namespace iMasomo
         private void menuTileList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedTile = menuTileList.SelectedItem as Tile;
-           // MessageBox.Show(selectedTile.Name);
             Frame myFrame= new Frame();
             EnglishMenu englishMenu= new EnglishMenu();
             KiswahiliMenu kiswahiliMenu = new KiswahiliMenu();
+            CreationCenter creationPage = new CreationCenter();
             switch(selectedTile.Name)
             {
                 case "englishTile":
                     myFrame.Content = englishMenu;
-                    mainWindow.Content = myFrame;
-                               
+                    mainWindow.Content = myFrame;                         
                     break;
                 case "kiswahiliTile":
                     myFrame.Content = kiswahiliMenu;
                     mainWindow.Content = myFrame;
                     break;
+                case "creationTile":
+                    myFrame.Content = creationPage;
+                    mainWindow.Content = myFrame;
+                    break;
+                    
             }
         }
     }

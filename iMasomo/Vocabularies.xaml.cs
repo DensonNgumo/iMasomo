@@ -25,7 +25,7 @@ namespace iMasomo
         string systemImagesPath = Environment.CurrentDirectory;
 
         private int currImage = 0;
-        private int MAXIMAGE = 1;
+        private int MAXIMAGE = 0;
 
         private SQLiteConnection databaseConn;
         
@@ -35,10 +35,10 @@ namespace iMasomo
             InitializeComponent();
             Database.OpenDatabase();
             SetDatabaseConnection();
-            
-                    
+           
+                             
         }
-        public void SetDatabaseConnection()
+        private void SetDatabaseConnection()
         {
             databaseConn = Database.GetDatabaseConnection();
         }
@@ -47,7 +47,7 @@ namespace iMasomo
         {
             try
             {
-                 string query = "select count(*) from image_details where image_type='system_defined'";
+                 string query = "select count(*) from image_details";
                 SQLiteCommand sqliteComm = new SQLiteCommand(query, databaseConn);
                 sqliteComm.ExecuteNonQuery();
                 SQLiteDataReader dr = sqliteComm.ExecuteReader();
@@ -55,7 +55,6 @@ namespace iMasomo
                 {
 
                     var value = dr.GetValue(0);
-                    MessageBox.Show(value.ToString());
                     MAXIMAGE = int.Parse(value.ToString());
                 }
             }
@@ -68,6 +67,7 @@ namespace iMasomo
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             SetMAXImages();
+            
             //load system images
             string query = "select image_tag,path from image_details where image_type='system_defined'";
             SQLiteCommand sqliteComm = new SQLiteCommand(query,databaseConn);
@@ -75,46 +75,33 @@ namespace iMasomo
             SQLiteDataReader dr = sqliteComm.ExecuteReader();
             while (dr.Read())
             {
-               // string imagePath = dr.GetString(1);
+               
                 imageCollection.Add(dr.GetString(0), new BitmapImage(new Uri(dr.GetString(1), UriKind.Relative)));
-             
-                // MessageBox.Show(dr.GetString(0));
+                             
             }
-           // imageCollection.Add("cat", new BitmapImage(new Uri(String.Format(@"/Images/cat.jpg"),UriKind.Relative)));
-           // imageCollection.Add("fish", new BitmapImage(new Uri(String.Format(@"/Images/fish.jpg"), UriKind.Relative)));
-            /*
-            imageCollection.Add("footballer", new BitmapImage(new Uri(String.Format(@"/Images/footballer.jpg"), UriKind.Relative)));
-            imageCollection.Add("leaves", new BitmapImage(new Uri(String.Format(@"/Images/leaves.jpg"), UriKind.Relative)));
-            imageCollection.Add("pumpkins", new BitmapImage(new Uri(String.Format(@"/Images/pumpkins.jpg"), UriKind.Relative)));
-            imageCollection.Add("snow-leopard", new BitmapImage(new Uri(String.Format(@"/Images/snow-leopard.jpg"), UriKind.Relative)));
-            imageCollection.Add("tree", new BitmapImage(new Uri(String.Format(@"/Images/tree.jpg"), UriKind.Relative)));*/
+          
             imageHolder.Source = imageCollection.Values[0];
 
         }
-
-       
+      
 
         private void PreviousButton_Click(object sender, RoutedEventArgs e)
         {
-            if (--currImage < 0)
-            {
-                currImage = MAXIMAGE;
+            if (--currImage<0)
+            
+                currImage = MAXIMAGE-1;                                        
                 imageHolder.Source = imageCollection.Values[currImage];
-                
-            }
             
-            
-
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            if (++currImage > MAXIMAGE)
+            if (++currImage >= MAXIMAGE)
             {
-                currImage = 0;
-                imageHolder.Source = imageCollection.Values[currImage];
+                currImage = 0;              
             }
-                
+           
+            imageHolder.Source = imageCollection.Values[currImage];
             
         }
     }

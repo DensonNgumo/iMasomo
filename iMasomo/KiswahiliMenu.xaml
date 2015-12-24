@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
       mc:Ignorable="d" 
-      d:DesignHeight="632.089" d:DesignWidth="796.642"
+      d:DesignHeight="632.089" d:DesignWidth="796.642" x:Name="kiswahiliMenuPage"
 	Title="KiswahiliMenu">
 
     <Grid>
-        <telerik:RadTileList Margin="63,18,10,0">
+        <telerik:RadTileList Margin="63,18,10,0" x:Name="kiswahiliMenuTileList" SelectionChanged="kiswahiliMenuTileList_SelectionChanged">
             <telerik:Tile Content="Kusikiliza na Kuongea"/>
             <telerik:Tile Content="Kusoma"/>
             <telerik:Tile Content="Sarufi"/>
-            <telerik:Tile Content="Nyenzo"/>
-            <telerik:Tile Content="Tathmini"/>
+            <telerik:Tile Content="Msamiati" x:Name="msamiatiTile"/>
+            <telerik:Tile Content="Imla" x:Name="imlaTile"/>
            
         </telerik:RadTileList>
            
