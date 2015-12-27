@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
 
 namespace iMasomo
 {
@@ -20,6 +21,8 @@ namespace iMasomo
     /// </summary>
     public partial class ImlaPage : Page
     {
+        SoundPlayer mPlayer = new SoundPlayer();
+        string currPath = Environment.CurrentDirectory;
         public ImlaPage()
         {
             InitializeComponent();
@@ -27,12 +30,13 @@ namespace iMasomo
 
         private void PlaySound(object sender, MouseButtonEventArgs e)
         {
-            var uri = new Uri(@"/Media/test.mp3",UriKind.RelativeOrAbsolute);
-
-            var player = new MediaPlayer();
-
-            player.Open(uri);
-            player.Play();
+            Uri testPath = new Uri(currPath + "/Media/sample.wav",UriKind.RelativeOrAbsolute);
+            mPlayer.SoundLocation =testPath.ToString();
+                                           
+          //  mPlayer.SoundLocation = currPath + @"\Media\sample.wav";
+            mPlayer.Load();
+            mPlayer.Play();
+             
         }
     }
 }

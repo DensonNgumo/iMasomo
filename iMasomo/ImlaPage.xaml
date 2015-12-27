@@ -19,7 +19,7 @@
         <TextBlock Grid.Row="1" Margin="143,50,76,10" TextWrapping="Wrap" FontSize="28" FontFamily="Segoe UI" Grid.Column="0">dfkdlfjsdlkfj</TextBlock>
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" >
             <TextBox Width="598" Margin="45,45,0,28" Grid.Row="2" Grid.Column="0"/>
-            <Image Source="/Images/speaker.png" Margin="0,45,0,28" Width="102" MouseDown="PlaySound"/>
+            <Image Source="/Images/speaker.png" Margin="0,45,0,28" Width="102" PreviewMouseDown="PlaySound"/>
         </StackPanel>
         <Button Content="Jibu" Margin="185,0,316,0" Height="68" Grid.Row="3" Grid.Column="0"/>
         <Button Content="Next" Grid.Row="4" Margin="564,42,76,10" Grid.Column="0"/>
