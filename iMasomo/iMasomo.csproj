@@ -82,12 +82,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlfabetiPage.xaml.cs">
+      <DependentUpon>AlfabetiPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreationCenter.xaml.cs">
       <DependentUpon>CreationCenter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="ImlaPage.xaml.cs">
       <DependentUpon>ImlaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KusikilizaPage.xaml.cs">
+      <DependentUpon>KusikilizaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MsamiatiPage.xaml.cs">
       <DependentUpon>MsamiatiPage.xaml</DependentUpon>
@@ -98,6 +104,10 @@
     <Compile Include="Vocabularies.xaml.cs">
       <DependentUpon>Vocabularies.xaml</DependentUpon>
     </Compile>
+    <Page Include="AlfabetiPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreationCenter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +119,10 @@
     <Page Include="ImlaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="KusikilizaPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MsamiatiPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -208,6 +222,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Images\green_bgd.jpg" />
     <Content Include="Media\sample.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -30,9 +30,7 @@ namespace iMasomo
        
         private void OpenMsamiatiImages(object sender, MouseButtonEventArgs e)
         {
-            string categoryName =((Tile)sender).Content.ToString().ToLower();
-   //         MessageBox.Show(categoryName);
-            
+            string categoryName =((Tile)sender).Content.ToString().ToLower();            
             MsamiatiImages msamiatiWindow = new MsamiatiImages();
             msamiatiWindow.SetCategory(categoryName);
             msamiatiWindow.Show();
@@ -42,8 +40,6 @@ namespace iMasomo
         private void menuTileList_MouseDown(object sender, RoutedEventArgs e)
         {
             string categoryName = ((Tile)sender).Content.ToString().ToLower();
-            //         MessageBox.Show(categoryName);
-
             MsamiatiImages msamiatiWindow = new MsamiatiImages();
             msamiatiWindow.SetCategory(categoryName);
             msamiatiWindow.Show();

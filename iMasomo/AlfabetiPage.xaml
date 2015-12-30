@@ -1,0 +1,92 @@
+﻿<Page x:Class="iMasomo.AlfabetiPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="632.089" d:DesignWidth="796.642" 
+	Title="AlfabetiPage">
+    <Page.Background>
+        <ImageBrush ImageSource="Images/green_bgd.jpg"/>
+    </Page.Background>
+
+    <Grid>
+        <Grid.Resources>
+            <Style  x:Key="konsonantiLabelStyle">
+                <Setter Property="Control.FontFamily" Value="Segoe UI"/>
+                <Setter Property="Control.FontSize" Value="48"/>
+                <Setter Property="Control.Cursor" Value="Hand" />
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=irabu,Path=IsSelected}" Value="True">
+                        <Setter Property="Control.Visibility" Value="Hidden"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style  x:Key="irabuLabelStyle">
+                <Setter Property="Control.FontFamily" Value="Segoe UI"/>
+                <Setter Property="Control.FontSize" Value="48"/>
+                <Setter Property="Control.Cursor" Value="Hand" />
+                <Setter Property="Control.Visibility" Value="Visible"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=konsonanti,Path=IsSelected}" Value="True">
+                        <Setter Property="Control.Visibility" Value="Hidden"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>           
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock FontFamily="Segoe UI" FontSize="28" Grid.Row="0" Margin="111,0,161,122">ALFABETI</TextBlock>
+        <TextBlock FontFamily="Segoe UI" FontSize="22" Grid.Row="1" Margin="0,0,0,358">Haya ni ma alfabeti ya kiswahili</TextBlock>
+        <ComboBox x:Name="comboBoxAlfabeti" Grid.Row="0" Margin="554,106,0,55" SelectionChanged="LoadAlfabeti">
+            <ComboBoxItem>Alfabeti Zote</ComboBoxItem>
+            <ComboBoxItem x:Name="irabu" Content="Irabu"/>
+            <ComboBoxItem x:Name="konsonanti" Content="Konsonanti"/>
+            
+        </ComboBox>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="35,63,10,255" x:Name="labelStackPanel">
+            <Label Width="42" Tag="irabu" Content="a" Style="{StaticResource irabuLabelStyle}"/>
+            <Label Width="46" Content="b" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="64" Content="ch" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="47" Content="d" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="73" Content="dh" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="46" Tag="irabu" Content="e" Style="{StaticResource irabuLabelStyle}"/>
+            <Label Width="34" Content="f" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="48" Content="g" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="74" Content="gh" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="46" Content="h" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="28" Tag="irabu" Content="i" Style="{StaticResource irabuLabelStyle}"/>
+            <Label Width="31" Content="j" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="44" Content="k" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="30" Content="l" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Content="m" Style="{StaticResource konsonantiLabelStyle}"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"  Grid.Row="1" Margin="35,187,0,133">
+            <Label Width="46" Content="n" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="86" Content="ng'" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="72" Content="ny" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="49" Tag="irabu" Content="o" Style="{StaticResource irabuLabelStyle}"/>
+            <Label Width="56" Content="p" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="44" Content="r" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="45" Content="s" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="63" Content="sh" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="38" Content="t" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="65" Content="th" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="49" Tag="irabu" Content="u" Style="{StaticResource irabuLabelStyle}"/>
+            <Label Width="49" Content="v" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Content="w" Style="{StaticResource konsonantiLabelStyle}"/> 
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="35,288,0,20">
+            <Label Width="54" Content="y" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Content="z" Style="{StaticResource konsonantiLabelStyle}"/> 
+        </StackPanel>
+    </Grid>
+</Page>

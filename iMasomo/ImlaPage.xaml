@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="632.089" d:DesignWidth="796.642"
-	Title="ImlaPage">
+	Title="ImlaPage" Loaded="LoadManeno">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
             <TextBox Width="598" Margin="45,45,0,28" Grid.Row="2" Grid.Column="0"/>
             <Image Source="/Images/speaker.png" Margin="0,45,0,28" Width="102" PreviewMouseDown="PlaySound"/>
         </StackPanel>
-        <Button Content="Jibu" Margin="185,0,316,0" Height="68" Grid.Row="3" Grid.Column="0"/>
+        <Button Content="Jibu" Margin="185,0,316,0" Height="68" Grid.Row="3" Grid.Column="0" Click="Button_Click"/>
         <Button Content="Next" Grid.Row="4" Margin="564,42,76,10" Grid.Column="0"/>
 
 

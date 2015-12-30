@@ -1,0 +1,23 @@
+﻿<Page x:Class="iMasomo.KusikilizaPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      mc:Ignorable="d" 
+      d:DesignHeight="632.089" d:DesignWidth="796.642" x:Name="kusikilizaPage"
+	Title="Kusikiliza na Kuongea">
+
+    <Grid>
+        <TextBlock FontFamily="Segoe UI" FontSize=" 28"> KUSIKILIZA NA KUONGEA</TextBlock>
+        <telerik:RadTileList Margin="146,38,258,0" x:Name="menuTileList" SelectionChanged="menuTileList_SelectionChanged">
+            <telerik:Tile Content="Alfabeti" TileType="Single" x:Name="alfabetiTile"/>
+            <telerik:Tile Content="Nyimbo|Shairi" TileType="Single"/>
+            <telerik:Tile Content="Silabi" TileType="Single" />
+            <telerik:Tile Content="Maamkuzi" TileType="Single" />            
+            <telerik:Tile Content="Hadithi"/>
+            
+        </telerik:RadTileList>
+           
+    </Grid>
+</Page>

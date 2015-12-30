@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Media;
+using System.Data.SQLite;
 
 namespace iMasomo
 {
@@ -22,21 +23,65 @@ namespace iMasomo
     public partial class ImlaPage : Page
     {
         SoundPlayer mPlayer = new SoundPlayer();
-        string currPath = Environment.CurrentDirectory;
+        private string currDirectoryPath = Environment.CurrentDirectory;
+        private string path;
+        private string word;
+        int count = 0;
+
+        SortedList<string, string> wordInfo = new SortedList<string, string>();
+
+        private SQLiteConnection databaseConn;
+
         public ImlaPage()
         {
             InitializeComponent();
+            Database.OpenDatabase();
+            SetDatabaseConnection();
+        }
+
+        private void SetDatabaseConnection()
+        {
+            databaseConn = Database.GetDatabaseConnection();
         }
 
         private void PlaySound(object sender, MouseButtonEventArgs e)
         {
-            Uri testPath = new Uri(currPath + "/Media/sample.wav",UriKind.RelativeOrAbsolute);
+            MessageBox.Show(path);
+            Uri testPath = new Uri(currDirectoryPath +path, UriKind.RelativeOrAbsolute);
             mPlayer.SoundLocation =testPath.ToString();
-                                           
-          //  mPlayer.SoundLocation = currPath + @"\Media\sample.wav";
             mPlayer.Load();
             mPlayer.Play();
              
         }
+
+        private void LoadManeno(object sender, RoutedEventArgs e)
+        {
+            string loadManenoQuery = "select word, sound_path from word_details where category='imla'";
+            SQLiteCommand sqliteComm = new SQLiteCommand(loadManenoQuery, databaseConn);
+            sqliteComm.ExecuteNonQuery();
+            SQLiteDataReader dr = sqliteComm.ExecuteReader();
+            while (dr.Read())
+            {
+                wordInfo.Add(dr.GetString(0), dr.GetString(1));
+
+            }
+            path = wordInfo.Values[count];
+            word = wordInfo.Keys[count];
+        }
+
+        private void LoadNextWord()
+        {
+            count++;
+            path = wordInfo.Values[count];
+            word = wordInfo.Keys[count];
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoadNextWord();
+        }
+
+       
+
     }
 }

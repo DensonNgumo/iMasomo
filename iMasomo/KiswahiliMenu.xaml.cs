@@ -32,18 +32,19 @@ namespace iMasomo
             Frame myFrame = new Frame();
             MsamiatiPage msamiatiMenu = new MsamiatiPage();
             ImlaPage imlaPage = new ImlaPage();
+            KusikilizaPage kusikilizaPage = new KusikilizaPage();
             
             switch (selectedTile.Name)
             {
                 case "msamiatiTile":
                    myFrame.Content = msamiatiMenu;
-                 //  kiswahiliMenuPage.Content = myFrame;
                     break;
                 case "imlaTile":
-                    myFrame.Content = imlaPage;
-                    
+                    myFrame.Content = imlaPage;                  
                     break;
-               
+                case "kusikilizaTile":
+                    myFrame.Content = kusikilizaPage;
+                    break;               
 
             }
             kiswahiliMenuPage.Content = myFrame;

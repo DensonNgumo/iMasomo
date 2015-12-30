@@ -10,7 +10,7 @@
 
     <Grid>
         <telerik:RadTileList Margin="63,18,10,0" x:Name="kiswahiliMenuTileList" SelectionChanged="kiswahiliMenuTileList_SelectionChanged">
-            <telerik:Tile Content="Kusikiliza na Kuongea"/>
+            <telerik:Tile Content="Kusikiliza na Kuongea" x:Name="kusikilizaTile"/>
             <telerik:Tile Content="Kusoma"/>
             <telerik:Tile Content="Sarufi"/>
             <telerik:Tile Content="Msamiati" x:Name="msamiatiTile"/>
