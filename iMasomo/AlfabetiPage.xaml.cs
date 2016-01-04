@@ -33,5 +33,15 @@ namespace iMasomo
            
 
         }
+
+        private void Label_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            string alphabet = (sender as Label).Content.ToString();
+            AlfabetiWindow words = new AlfabetiWindow();
+            words.SetAlphabet(alphabet);
+            words.Show();
+
+            
+        }
     }
 }

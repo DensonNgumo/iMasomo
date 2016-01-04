@@ -42,7 +42,15 @@ namespace iMasomo
             string categoryName = ((Tile)sender).Content.ToString().ToLower();
             MsamiatiImages msamiatiWindow = new MsamiatiImages();
             msamiatiWindow.SetCategory(categoryName);
+            msamiatiWindow.ShowActivated = true;
             msamiatiWindow.Show();
+        }
+
+        private void Tile_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Tarakimu tarakimuWindow = new Tarakimu();
+            tarakimuWindow.ShowActivated = true;
+            tarakimuWindow.Show();
         }
 
        

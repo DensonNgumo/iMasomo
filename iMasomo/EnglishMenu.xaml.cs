@@ -27,9 +27,7 @@ namespace iMasomo
 
         private void Tile_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Vocabularies vocabulariesWindow = new Vocabularies();
            
-            vocabulariesWindow.Show();
 
         }
     }

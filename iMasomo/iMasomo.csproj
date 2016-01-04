@@ -85,6 +85,9 @@
     <Compile Include="AlfabetiPage.xaml.cs">
       <DependentUpon>AlfabetiPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AlfabetiWindow.xaml.cs">
+      <DependentUpon>AlfabetiWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CreationCenter.xaml.cs">
       <DependentUpon>CreationCenter.xaml</DependentUpon>
     </Compile>
@@ -101,10 +104,17 @@
     <Compile Include="MsamiatiImages.xaml.cs">
       <DependentUpon>MsamiatiImages.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vocabularies.xaml.cs">
-      <DependentUpon>Vocabularies.xaml</DependentUpon>
+    <Compile Include="SilabiPage.xaml.cs">
+      <DependentUpon>SilabiPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tarakimu.xaml.cs">
+      <DependentUpon>Tarakimu.xaml</DependentUpon>
     </Compile>
     <Page Include="AlfabetiPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AlfabetiWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,7 +169,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Vocabularies.xaml">
+    <Page Include="SilabiPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tarakimu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,6 +237,8 @@
   <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\green_bgd.jpg" />
+    <Resource Include="Images\arrow-left.png" />
+    <Resource Include="Images\arrow-right.png" />
     <Content Include="Media\sample.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -12,26 +12,32 @@
 
     <Grid>
         <Grid.Resources>
-            <Style  x:Key="konsonantiLabelStyle">
-                <Setter Property="Control.FontFamily" Value="Segoe UI"/>
-                <Setter Property="Control.FontSize" Value="48"/>
-                <Setter Property="Control.Cursor" Value="Hand" />
+            <Style  x:Key="konsonantiLabelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="FontSize" Value="48"/>
+                <Setter Property="Cursor" Value="Hand" />
+                <EventSetter Event="PreviewMouseDown" Handler="Label_PreviewMouseDown"/>
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding ElementName=irabu,Path=IsSelected}" Value="True">
                         <Setter Property="Control.Visibility" Value="Hidden"/>
                     </DataTrigger>
                 </Style.Triggers>
+                
             </Style>
-            <Style  x:Key="irabuLabelStyle">
-                <Setter Property="Control.FontFamily" Value="Segoe UI"/>
-                <Setter Property="Control.FontSize" Value="48"/>
-                <Setter Property="Control.Cursor" Value="Hand" />
-                <Setter Property="Control.Visibility" Value="Visible"/>
+            <Style  x:Key="irabuLabelStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="FontSize" Value="48"/>
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="Visibility" Value="Visible"/>
+                <EventSetter Event="PreviewMouseDown" Handler="Label_PreviewMouseDown"/>
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding ElementName=konsonanti,Path=IsSelected}" Value="True">
                         <Setter Property="Control.Visibility" Value="Hidden"/>
                     </DataTrigger>
                 </Style.Triggers>
+            </Style>
+            <Style TargetType="Label">
+                
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -69,8 +75,8 @@
 
         </StackPanel>
         <StackPanel Orientation="Horizontal"  Grid.Row="1" Margin="35,187,0,133">
-            <Label Width="46" Content="n" Style="{StaticResource konsonantiLabelStyle}"/>
-            <Label Width="86" Content="ng'" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="52" Content="n" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label Width="76" Content="ng" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="72" Content="ny" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="49" Tag="irabu" Content="o" Style="{StaticResource irabuLabelStyle}"/>
             <Label Width="56" Content="p" Style="{StaticResource konsonantiLabelStyle}"/>

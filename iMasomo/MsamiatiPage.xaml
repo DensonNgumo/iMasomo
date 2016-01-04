@@ -9,21 +9,29 @@
 	Title="Msamiati">
 
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="telerik:Tile">
+                <EventSetter Event="MouseDown" Handler="OpenMsamiatiImages"/>
+            </Style>
+            <Style TargetType="telerik:Tile" x:Key="tarakimuStyle">
+                <EventSetter Event="MouseDown" Handler="Tile_MouseDown"/>
+            </Style>
+        </Grid.Resources>
         <telerik:RadTileList Margin="24,10,10,10" x:Name="menuTileList">
             <telerik:Tile Content="Wanyama na Ndege"/>
-            <telerik:Tile Content="Sehemu za Mwili" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Nyumbani" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Darasani" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Shuleni" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Dunai" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Sokoni" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Mavazi" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Vyakula" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Afya na usafi" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Maumbo" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Angani" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Tarakimu" MouseDown="OpenMsamiatiImages"/>
-            <telerik:Tile Content="Maswala ya Ibuka" MouseDown="OpenMsamiatiImages"/>
+            <telerik:Tile Content="Sehemu za Mwili" />
+            <telerik:Tile Content="Nyumbani" />
+            <telerik:Tile Content="Darasani"/>
+            <telerik:Tile Content="Shuleni" />
+            <telerik:Tile Content="Dunai"/>
+            <telerik:Tile Content="Sokoni"/>
+            <telerik:Tile Content="Mavazi"/>
+            <telerik:Tile Content="Vyakula"/>
+            <telerik:Tile Content="Afya na usafi"/>
+            <telerik:Tile Content="Maumbo"/>
+            <telerik:Tile Content="Angani"/>
+            <telerik:Tile Content="Tarakimu" Style="{StaticResource tarakimuStyle}"/>
+            <telerik:Tile Content="Maswala ya Ibuka"/>
 
 
 

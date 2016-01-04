@@ -1,0 +1,49 @@
+﻿<Page x:Class="iMasomo.SilabiPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	Title="SilabiPage" Height="317.91" Width="408.955">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="57*"/>
+            <RowDefinition Height="182*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="196*"/>
+            <ColumnDefinition Width="213*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Silabi Zenye Sauti Mbili" FontSize="26" FontFamily="Segoe UI" Grid.Row="0" Grid.ColumnSpan="2" Margin="51,0,0,0"/>
+        <TextBlock Text="Chagua alfabeti: " FontFamily="Segoe UI" FontSize="22" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox x:Name="alfabetiComboBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,22" SelectionChanged="alfabetiComboBox_SelectionChanged">
+            <ComboBoxItem Content="b"/>
+            <ComboBoxItem Content="ch"/>
+            <ComboBoxItem Content="dh"/>
+            <ComboBoxItem Content="f"/>
+            <ComboBoxItem Content="g"/>
+            <ComboBoxItem Content="gh"/>
+            <ComboBoxItem Content="h"/>
+            <ComboBoxItem Content="j"/>
+            <ComboBoxItem Content="k"/>
+            <ComboBoxItem Content="l"/>
+            <ComboBoxItem Content="m"/>
+            <ComboBoxItem Content="n"/>
+            <ComboBoxItem Content="ng"/>
+            <ComboBoxItem Content="ny"/>
+            <ComboBoxItem Content="p"/>
+            <ComboBoxItem Content="r"/>
+            <ComboBoxItem Content="s"/>
+            <ComboBoxItem Content="sh"/>
+            <ComboBoxItem Content="t"/>
+            <ComboBoxItem Content="th"/>
+            <ComboBoxItem Content="v"/>
+            <ComboBoxItem Content="w"/>
+            <ComboBoxItem Content="y"/>
+            <ComboBoxItem Content="z"/>
+        </ComboBox>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" FontFamily="Segoe UI" FontSize="22" x:Name="silabiTextBlock"/>
+    </Grid>
+</Page>

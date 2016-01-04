@@ -32,15 +32,12 @@ namespace iMasomo
         {
             var selectedTile = menuTileList.SelectedItem as Tile;
             Frame myFrame= new Frame();
-            EnglishMenu englishMenu= new EnglishMenu();
+           
             KiswahiliMenu kiswahiliMenu = new KiswahiliMenu();
             CreationCenter creationPage = new CreationCenter();
             switch(selectedTile.Name)
             {
-                case "englishTile":
-                    myFrame.Content = englishMenu;
-                    mainWindow.Content = myFrame;                         
-                    break;
+               
                 case "kiswahiliTile":
                     myFrame.Content = kiswahiliMenu;
                     mainWindow.Content = myFrame;

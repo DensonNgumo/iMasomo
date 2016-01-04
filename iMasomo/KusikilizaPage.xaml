@@ -13,7 +13,7 @@
         <telerik:RadTileList Margin="146,38,258,0" x:Name="menuTileList" SelectionChanged="menuTileList_SelectionChanged">
             <telerik:Tile Content="Alfabeti" TileType="Single" x:Name="alfabetiTile"/>
             <telerik:Tile Content="Nyimbo|Shairi" TileType="Single"/>
-            <telerik:Tile Content="Silabi" TileType="Single" />
+            <telerik:Tile Content="Silabi" TileType="Single" x:Name="silabiTile"/>
             <telerik:Tile Content="Maamkuzi" TileType="Single" />            
             <telerik:Tile Content="Hadithi"/>
             

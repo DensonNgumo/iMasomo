@@ -32,12 +32,16 @@ namespace iMasomo
             var selectedTile = menuTileList.SelectedItem as Tile;
             Frame myFrame = new Frame();
             AlfabetiPage alfabetiPage = new AlfabetiPage();
+            SilabiPage silabiPage = new SilabiPage();
 
 
             switch (selectedTile.Name)
             {
                 case "alfabetiTile":
                     myFrame.Content = alfabetiPage;
+                    break;
+                case "silabiTile":
+                    myFrame.Content = silabiPage;
                     break;
                 
 
