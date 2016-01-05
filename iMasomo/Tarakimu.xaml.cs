@@ -19,53 +19,72 @@ namespace iMasomo
     /// </summary>
     public partial class Tarakimu : Window
     {
-        int nambari = 1;
+        int nambari = 0;
         string[] tarakimuJina = {"nunge","moja","mbili","tatu","nne","tano","sita","saba","nane","tisa" };
         string nambariJina="";
         public Tarakimu()
         {
             InitializeComponent();
             nambariTextBlock.Text = nambari.ToString();
-            nambariJinaTextBlock.Text = "MOJA";
+            nambariJinaTextBlock.Text = tarakimuJina[nambari].ToUpper();
         }
 
         private void LoadNextNumber()
         {
-            nambari++;
-            LoadNumberName();
-            nambariTextBlock.Text = nambari.ToString();
-            nambariJinaTextBlock.Text = nambariJina.ToUpper();
+            if(nambari<1000)
+            {
+                nambari++;
+                LoadNumberName();
+                nambariTextBlock.Text = nambari.ToString();
+                nambariJinaTextBlock.Text = nambariJina.ToUpper();
+            }
+            
         }
 
         private void LoadPreviousNumber()
         {
-            nambari--;
-            LoadNumberName();
-            nambariTextBlock.Text = nambari.ToString();
-            nambariJinaTextBlock.Text = nambariJina.ToUpper();
+            if(nambari>0)
+            {
+                nambari--;
+                LoadNumberName();
+                nambariTextBlock.Text = nambari.ToString();
+                nambariJinaTextBlock.Text = nambariJina.ToUpper();
+            }
+            
         }
 
         private void LoadNumberName()
         {
             //load name for single digit number
-            if(nambari>0 && nambari<10)
+            if(nambari>=0 && nambari<10)
             {
                 nambariJina = tarakimuJina[nambari];
             }
             
-            else if(nambari>=10 && nambari<=100)
+            else if(nambari>=10 && nambari<100)
             {
                 nambariJina=LoadDoubleDigits(nambari);//load name for double digit number
             }
-            else if(nambari>100)
+            else if(nambari>=100)
             {
                 nambariJina=LoadTripleDigits(nambari);//load name for triple digit number
             }
         }
 
+        //returns the first digit of an integer
+        private int GetFirstDigit(int number)
+        {
+            if (number < 10)
+            {
+                return number;
+            }
+            return GetFirstDigit((number - (number % 10)) / 10);
+        }
+
         private string LoadDoubleDigits(int no)
         {
             int n = no % 10;
+            
             switch (no)
             {
                 case 10:
@@ -85,9 +104,8 @@ namespace iMasomo
                 case 80:
                     return "themanini";
                 case 90:
-                    return "tisini";
-                case 100:
-                    return "mia moja";
+                    return "tisini";                
+                
             }
             if (no > 10 && no < 20)
             {
@@ -129,14 +147,21 @@ namespace iMasomo
         }
         private string LoadTripleDigits(int no)
         {
-            int n=nambari%10;
-            if(no>100 && no<110)
+            int n=nambari%10;//last digit
+            int fNumber = GetFirstDigit(no);//first digit
+            int lastTwoNumbers = no % 100;
+            if(lastTwoNumbers==00)
             {
-                return "mia moja na " + tarakimuJina[n];
+                return "mia " + tarakimuJina[fNumber];
+            }
+            
+            if(lastTwoNumbers>0 && lastTwoNumbers<10)
+            {
+                return "mia "+tarakimuJina[fNumber]+" na " + tarakimuJina[n];
             }
             else
             {
-                return "mia moja "+LoadDoubleDigits(no%100);
+                return "mia " + tarakimuJina[fNumber] + " na " + LoadDoubleDigits(lastTwoNumbers);
             }
         }
 

@@ -1,0 +1,22 @@
+﻿<Window x:Class="iMasomo.Tarakimu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tarakimu" Height="354.806" Width="703.209">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="103*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="105*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="12*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Tarakimu" FontFamily="Segoe UI" FontSize="28" Grid.Row="0" Grid.Column="1" TextAlignment="Center"/>
+        <TextBlock x:Name="nambariTextBlock" Text="11" FontFamily="Segoe UI" FontSize="24" Grid.Row="1" Grid.Column="1" TextAlignment="Center" Margin="0,27,0,0" />
+        <Image Source="/Images/arrow-left.png" Grid.Column="0" Grid.Row="1" Margin="35,27,36,22" RenderTransformOrigin="0.467,0.268" PreviewMouseDown="Image_PreviewMouseDown_1"/>
+        <Image Source="/Images/arrow-right.png" Grid.Column="2" Grid.Row="1" Margin="31,27,51,22" PreviewMouseDown="Image_PreviewMouseDown"/>
+        <TextBlock x:Name="nambariJinaTextBlock" Text="KUMI NA MOJA" FontFamily="Segoe UI" FontSize="22" Grid.Row="2" Grid.Column="1" TextAlignment="Center"/>
+    </Grid>
+</Window>
