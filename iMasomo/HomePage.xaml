@@ -1,0 +1,50 @@
+﻿<Page x:Class="iMasomo.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	Title="Home Page" Width="716.417" Height="552.985">
+
+    <DockPanel>
+        <telerik:RadTileList x:Name="menuTileList" Width="653" Margin="0,57,0,42">
+            <telerik:RadTileList.Groups>
+
+                <telerik:TileGroup DisplayIndex="0">
+                    <telerik:TileGroup.Items>
+                        <telerik:Tile Content="Kusikiliza na Kuongea" x:Name="kusikilizaTile"  MouseDown="kusikilizaTile_MouseDown"/>
+                        <telerik:Tile Content="Sarufi" />
+                        <telerik:Tile Content="Msamiati" x:Name="msamiatiTile"   MouseDown="msamiatiTile_MouseDown"/>
+                        <telerik:Tile Content="Imla" x:Name="imlaTile"  MouseDown="imlaTile_MouseDown"/>
+                    </telerik:TileGroup.Items>
+                </telerik:TileGroup>
+
+                <telerik:TileGroup DisplayIndex="1">
+                    <telerik:TileGroup.Items>
+                        <telerik:Tile  x:Name="mazoeziTile" Background="Thistle" MouseDown="mazoeziTile_MouseDown">
+                            <Grid>
+                                <TextBlock Text="Mazoezi"/>
+                            </Grid>
+                        </telerik:Tile>
+                        <telerik:Tile   TileType="Single">
+                            <Grid>
+                                <Image Source="/Images/michezo.png" Height="100"/>
+                                <TextBlock Text="Michezo"/>
+                            </Grid>
+                        </telerik:Tile>
+                        <telerik:Tile  x:Name="creationTile" TileType="Single" Background="Red" MouseDown="creationTile_MouseDown">
+                            <Grid>
+                                <Image Source="/Images/kuchora.png" Height="100"/>
+                                <TextBlock Text="Kuchora"/>
+                            </Grid>
+                        </telerik:Tile>
+
+                    </telerik:TileGroup.Items>
+                </telerik:TileGroup>
+            </telerik:RadTileList.Groups>
+        </telerik:RadTileList>
+
+
+    </DockPanel>
+</Page>
