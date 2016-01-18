@@ -1,0 +1,10 @@
+﻿<Window x:Class="iMasomo_Teacher.HomeWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                Title="MainWindow" Height="350" Width="525">
+        <Grid>
+        <TextBlock>Outside frame</TextBlock>
+        <Frame Source="AddImages.xaml"/>
+    </Grid>
+</Window>

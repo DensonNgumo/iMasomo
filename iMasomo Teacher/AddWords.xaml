@@ -1,0 +1,43 @@
+﻿<Page x:Class="iMasomo_Teacher.AddWords"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	Title="AddWords" Height="507.463" Width="749.254">
+
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="FontSize" Value="24"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="54*"/>
+            <RowDefinition Height="64*"/>
+            <RowDefinition Height="125*"/>
+            <RowDefinition Height="72*"/>
+            <RowDefinition Height="73*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="401*"/>
+            <ColumnDefinition Width="348*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Add Words To The System" TextAlignment="Center" Grid.ColumnSpan="2" Grid.Row="0"/>
+        <TextBlock Text="Select alphabet" Grid.Column="0" Grid.Row="1"/>
+        <ComboBox Grid.Column="1" Grid.Row="1" Margin="0,0,106,0"/>
+        <TextBlock Text="Enter word" Grid.Column="0" Grid.Row="2"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,0,106,10"/>
+        <TextBlock Text="Enter meaning of word" Grid.Column="0" Grid.Row="3"/>
+        <TextBox Grid.Column="1" Grid.Row="3" Margin="0,5,106,10"/>
+        <TextBlock Text="Should word be used for imla?" Grid.Column="0" Grid.Row="4"/>
+        <RadioButton x:Name="yesRadioBtn" Content="Yes" GroupName="recordChoice" Grid.Row="4" Grid.Column="1" Margin="0,0,0,83"/>
+        <RadioButton x:Name="noRadioBtn" Content="No" GroupName="recordChoice" Grid.Row="4" Grid.Column="1" Margin="0,42,0,40"/>    
+        <TextBlock Text="Choose/Record sound for the word" Grid.Column="0" Grid.Row="5"/>
+        <TextBox Grid.Column="1" Grid.Row="5" Margin="0,0,140,34"/>
+        <Button Content="Add word" Grid.Row="6" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="345,0,285,0" Width="119" Grid.ColumnSpan="2"/>
+    </Grid>
+</Page>

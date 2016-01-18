@@ -39,6 +39,12 @@ namespace iMasomo
             SetDatabaseConnection();
         }
 
+
+        public void DisposeResources()
+        {
+            mPlayer.Dispose();
+        }
+
         private void SetDatabaseConnection()
         {
             databaseConn = Database.GetDatabaseConnection();
@@ -56,7 +62,7 @@ namespace iMasomo
 
         private void LoadManeno(object sender, RoutedEventArgs e)
         {
-            string loadManenoQuery = "select word, sound_path from word_details where category='imla'";
+            string loadManenoQuery = "select word, sound_path from word_details where word_id=3";
             SQLiteCommand sqliteComm = new SQLiteCommand(loadManenoQuery, databaseConn);
             sqliteComm.ExecuteNonQuery();
             SQLiteDataReader dr = sqliteComm.ExecuteReader();
@@ -79,6 +85,11 @@ namespace iMasomo
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             LoadNextWord();
+        }
+
+        private void Dispose(object sender, RoutedEventArgs e)
+        {
+            DisposeResources();
         }
 
        

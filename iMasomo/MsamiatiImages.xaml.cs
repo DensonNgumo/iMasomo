@@ -72,40 +72,44 @@ namespace iMasomo
         {
             SetMAXImages();
             //load system images
-            string query = "select kiswahili_tag,path from image_details where image_type='system_defined' and category='"+category+"'";
+            string query = "select kiswahili_tag,path from image_details where  category='"+category+"'";
             SQLiteCommand sqliteComm = new SQLiteCommand(query,databaseConn);
             sqliteComm.ExecuteNonQuery();
             SQLiteDataReader dr = sqliteComm.ExecuteReader();
             while (dr.Read())
             {
-               imageCollection.Add(dr.GetString(0), new BitmapImage(new Uri(dr.GetString(1), UriKind.Relative)));
+               imageCollection.Add(dr.GetString(0), new BitmapImage(new Uri(dr.GetString(1), UriKind.RelativeOrAbsolute)));
                              
             }
  
-            imageHolder.Source = imageCollection.Values[0]; 
+            imageHolder.Source = imageCollection.Values[0];
+            imageNameLabel.Content = imageCollection.Keys[0].ToUpper();
+            categoryNameLabel.Content = category.ToUpper();
             
 
         }
       
 
-        private void PreviousButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (--currImage<0)
-            
-                currImage = MAXIMAGE-1;                                        
-                imageHolder.Source = imageCollection.Values[currImage];
-            
-        }
 
-        private void NextButton_Click(object sender, RoutedEventArgs e)
+        private void nextArrowImage_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             if (++currImage >= MAXIMAGE)
             {
-                currImage = 0;              
+                currImage = 0;
             }
-           
+
             imageHolder.Source = imageCollection.Values[currImage];
-            
+            imageNameLabel.Content = imageCollection.Keys[currImage].ToUpper();
+        }
+
+        private void previousArrowImage_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (--currImage < 0)
+
+                currImage = MAXIMAGE - 1;
+            imageHolder.Source = imageCollection.Values[currImage];
+            imageNameLabel.Content = imageCollection.Keys[currImage].ToUpper();
+
         }
     }
 }

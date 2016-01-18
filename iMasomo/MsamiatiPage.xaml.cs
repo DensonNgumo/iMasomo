@@ -30,21 +30,13 @@ namespace iMasomo
        
         private void OpenMsamiatiImages(object sender, MouseButtonEventArgs e)
         {
-            string categoryName =((Tile)sender).Content.ToString().ToLower();            
+            string categoryName = ((Tile)sender).Tag.ToString().ToLower();            
             MsamiatiImages msamiatiWindow = new MsamiatiImages();
             msamiatiWindow.SetCategory(categoryName);
             msamiatiWindow.Show();
              
         }
 
-        private void menuTileList_MouseDown(object sender, RoutedEventArgs e)
-        {
-            string categoryName = ((Tile)sender).Content.ToString().ToLower();
-            MsamiatiImages msamiatiWindow = new MsamiatiImages();
-            msamiatiWindow.SetCategory(categoryName);
-            msamiatiWindow.ShowActivated = true;
-            msamiatiWindow.Show();
-        }
 
         private void Tile_MouseDown(object sender, MouseButtonEventArgs e)
         {

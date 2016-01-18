@@ -57,7 +57,9 @@ namespace iMasomo
             {
                 myInkCanvas.Strokes.Save(fs);
                 fs.Close();
+                
             }
+            
         }
 
         private void LoadData(object sender, RoutedEventArgs e)

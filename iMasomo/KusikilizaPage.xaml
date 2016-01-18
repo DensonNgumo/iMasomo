@@ -8,16 +8,15 @@
       d:DesignHeight="632.089" d:DesignWidth="796.642" x:Name="kusikilizaPage"
 	Title="Kusikiliza na Kuongea">
 
-    <Grid>
-        <TextBlock FontFamily="Segoe UI" FontSize=" 28"> KUSIKILIZA NA KUONGEA</TextBlock>
-        <telerik:RadTileList Margin="146,38,258,0" x:Name="menuTileList" SelectionChanged="menuTileList_SelectionChanged">
-            <telerik:Tile Content="Alfabeti" TileType="Single" x:Name="alfabetiTile"/>
+    <DockPanel Margin="32,36,36,0">
+        <telerik:RadTileList  x:Name="menuTileList" Margin="0,10,0,87" Width="692">
+            <telerik:Tile Content="Alfabeti"  x:Name="alfabetiTile"  PreviewMouseDown="alfabetiTile_MouseDown"/>
             <telerik:Tile Content="Nyimbo|Shairi" TileType="Single"/>
-            <telerik:Tile Content="Silabi" TileType="Single" x:Name="silabiTile"/>
-            <telerik:Tile Content="Maamkuzi" TileType="Single" />            
-            <telerik:Tile Content="Hadithi"/>
-            
+            <telerik:Tile Content="Silabi" TileType="Single" x:Name="silabiTile" PreviewMouseDown="silabiTile_MouseDown"/>
+            <telerik:Tile Content="Maamkuzi" />
+            <telerik:Tile Content="Hadithi" />
+
         </telerik:RadTileList>
-           
-    </Grid>
+
+    </DockPanel>
 </Page>

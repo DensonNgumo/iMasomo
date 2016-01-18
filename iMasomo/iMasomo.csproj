@@ -92,6 +92,9 @@
       <DependentUpon>CreationCenter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ImlaPage.xaml.cs">
       <DependentUpon>ImlaPage.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,9 @@
     <Compile Include="Tarakimu.xaml.cs">
       <DependentUpon>Tarakimu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
     <Page Include="AlfabetiPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,7 +128,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EnglishMenu.xaml">
+    <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,10 +144,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="KiswahiliMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -155,12 +157,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EnglishMenu.xaml.cs">
-      <DependentUpon>EnglishMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="KiswahiliMenu.xaml.cs">
-      <DependentUpon>KiswahiliMenu.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -169,11 +165,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="arrow-resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="segd-arrow-symbols-icons [WPF Paths].xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SilabiPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tarakimu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WelcomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,6 +207,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Database\iMasomoDB.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -212,8 +223,6 @@
   <ItemGroup>
     <Resource Include="Images\cat.jpg" />
     <Resource Include="Images\fish.jpg" />
-    <Resource Include="Images\snow-leopard.jpg" />
-    <Resource Include="Images\wolf.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\footballer.jpg" />
@@ -228,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\kitabu.jpg" />
-    <Resource Include="Images\macho.jpg" />
     <Resource Include="Images\pesa.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +247,56 @@
     <Resource Include="Images\green_bgd.jpg" />
     <Resource Include="Images\arrow-left.png" />
     <Resource Include="Images\arrow-right.png" />
+    <Resource Include="Images\dirisha.jpg" />
+    <Resource Include="Images\kijiko.jpg" />
+    <Resource Include="Images\kitanda.jpg" />
+    <Resource Include="Images\mlango.png" />
+    <Resource Include="Images\sufuria.jpg" />
+    <Resource Include="Images\mswaki.jpg" />
+    <Resource Include="Images\pasi.jpg" />
+    <Resource Include="Images\ufagio.jpg" />
+    <Resource Include="Images\dawati.jpg" />
+    <Resource Include="Images\mwanafunzi2.jpg" />
+    <Resource Include="Images\ubao.png" />
+    <Resource Include="Images\peremende.jpg" />
+    <Resource Include="Images\sabuni.jpg" />
+    <Resource Include="Images\matatu.jpg" />
+    <Resource Include="Images\mgomo.jpg" />
+    <Resource Include="Images\uchaguzi.jpg" />
+    <Resource Include="Images\duara.png" />
+    <Resource Include="Images\mstari.jpg" />
+    <Resource Include="Images\nyota.jpg" />
+    <Resource Include="Images\shati.jpg" />
+    <Resource Include="Images\sketi.jpg" />
+    <Resource Include="Images\soksi.jpg" />
+    <Resource Include="Images\macho.jpg" />
+    <Resource Include="Images\mdomo.jpg" />
+    <Resource Include="Images\sikio.jpg" />
+    <Resource Include="Images\bendera.jpg" />
+    <Resource Include="Images\darasa.jpg" />
+    <Resource Include="Images\mlinzi.png" />
+    <Resource Include="Images\mahindi.jpg" />
+    <Resource Include="Images\njugu.jpg" />
+    <Resource Include="Images\nyanya.jpg" />
+    <Resource Include="Images\ndizi.jpg" />
+    <Resource Include="Images\ugali.jpg" />
+    <Resource Include="Images\wali.jpg" />
+    <Resource Include="Images\mafunzo.png" />
+    <Resource Include="Images\kuchora.png" />
+    <Resource Include="Images\michezo.png" />
+    <Resource Include="Images\largebackground.png" />
+    <Resource Include="Images\purple_bgd.jpg" />
+    <Resource Include="Images\art.jpg" />
+    <Resource Include="Images\viatu.jpg" />
+    <Resource Include="Images\ngombe.jpg" />
+    <Resource Include="Images\mbuzi.jpg" />
+    <Resource Include="Images\eye.jpg" />
+    <Resource Include="Images\sahani.jpg" />
+    <Resource Include="Images\mwanafunzi.jpg" />
+    <Resource Include="Images\mwalimu.png" />
+    <Resource Include="Images\chumvi.jpg" />
+    <Resource Include="Images\rangi.JPG" />
+    <Resource Include="Images\ukimwi.jpg" />
     <Content Include="Media\sample.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

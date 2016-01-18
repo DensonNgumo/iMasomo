@@ -8,9 +8,9 @@ using System.Data.SQLite;
 
 namespace iMasomo
 {
-    class Database
+    public static class Database
     {
-        private static string dbConnectionString = @"Data Source=iMasomoDB.db;Version=3;";
+        private static string dbConnectionString = @"Data Source=E:\THE HUB\My Files\My Projects\C# code\iMasomo\iMasomo\bin\Debug\iMasomoDB.db;Version=3;";
         private  static SQLiteConnection sqliteConn;
 
        

@@ -22,7 +22,7 @@
                         <Setter Property="Control.Visibility" Value="Hidden"/>
                     </DataTrigger>
                 </Style.Triggers>
-                
+
             </Style>
             <Style  x:Key="irabuLabelStyle" TargetType="Label">
                 <Setter Property="FontFamily" Value="Segoe UI"/>
@@ -36,13 +36,11 @@
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
-            <Style TargetType="Label">
-                
-            </Style>
+
         </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>           
+            <RowDefinition Height="22*"></RowDefinition>
+            <RowDefinition Height="57*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -50,11 +48,11 @@
 
         <TextBlock FontFamily="Segoe UI" FontSize="28" Grid.Row="0" Margin="111,0,161,122">ALFABETI</TextBlock>
         <TextBlock FontFamily="Segoe UI" FontSize="22" Grid.Row="1" Margin="0,0,0,358">Haya ni ma alfabeti ya kiswahili</TextBlock>
-        <ComboBox x:Name="comboBoxAlfabeti" Grid.Row="0" Margin="554,106,0,55" SelectionChanged="LoadAlfabeti">
+        <ComboBox x:Name="comboBoxAlfabeti" Grid.Row="0" Margin="554,75,0,55" SelectionChanged="LoadAlfabeti">
             <ComboBoxItem>Alfabeti Zote</ComboBoxItem>
             <ComboBoxItem x:Name="irabu" Content="Irabu"/>
             <ComboBoxItem x:Name="konsonanti" Content="Konsonanti"/>
-            
+
         </ComboBox>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="35,63,10,255" x:Name="labelStackPanel">
             <Label Width="42" Tag="irabu" Content="a" Style="{StaticResource irabuLabelStyle}"/>
@@ -87,12 +85,12 @@
             <Label Width="65" Content="th" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="49" Tag="irabu" Content="u" Style="{StaticResource irabuLabelStyle}"/>
             <Label Width="49" Content="v" Style="{StaticResource konsonantiLabelStyle}"/>
-            <Label Content="w" Style="{StaticResource konsonantiLabelStyle}"/> 
+            <Label Content="w" Style="{StaticResource konsonantiLabelStyle}"/>
 
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="35,288,0,20">
             <Label Width="54" Content="y" Style="{StaticResource konsonantiLabelStyle}"/>
-            <Label Content="z" Style="{StaticResource konsonantiLabelStyle}"/> 
+            <Label Content="z" Style="{StaticResource konsonantiLabelStyle}"/>
         </StackPanel>
     </Grid>
 </Page>

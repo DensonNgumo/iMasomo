@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMasomo", "iMasomo\iMasomo.csproj", "{DCD7C8CB-87CE-40EB-ADA5-37627F8C49A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMasomo Teacher", "iMasomo Teacher\iMasomo Teacher.csproj", "{DE7F2186-C4E0-44F1-B158-F0D041B407B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +17,10 @@ Global
 		{DCD7C8CB-87CE-40EB-ADA5-37627F8C49A0}.Debug|x86.Build.0 = Debug|x86
 		{DCD7C8CB-87CE-40EB-ADA5-37627F8C49A0}.Release|x86.ActiveCfg = Release|x86
 		{DCD7C8CB-87CE-40EB-ADA5-37627F8C49A0}.Release|x86.Build.0 = Release|x86
+		{DE7F2186-C4E0-44F1-B158-F0D041B407B5}.Debug|x86.ActiveCfg = Debug|x86
+		{DE7F2186-C4E0-44F1-B158-F0D041B407B5}.Debug|x86.Build.0 = Debug|x86
+		{DE7F2186-C4E0-44F1-B158-F0D041B407B5}.Release|x86.ActiveCfg = Release|x86
+		{DE7F2186-C4E0-44F1-B158-F0D041B407B5}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

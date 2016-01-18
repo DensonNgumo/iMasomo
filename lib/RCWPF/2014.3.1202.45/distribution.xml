@@ -4,6 +4,7 @@
   <Trial>false</Trial>
   <Dependencies>
     <Project>dcd7c8cb-87ce-40eb-ada5-37627f8c49a0</Project>
+    <Project>de7f2186-c4e0-44f1-b158-f0d041b407b5</Project>
   </Dependencies>
   <NoXaml>false</NoXaml>
 </Distribution>

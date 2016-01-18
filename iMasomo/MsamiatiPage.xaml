@@ -12,26 +12,99 @@
         <Grid.Resources>
             <Style TargetType="telerik:Tile">
                 <EventSetter Event="MouseDown" Handler="OpenMsamiatiImages"/>
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="FontSize" Value="18"/>
             </Style>
             <Style TargetType="telerik:Tile" x:Key="tarakimuStyle">
                 <EventSetter Event="MouseDown" Handler="Tile_MouseDown"/>
             </Style>
         </Grid.Resources>
+        
         <telerik:RadTileList Margin="24,10,10,10" x:Name="menuTileList">
-            <telerik:Tile Content="Wanyama na Ndege"/>
-            <telerik:Tile Content="Sehemu za Mwili" />
-            <telerik:Tile Content="Nyumbani" />
-            <telerik:Tile Content="Darasani"/>
-            <telerik:Tile Content="Shuleni" />
-            <telerik:Tile Content="Dunai"/>
-            <telerik:Tile Content="Sokoni"/>
-            <telerik:Tile Content="Mavazi"/>
-            <telerik:Tile Content="Vyakula"/>
-            <telerik:Tile Content="Afya na usafi"/>
-            <telerik:Tile Content="Maumbo"/>
-            <telerik:Tile Content="Angani"/>
-            <telerik:Tile Content="Tarakimu" Style="{StaticResource tarakimuStyle}"/>
-            <telerik:Tile Content="Maswala ya Ibuka"/>
+            <telerik:Tile Tag="Wanyama na Ndege">
+                <Grid>
+                    <Image Source="/Images/ngombe.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Wanyama na Ndege"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Sehemu za Mwili">
+                <Grid>
+                    <Image Source="/Images/eye.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Sehemu za Mwili"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Nyumbani">
+                <Grid>
+                    <Image Source="/Images/sahani.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Nyumbani"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Darasani">
+                <Grid>
+                    <Image Source="/Images/mwalimu.png" Stretch="Fill"/>
+                    <TextBlock Text="Darasani"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Shuleni">
+                <Grid>
+                    <Image Source="/Images/mwanafunzi.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Shuleni"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Dunai">
+                <Grid>
+                    <Image Source="/Images/chumvi.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Dunai"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Sokoni">
+                <Grid>
+                    <Image Source="/Images/njugu.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Sokoni"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Mavazi">
+                <Grid>
+                    <Image Source="/Images/viatu.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Mavazi"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Vyakula">
+                <Grid>
+                    <Image Source="/Images/ugali.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Vyakula"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Afya na usafi">
+                <Grid>
+                    <Image Source="/Images/rangi.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Afya na Usafi"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Maumbo">
+                <Grid>
+                    <Image Source="/Images/ugali.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Maumbo"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Angani">
+                <Grid>
+                    <Image Source="/Images/ugali.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Angani"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Tarakimu" Style="{StaticResource tarakimuStyle}">
+                <Grid>
+                    <Image Source="/Images/ugali.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Tarakimu"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Maswala ya Ibuka">
+                <Grid>
+                    <Image Source="/Images/ukimwi.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Maswala ya Ibuka"/>
+                </Grid>
+            </telerik:Tile>
 
 
 

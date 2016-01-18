@@ -31,7 +31,7 @@ namespace iMasomo
 
         private void LoadNextNumber()
         {
-            if(nambari<1000)
+            if(nambari<999)
             {
                 nambari++;
                 LoadNumberName();
@@ -65,7 +65,7 @@ namespace iMasomo
             {
                 nambariJina=LoadDoubleDigits(nambari);//load name for double digit number
             }
-            else if(nambari>=100)
+            else if(nambari>=100 && nambari<1000)
             {
                 nambariJina=LoadTripleDigits(nambari);//load name for triple digit number
             }

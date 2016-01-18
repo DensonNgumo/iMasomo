@@ -28,26 +28,10 @@ namespace iMasomo
            
         }
 
-        private void menuTileList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var selectedTile = menuTileList.SelectedItem as Tile;
-            Frame myFrame= new Frame();
-           
-            KiswahiliMenu kiswahiliMenu = new KiswahiliMenu();
-            CreationCenter creationPage = new CreationCenter();
-            switch(selectedTile.Name)
-            {
-               
-                case "kiswahiliTile":
-                    myFrame.Content = kiswahiliMenu;
-                    mainWindow.Content = myFrame;
-                    break;
-                case "creationTile":
-                    myFrame.Content = creationPage;
-                    mainWindow.Content = myFrame;
-                    break;
-                    
-            }
+            mainFrame.Navigate(new WelcomePage());
         }
     }
 }

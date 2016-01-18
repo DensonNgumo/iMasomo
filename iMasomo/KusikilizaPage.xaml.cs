@@ -21,32 +21,27 @@ namespace iMasomo
     /// </summary>
     public partial class KusikilizaPage : Page
     {
+        AlfabetiPage alfabetiPage = null;
+        SilabiPage silabiPage = null;
+
         public KusikilizaPage()
         {
             InitializeComponent();
+            alfabetiPage = new AlfabetiPage();
+            silabiPage = new SilabiPage();
             
         }
 
-        private void menuTileList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+       
+
+        private void alfabetiTile_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            var selectedTile = menuTileList.SelectedItem as Tile;
-            Frame myFrame = new Frame();
-            AlfabetiPage alfabetiPage = new AlfabetiPage();
-            SilabiPage silabiPage = new SilabiPage();
+            this.NavigationService.Navigate(alfabetiPage);
+        }
 
-
-            switch (selectedTile.Name)
-            {
-                case "alfabetiTile":
-                    myFrame.Content = alfabetiPage;
-                    break;
-                case "silabiTile":
-                    myFrame.Content = silabiPage;
-                    break;
-                
-
-            }
-            kusikilizaPage.Content = myFrame;
+        private void silabiTile_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.NavigationService.Navigate(silabiPage);
         }
 
        

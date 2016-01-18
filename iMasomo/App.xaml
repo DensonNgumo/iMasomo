@@ -3,5 +3,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+            <DrawingBrush x:Key="Arrow45" Stretch="Uniform">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup>
+                        <DrawingGroup.Children>
+                            <GeometryDrawing Brush="#FF000000" Geometry="F1 M 280.118,623.266L 270.835,623.266L 281.538,612.564L 260.502,612.564L 260.502,605.749L 281.465,605.749L 270.817,595.1L 280.118,595.116L 294.194,609.192M 277.347,583.325C 263.065,583.325 251.487,594.901 251.487,609.184C 251.487,623.465 263.065,635.044 277.347,635.044C 291.629,635.044 303.206,623.465 303.206,609.184C 303.206,594.901 291.629,583.325 277.347,583.325 Z "/>
+                        </DrawingGroup.Children>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
