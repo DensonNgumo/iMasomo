@@ -4,8 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="632.089" d:DesignWidth="796.642"
-	Title="ImlaPage" Loaded="LoadManeno" Unloaded="Dispose" >
+      d:DesignHeight="632.089" d:DesignWidth="796.642" x:Name="imlaPage"
+	Title="ImlaPage" Loaded="imlaPage_Loaded"  Unloaded="Page_Unloaded" >
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,13 +16,15 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label FontWeight="Bold" Grid.Row="0" Margin="311,10,151,33" FontFamily="Segoe UI" FontSize="30" Grid.Column="0">IMLA</Label>
-        <TextBlock Grid.Row="1" Margin="143,50,76,10" TextWrapping="Wrap" FontSize="28" FontFamily="Segoe UI" Grid.Column="0">dfkdlfjsdlkfj</TextBlock>
-        <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" >
-            <TextBox Width="598" Margin="45,45,0,28" Grid.Row="2" Grid.Column="0"/>
-            <Image Source="/Images/speaker.png" Margin="0,45,0,28" Width="102" PreviewMouseDown="PlaySound"/>
+        <TextBlock x:Name="anzaTxtBlock" Text="ANZA!" FontSize="26" FontFamily="Segoe UI" Grid.Column="0" Margin="311,60,373,33" Cursor="Hand" MouseDown="anzaTxtBlock_MouseDown" MouseEnter="anzaTxtBlock_MouseEnter"/>
+        <Button x:Name="onyeshaJibuBtn" Content="Onyesha Jibu" FontSize="30" FontFamily="Segoe UI" Grid.Column="0" Grid.Row="1" Margin="597,7,10,76" Cursor="Hand" Click="onyeshaJibuBtn_Click" Visibility="Hidden"/>
+        <TextBlock x:Name="jawabuTxtBlock" Grid.Row="1" Margin="143,66,76,10" TextWrapping="Wrap" FontSize="28" FontFamily="Segoe UI" Grid.Column="0" Visibility="Hidden" Text="Jawabu"/> 
+        <StackPanel x:Name="inputStackPanel" Orientation="Horizontal" Grid.Row="2" Grid.Column="0" >
+            <TextBox x:Name="jibuTxt" Width="598" Margin="45,45,0,28" Grid.Row="2" Grid.Column="0"/>
+            <Image Source="/Images/speaker.png" Margin="0,45,0,28" Width="102" PreviewMouseDown="Image_PreviewMouseDown"/>
         </StackPanel>
-        <Button Content="Jibu" Margin="185,0,316,0" Height="68" Grid.Row="3" Grid.Column="0" Click="Button_Click"/>
-        <Button Content="Next" Grid.Row="4" Margin="564,42,76,10" Grid.Column="0"/>
+        <Button x:Name="jibuBtn" Content="Jibu" Margin="185,0,316,0" Height="68" Grid.Row="3" Grid.Column="0" Click="jibuBtn_Click"/>
+        <Button x:Name="endeleaBtn" Content="Endelea" Grid.Row="4" Margin="564,42,76,10" Grid.Column="0" Click="endeleaBtn_Click"/>
 
 
 

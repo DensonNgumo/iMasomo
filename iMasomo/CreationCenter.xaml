@@ -38,7 +38,7 @@
             </ComboBox>
             <Button x:Name="btnSave" Content="Save Drawing" Height="55" VerticalAlignment="Top" Width="85" Click="SaveData" />
             <Button x:Name="btnLoad" Content="Load Drawing" Height="55" VerticalAlignment="Top" Width="99" Click="LoadData"/>
-            <Button x:Name="btnClear" Content="Clear" Height="55" VerticalAlignment="Top" Width="75" Click="Clear" />
+            <Button x:Name="btnClear" Content="Clear" Height="55" VerticalAlignment="Top" Width="75" Click="ClearData" />
 
         </ToolBar>
         <InkCanvas x:Name="myInkCanvas" Background="Aqua"/>

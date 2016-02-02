@@ -50,19 +50,18 @@ namespace iMasomo
             string colorToUse = (comboColors.SelectedItem as StackPanel).Tag.ToString();
             myInkCanvas.DefaultDrawingAttributes.Color = (Color)ColorConverter.ConvertFromString(colorToUse);
         }
-
-        private void SaveData(object sender, RoutedEventArgs e)
+        
+        private void Save()
         {
             using (FileStream fs = new FileStream("StrokeData.bin", FileMode.Create))
             {
                 myInkCanvas.Strokes.Save(fs);
                 fs.Close();
-                
+
             }
-            
         }
 
-        private void LoadData(object sender, RoutedEventArgs e)
+        private void Load()
         {
             using (FileStream fs = new FileStream("StrokeData.bin", FileMode.Open, FileAccess.Read))
             {
@@ -71,9 +70,25 @@ namespace iMasomo
             }
         }
 
-        private void Clear(object sender, RoutedEventArgs e)
+        private void Clear()
         {
             myInkCanvas.Strokes.Clear();
+        }
+
+        private void SaveData(object sender, RoutedEventArgs e)
+        {
+            Save();
+            
+        }
+
+        private void LoadData(object sender, RoutedEventArgs e)
+        {
+            Load();
+        }
+
+        private void ClearData(object sender, RoutedEventArgs e)
+        {
+            Clear();
         }
     }
 }

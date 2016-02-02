@@ -9,12 +9,37 @@
 	Title="Kusikiliza na Kuongea">
 
     <DockPanel Margin="32,36,36,0">
+        <DockPanel.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Foreground" Value="Black"/>
+            </Style>
+        </DockPanel.Resources>
         <telerik:RadTileList  x:Name="menuTileList" Margin="0,10,0,87" Width="692">
-            <telerik:Tile Content="Alfabeti"  x:Name="alfabetiTile"  PreviewMouseDown="alfabetiTile_MouseDown"/>
-            <telerik:Tile Content="Nyimbo|Shairi" TileType="Single"/>
-            <telerik:Tile Content="Silabi" TileType="Single" x:Name="silabiTile" PreviewMouseDown="silabiTile_MouseDown"/>
+            <telerik:Tile  x:Name="alfabetiTile" MouseDoubleClick="alfabetiTile_MouseDown">
+                <Grid>
+                    <Image Source="/Images/alfabeti.jpg"  Stretch="Fill"/>
+                    <TextBlock Text="Alfabeti"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile TileType="Single">
+                <Grid>
+                    <Image Source="/Images/nyimbo.jpg"  Stretch="Fill"/>
+                    <TextBlock Text="Nyimbo|Shairi"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile TileType="Single" x:Name="silabiTile" MouseDoubleClick="silabiTile_MouseDown">
+                <Grid>
+                    <Image Source="/Images/abc.jpg"  Stretch="Fill"/>
+                    <TextBlock Text="Silabi"/>
+                </Grid>
+            </telerik:Tile>
             <telerik:Tile Content="Maamkuzi" />
-            <telerik:Tile Content="Hadithi" />
+            <telerik:Tile >
+                <Grid>
+                    <Image Source="/Images/hadithi.jpg"  Stretch="Fill"/>
+                    <TextBlock Text="Hadithi"/>
+                </Grid>
+            </telerik:Tile>
 
         </telerik:RadTileList>
 

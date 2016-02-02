@@ -4,15 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="AddImages" Height="283.582" Width="610.448" Loaded="Page_Loaded">
+	Title="AddImages" Height="372.582" Width="610.448" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="85*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="51*"/>
@@ -23,9 +23,11 @@
         <TextBox x:Name="imagePathTextBox" Grid.Column="1" Grid.Row="1" Margin="0,5,146,10"/>
         <Button Content="Browse Images.." x:Name="browseImagesButton" Click="browseImagesButton_Click" FontFamily="Segoe UI" Grid.Column="1" Grid.Row="1" Margin="207,5,0,10"/>
         <TextBlock Text="Kiswahili Name for Image" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="2"/>
-        <TextBox x:Name="kiswahiliTagTxtBox" Grid.Column="1" Grid.Row="2" Margin="5,0,59,23"/>
+        <TextBox x:Name="kiswahiliTagTxtBox" Grid.Column="1" Grid.Row="2" Margin="0,0,59,24" HorizontalAlignment="Right" Width="296"/>
         <TextBlock Text="Category" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="3"/>
-        <ComboBox x:Name="categoryComboBox" Grid.Column="1" Grid.Row="3" Margin="5,0,94,22"/>
+        <TextBlock Text="Utangulizi" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="3" Margin="0,53,0,0"/>
+        <TextBox x:Name="utanguliziTxtBox" FontFamily="Segoe UI" FontSize="22" Grid.Column="1" Grid.Row="3" Margin="0,53,0,5"/>
+        <ComboBox x:Name="categoryComboBox" Grid.Column="1" Grid.Row="3" Margin="0,0,59,61"/>
         <Button x:Name="addImageBtn" Content="Add Image" Click="addImageBtn_Click" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="4" Margin="186,0,245,0" Width="179"/>
     </Grid>
 </Page>

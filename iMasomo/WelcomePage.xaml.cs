@@ -20,14 +20,19 @@ namespace iMasomo
     /// </summary>
     public partial class WelcomePage : Page
     {
+       
         public WelcomePage()
         {
             InitializeComponent();
+                 
         }
 
         private void endeleaBtn_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new HomePage());
+            this.NavigationService.Navigate(new HomePage()); 
+           
         }
+
+ 
     }
 }

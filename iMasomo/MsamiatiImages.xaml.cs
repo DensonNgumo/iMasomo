@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
+using System.Windows.Media.Animation;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -22,11 +22,12 @@ namespace iMasomo
     public partial class MsamiatiImages : Window
     {
         SortedList<string, BitmapImage> imageCollection = new SortedList<string, BitmapImage>();
+        SortedList<string, string> imageDetails;
         string systemImagesPath = Environment.CurrentDirectory;
 
         private int currImage = 0;
         private int MAXIMAGE = 0;
-        private string category="michezo";
+        private string category="";
         private SQLiteConnection databaseConn;
         
        
@@ -68,47 +69,84 @@ namespace iMasomo
             }
            
         }
+
+        private void AnimateText()
+        {
+            imageNameLabel.Visibility = Visibility.Visible;
+            DoubleAnimation dblAnim = new DoubleAnimation();
+            dblAnim.To = 1.0;
+            dblAnim.From = 0.0;
+            dblAnim.BeginTime = TimeSpan.FromSeconds(5);
+            dblAnim.Duration = TimeSpan.FromSeconds(5);
+
+            var storyboard = new Storyboard();
+            storyboard.Children.Add(dblAnim);
+            Storyboard.SetTarget(dblAnim, imageNameLabel);
+            Storyboard.SetTargetProperty(dblAnim, new PropertyPath(OpacityProperty));
+            storyboard.Completed += delegate { imageNameLabel.Visibility = Visibility.Hidden; };
+            storyboard.Begin();
+           // imageNameLabel.BeginAnimation(OpacityProperty, dblAnim);
+        }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             SetMAXImages();
+            imageDetails = new SortedList<string, string>();
             //load system images
-            string query = "select kiswahili_tag,path from image_details where  category='"+category+"'";
+            string query = "select kiswahili_tag,path,image_id,utangulizi from image_details where  category='"+category+"'";
             SQLiteCommand sqliteComm = new SQLiteCommand(query,databaseConn);
             sqliteComm.ExecuteNonQuery();
             SQLiteDataReader dr = sqliteComm.ExecuteReader();
             while (dr.Read())
             {
                imageCollection.Add(dr.GetString(0), new BitmapImage(new Uri(dr.GetString(1), UriKind.RelativeOrAbsolute)));
+               
+               imageDetails.Add(dr.GetString(0), dr.GetString(3)+"...");
                              
             }
  
             imageHolder.Source = imageCollection.Values[0];
             imageNameLabel.Content = imageCollection.Keys[0].ToUpper();
             categoryNameLabel.Content = category.ToUpper();
-            
+            imagePretext.Content = imageDetails.Values[0].ToUpper();
+            AnimateText();
 
         }
       
-
-
-        private void nextArrowImage_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void NextImage()
         {
+            
             if (++currImage >= MAXIMAGE)
             {
                 currImage = 0;
             }
 
             imageHolder.Source = imageCollection.Values[currImage];
+            imagePretext.Content = imageDetails.Values[currImage].ToUpper();          
             imageNameLabel.Content = imageCollection.Keys[currImage].ToUpper();
+            AnimateText();
+            
+            
         }
 
-        private void previousArrowImage_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void PreviousImage()
         {
             if (--currImage < 0)
 
                 currImage = MAXIMAGE - 1;
             imageHolder.Source = imageCollection.Values[currImage];
             imageNameLabel.Content = imageCollection.Keys[currImage].ToUpper();
+            imagePretext.Content = imageDetails.Values[currImage].ToUpper();
+            AnimateText();
+        }
+
+        private void nextArrowImage_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            NextImage();
+        }
+
+        private void previousArrowImage_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PreviousImage();
 
         }
     }

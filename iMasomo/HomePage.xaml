@@ -8,22 +8,49 @@
 	Title="Home Page" Width="716.417" Height="552.985">
 
     <DockPanel>
+        <DockPanel.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Style>
+        </DockPanel.Resources>
         <telerik:RadTileList x:Name="menuTileList" Width="653" Margin="0,57,0,42">
             <telerik:RadTileList.Groups>
 
                 <telerik:TileGroup DisplayIndex="0">
                     <telerik:TileGroup.Items>
-                        <telerik:Tile Content="Kusikiliza na Kuongea" x:Name="kusikilizaTile"  MouseDown="kusikilizaTile_MouseDown"/>
-                        <telerik:Tile Content="Sarufi" />
-                        <telerik:Tile Content="Msamiati" x:Name="msamiatiTile"   MouseDown="msamiatiTile_MouseDown"/>
-                        <telerik:Tile Content="Imla" x:Name="imlaTile"  MouseDown="imlaTile_MouseDown"/>
+                        <telerik:Tile Background="LawnGreen" x:Name="kusikilizaTile"  MouseDoubleClick="kusikilizaTile_MouseDown">
+                            <Grid>
+                                <Image Source="/Images/kusikiliza.jpg" Stretch="Fill"/>
+                                <TextBlock Text="Kusikiliza na Kuongea"/>
+                            </Grid>
+                        </telerik:Tile>
+                        <telerik:Tile Background="PaleVioletRed">
+                            <Grid>
+                                <Image Source="/Images/sarufi.jpg" Stretch="Fill"/>
+                                <TextBlock Text="Sarufi"/>
+                            </Grid>
+                        </telerik:Tile>
+                        <telerik:Tile x:Name="msamiatiTile" MouseDoubleClick="msamiatiTile_MouseDown">
+                            <Grid>
+                                <Image Source="/Images/sun-background.jpg" Stretch="Fill"/>
+                                <TextBlock Text="Msamiati"/>
+                            </Grid>
+                        </telerik:Tile>
+                        <telerik:Tile x:Name="imlaTile"  MouseDoubleClick="imlaTile_MouseDown">
+                            <Grid>
+                                <Image Source="/Images/imla.gif" Stretch="Fill"/>
+                                <TextBlock Text="Imla"/>
+                            </Grid>
+                        </telerik:Tile>
                     </telerik:TileGroup.Items>
                 </telerik:TileGroup>
 
                 <telerik:TileGroup DisplayIndex="1">
                     <telerik:TileGroup.Items>
-                        <telerik:Tile  x:Name="mazoeziTile" Background="Thistle" MouseDown="mazoeziTile_MouseDown">
+                        <telerik:Tile  x:Name="mazoeziTile" Background="Thistle"  MouseDoubleClick="mazoeziTile_MouseDown">
                             <Grid>
+                                <Image Source="/Images/zoezi.png" Height="100"/>
                                 <TextBlock Text="Mazoezi"/>
                             </Grid>
                         </telerik:Tile>
@@ -33,7 +60,7 @@
                                 <TextBlock Text="Michezo"/>
                             </Grid>
                         </telerik:Tile>
-                        <telerik:Tile  x:Name="creationTile" TileType="Single" Background="Red" MouseDown="creationTile_MouseDown">
+                        <telerik:Tile  x:Name="creationTile" TileType="Single" Background="Red" MouseDoubleClick="creationTile_MouseDown">
                             <Grid>
                                 <Image Source="/Images/kuchora.png" Height="100"/>
                                 <TextBlock Text="Kuchora"/>

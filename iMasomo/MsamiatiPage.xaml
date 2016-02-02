@@ -11,12 +11,12 @@
     <Grid>
         <Grid.Resources>
             <Style TargetType="telerik:Tile">
-                <EventSetter Event="MouseDown" Handler="OpenMsamiatiImages"/>
+                <EventSetter Event="MouseDoubleClick" Handler="OpenMsamiatiImages"/>
                 <Setter Property="FontFamily" Value="Segoe UI"/>
                 <Setter Property="FontSize" Value="18"/>
             </Style>
             <Style TargetType="telerik:Tile" x:Key="tarakimuStyle">
-                <EventSetter Event="MouseDown" Handler="Tile_MouseDown"/>
+                <EventSetter Event="MouseDoubleClick" Handler="Tile_MouseDown"/>
             </Style>
         </Grid.Resources>
         
@@ -83,19 +83,19 @@
             </telerik:Tile>
             <telerik:Tile Tag="Maumbo">
                 <Grid>
-                    <Image Source="/Images/ugali.jpg" Stretch="Fill"/>
+                    
                     <TextBlock Text="Maumbo"/>
                 </Grid>
             </telerik:Tile>
             <telerik:Tile Tag="Angani">
                 <Grid>
-                    <Image Source="/Images/ugali.jpg" Stretch="Fill"/>
+                    
                     <TextBlock Text="Angani"/>
                 </Grid>
             </telerik:Tile>
             <telerik:Tile Tag="Tarakimu" Style="{StaticResource tarakimuStyle}">
                 <Grid>
-                    <Image Source="/Images/ugali.jpg" Stretch="Fill"/>
+                    <Image Source="/Images/tarakimu.jpg" Stretch="Fill"/>
                     <TextBlock Text="Tarakimu"/>
                 </Grid>
             </telerik:Tile>

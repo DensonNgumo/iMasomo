@@ -12,9 +12,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.IO;
 using iMasomo;
 using System.Data.SQLite;
+
 
 
 namespace iMasomo_Teacher
@@ -25,6 +26,8 @@ namespace iMasomo_Teacher
     public partial class AddImages : Page
     {
         private SQLiteConnection sqliteConn;
+        string newImagePath;
+        string fileName;
         public AddImages()
         {
             try
@@ -64,23 +67,32 @@ namespace iMasomo_Teacher
         }
         private void browseImagesButton_Click(object sender, RoutedEventArgs e)
         {
-            //Create OpenFileDialog
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-
-            //set filter for file extension and default file extension
-            dlg.DefaultExt = ".png";
-            dlg.Filter = "JPEG Files(*.jpeg)|*.jpeg|PNG Files(*.png)|*.png|JPG Files (*.jpg)|*.jpg";
-
-            //display OpenFileDialog by calling ShowDialog method
-            Nullable<bool> result = dlg.ShowDialog();
-
-            //get the selected file name and display in a TextBox
-            if(result.HasValue)
+            try
             {
-                //Open document
-                string filename = dlg.FileName;
-                imagePathTextBox.Text = filename;
+                //Create OpenFileDialog
+                Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+
+                //set filter for file extension and default file extension
+                dlg.DefaultExt = ".png";
+                dlg.Filter = "IMAGE Files(*.jpeg;*.jpg;*.png)|*.jpeg;*.jpg;*.png";
+
+                //display OpenFileDialog by calling ShowDialog method
+                Nullable<bool> result = dlg.ShowDialog();
+
+                //get the selected file name and display in a TextBox
+                if (result.HasValue)
+                {
+                    //Open document
+                    fileName = dlg.FileName;
+                    imagePathTextBox.Text = fileName;
+                   
+                }
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
     
         }
 
@@ -89,9 +101,19 @@ namespace iMasomo_Teacher
             LoadComboBoxElements();
         }
 
+        private void CopyImage()
+        {
+            string ext = Path.GetExtension(fileName);
+            newImagePath=Environment.CurrentDirectory + @"\Images\" + kiswahiliTagTxtBox.Text + ext;
+            File.Copy(fileName,newImagePath);
+            
+        }
+
         private void addImageBtn_Click(object sender, RoutedEventArgs e)
         {
-            string query="insert into image_details(kiswahili_tag,category,path,image_type) values ('"+kiswahiliTagTxtBox.Text.ToLower()+"','"+categoryComboBox.SelectedItem.ToString().ToLower()+"','"+imagePathTextBox.Text+"','user_defined')";
+            CopyImage();
+            
+            string query="insert into image_details(kiswahili_tag,category,path,image_type,utangulizi) values ('"+kiswahiliTagTxtBox.Text.ToLower()+"','"+categoryComboBox.SelectedItem.ToString().ToLower()+"','"+newImagePath+"','user_defined','"+utanguliziTxtBox.Text+"')";
             try
             {
                 SQLiteCommand sqliteCommand = new SQLiteCommand(query, sqliteConn);
