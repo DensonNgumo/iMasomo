@@ -21,27 +21,32 @@ namespace iMasomo
     /// </summary>
     public partial class KusikilizaPage : Page
     {
-        AlfabetiPage alfabetiPage = null;
-        SilabiPage silabiPage = null;
+               
 
         public KusikilizaPage()
         {
             InitializeComponent();
-            alfabetiPage = new AlfabetiPage();
-            silabiPage = new SilabiPage();
-            
+                               
         }
 
        
 
         private void alfabetiTile_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            AlfabetiPage alfabetiPage = new AlfabetiPage();
             this.NavigationService.Navigate(alfabetiPage);
         }
 
         private void silabiTile_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            SilabiPage silabiPage = new SilabiPage();
             this.NavigationService.Navigate(silabiPage);
+        }
+
+        private void hadithiTile_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            HadithiPage hadithiPage = new HadithiPage();
+            this.NavigationService.Navigate(hadithiPage);
         }
 
        

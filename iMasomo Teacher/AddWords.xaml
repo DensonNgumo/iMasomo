@@ -12,10 +12,11 @@
                 <Setter Property="FontFamily" Value="Segoe UI"/>
                 <Setter Property="FontSize" Value="24"/>
             </Style>
-            <Style x:Key="showControl">
+            <Style x:Key="enableControl">
                 <Style.Triggers>
-                    <DataTrigger Binding="{Binding ElementName=yesRadioBtn,Path=IsChecked}" Value="True">
-                        <Setter Property="Control.Visibility" Value="Visible"/>
+                    
+                    <DataTrigger Binding="{Binding ElementName=yesRadioBtn,Path=Checked}" Value="True">
+                        <Setter Property="Control.IsEnabled" Value="True"/>
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
@@ -34,21 +35,21 @@
         </Grid.ColumnDefinitions>
         <TextBlock Text="Add Words To The System" TextAlignment="Center" Grid.ColumnSpan="2" Grid.Row="0"/>
         <TextBlock Text="Enter word" Grid.Column="0" Grid.Row="1"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Margin="0,0,106,10"/>
+        <TextBox x:Name="kiswahiliWordTxtBox" Grid.Column="1" Grid.Row="1" Margin="0,0,106,10"/>
         <TextBlock Text="Enter meaning of word" Grid.Column="0" Grid.Row="2"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Margin="0,5,106,10"/>
+        <TextBox x:Name="wordMeaningTxtBox" Grid.Column="1" Grid.Row="2" Margin="0,5,106,10"/>
         <TextBlock Text="Should word be used for imla?" Grid.Column="0" Grid.Row="3"/>
         <RadioButton x:Name="yesRadioBtn" Content="Yes" GroupName="recordChoice" Grid.Row="3" Grid.Column="1" Margin="0,0,0,82"/>
         <RadioButton x:Name="noRadioBtn" Content="No" GroupName="recordChoice" Grid.Row="3" Grid.Column="1" Margin="0,42,0,40"/>
-        <TextBlock Text="Choose/Record sound for the word" Grid.Column="0" Grid.Row="4" FontSize="24" Style="{StaticResource showControl}"/>
-        <TextBox Grid.Column="1" Grid.Row="4" Margin="0,0,140,73" Style="{StaticResource showControl}"/>
-        <Button x:Name="browseBtn" Content="Browse for Sounds" Grid.Column="1" Grid.Row="4" Style="{StaticResource showControl}" Margin="208,0,0,73"/>
-        <TextBlock Text="Or" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" Style="{StaticResource showControl}" FontSize="20" Margin="152,66,140,36"/>
-        <Button x:Name="recordBtn" Grid.Column="1" Grid.Row="4" Style="{StaticResource showControl}" Margin="0,98,0,0">
+        <TextBlock Text="Choose/Record sound for the word" Grid.Column="0" Grid.Row="4" FontSize="24"/>
+        <TextBox x:Name="recordingPathTxtBox" Grid.Column="1" Grid.Row="4" Margin="0,0,140,73" IsEnabled="{Binding IsChecked, ElementName=yesRadioBtn}"/>
+        <Button x:Name="browseBtn" Content="Browse for Sounds" Grid.Column="1" Grid.Row="4" IsEnabled="{Binding IsChecked, ElementName=yesRadioBtn}"  Margin="208,0,0,73" Click="browseBtn_Click"/>
+        <TextBlock Text="Or" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4" FontSize="20" Margin="152,66,140,36"/>
+        <Button x:Name="recordBtn" Grid.Column="1" Grid.Row="4" IsEnabled="{Binding IsChecked, ElementName=yesRadioBtn}" Margin="0,98,0,0" Click="recordBtn_Click">
             <Grid>
-                <TextBlock Text="Press Button To Record Sound"/>
+                <TextBlock x:Name="recordBtnText" Text="Press Button To Record Sound"/>
             </Grid>
         </Button>
-        <Button Content="Add word" Grid.Row="5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="345,0,285,0" Width="119" Grid.ColumnSpan="2"/>
+        <Button x:Name="addWordBtn" Content="Add word" Grid.Row="5" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="345,0,285,0" Width="119" Grid.ColumnSpan="2" Click="addWordBtn_Click"/>
     </Grid>
 </Page>

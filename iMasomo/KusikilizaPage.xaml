@@ -34,7 +34,7 @@
                 </Grid>
             </telerik:Tile>
             <telerik:Tile Content="Maamkuzi" />
-            <telerik:Tile >
+            <telerik:Tile  x:Name="hadithiTile" MouseDoubleClick="hadithiTile_MouseDoubleClick">
                 <Grid>
                     <Image Source="/Images/hadithi.jpg"  Stretch="Fill"/>
                     <TextBlock Text="Hadithi"/>

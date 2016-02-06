@@ -23,7 +23,8 @@ namespace iMasomo
                
         public MainWindow()
         {
-            InitializeComponent();          
+            InitializeComponent();
+            Database.OpenDatabase();
            
         }
 

@@ -10,7 +10,8 @@ namespace iMasomo
 {
     public static class Database
     {
-        private static string dbConnectionString = @"Data Source=iMasomoDB.db;Version=3;";
+        private static string dbPath =  @"E:\THE HUB\My Files\My Projects\C# code\iMasomo\iMasomo\Database\iMasomoDB.db";
+        private static string dbConnectionString = @"Data Source='"+dbPath+"';Version=3;";
         private  static SQLiteConnection sqliteConn;
 
        
@@ -20,6 +21,7 @@ namespace iMasomo
             {
                 sqliteConn = new SQLiteConnection(dbConnectionString);
                 sqliteConn.Open();
+                MessageBox.Show("Database Opened");
             }
             catch (Exception ex)
             {

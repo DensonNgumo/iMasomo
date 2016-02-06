@@ -64,7 +64,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddStories.xaml.cs">
+      <DependentUpon>AddStories.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sound.cs" />
     <Page Include="AddImages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddStories.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -45,6 +45,11 @@ namespace iMasomo
             tarakimuWindow.Show();
         }
 
+        private void OpenSehemuYaMwili(object sender, MouseButtonEventArgs e)
+        {
+            MediaPlayer mediaPlayer = new MediaPlayer();
+            mediaPlayer.Show();
+        }
        
     }
 }

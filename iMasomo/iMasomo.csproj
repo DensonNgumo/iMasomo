@@ -38,6 +38,9 @@
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio">
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -92,6 +95,9 @@
       <DependentUpon>CreationCenter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database.cs" />
+    <Compile Include="HadithiPage.xaml.cs">
+      <DependentUpon>HadithiPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -101,11 +107,20 @@
     <Compile Include="KusikilizaPage.xaml.cs">
       <DependentUpon>KusikilizaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MediaPlayer.xaml.cs">
+      <DependentUpon>MediaPlayer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MsamiatiPage.xaml.cs">
       <DependentUpon>MsamiatiPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MsamiatiImages.xaml.cs">
       <DependentUpon>MsamiatiImages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PDFViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PDFViewer.Designer.cs">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="SilabiPage.xaml.cs">
       <DependentUpon>SilabiPage.xaml</DependentUpon>
@@ -128,6 +143,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="HadithiPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +158,10 @@
     <Page Include="KusikilizaPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MediaPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MsamiatiPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -203,13 +226,19 @@
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PDFViewer.resx">
+      <DependentUpon>PDFViewer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Database\iMasomoDB.db">
+    <None Include="Resources\Anansi Na Kasa.pdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
+    <None Include="Database\iMasomoDB.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -243,7 +272,6 @@
   <ItemGroup>
     <Resource Include="Images\speaker.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\green_bgd.jpg" />
     <Resource Include="Images\arrow-left.png" />
@@ -312,6 +340,25 @@
     <Content Include="Media\sample.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,19 @@
+﻿<Page x:Class="iMasomo.HadithiPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	Title="HadithiPage" Height="429.699" Width="523.308" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="HADITHI ZANGU" Grid.Row="0" HorizontalAlignment="Center" FontSize="28"/>
+        <TextBlock Text="Chague Hadithi ya kusoma:" Grid.Row="0" HorizontalAlignment="Center" FontSize="28" Margin="0,52,0,0"/>
+        <StackPanel x:Name="hadithiPanel" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+
+    </Grid>
+</Page>

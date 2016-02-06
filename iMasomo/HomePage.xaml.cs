@@ -21,21 +21,17 @@ namespace iMasomo
     /// </summary>
     public partial class HomePage : Page
     {
-        CreationCenter creationPage = null;
-        MsamiatiPage msamiatiMenu = null;
-        ImlaPage imlaPage = null;
-        KusikilizaPage kusikilizaPage = null;
+        
+       
         public HomePage()
         {
             InitializeComponent();
-            creationPage = new CreationCenter();
-            msamiatiMenu = new MsamiatiPage();
-            imlaPage = new ImlaPage();
-            kusikilizaPage = new KusikilizaPage();
+
         }
 
         private void creationTile_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            CreationCenter creationPage = new CreationCenter();
             this.NavigationService.Navigate(creationPage);
         }
 
@@ -46,16 +42,19 @@ namespace iMasomo
 
         private void kusikilizaTile_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            KusikilizaPage kusikilizaPage = new KusikilizaPage();
             this.NavigationService.Navigate(kusikilizaPage);
         }
 
         private void msamiatiTile_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            MsamiatiPage msamiatiMenu = new MsamiatiPage();
             this.NavigationService.Navigate(msamiatiMenu);
         }
 
         private void imlaTile_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            ImlaPage imlaPage = new ImlaPage();
             this.NavigationService.Navigate(imlaPage);
         }
     }

@@ -14,9 +14,13 @@
                 <EventSetter Event="MouseDoubleClick" Handler="OpenMsamiatiImages"/>
                 <Setter Property="FontFamily" Value="Segoe UI"/>
                 <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Foreground" Value="Black"/>
             </Style>
             <Style TargetType="telerik:Tile" x:Key="tarakimuStyle">
                 <EventSetter Event="MouseDoubleClick" Handler="Tile_MouseDown"/>
+            </Style>
+            <Style TargetType="telerik:Tile" x:Key="sehemuYaMwiliStyle">
+                <EventSetter Event="MouseDoubleClick" Handler="OpenSehemuYaMwili"/>
             </Style>
         </Grid.Resources>
         
@@ -103,6 +107,12 @@
                 <Grid>
                     <Image Source="/Images/ukimwi.jpg" Stretch="Fill"/>
                     <TextBlock Text="Maswala ya Ibuka"/>
+                </Grid>
+            </telerik:Tile>
+            <telerik:Tile Tag="Sehemu Ya Mwili" Style="{StaticResource sehemuYaMwiliStyle}">
+                <Grid>
+                    <Image Source="/Images/ukimwi.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Sehemu ya Mwili"/>
                 </Grid>
             </telerik:Tile>
 
