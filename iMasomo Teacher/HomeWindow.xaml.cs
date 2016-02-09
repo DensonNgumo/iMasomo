@@ -23,5 +23,19 @@ namespace iMasomo_Teacher
             MessageBox.Show(Environment.CurrentDirectory);
             Database.OpenDatabase();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(this.Name=="addStories")
+            {
+                mainFrame.NavigationService.Navigate(new AddImages());
+                this.Name = "else";
+            }
+            else 
+            {
+                mainFrame.NavigationService.Navigate(new AddWords());
+            }
+            
+        }
     }
 }

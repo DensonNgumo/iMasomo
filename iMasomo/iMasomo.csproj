@@ -107,6 +107,7 @@
     <Compile Include="KusikilizaPage.xaml.cs">
       <DependentUpon>KusikilizaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoopStream.cs" />
     <Compile Include="MediaPlayer.xaml.cs">
       <DependentUpon>MediaPlayer.xaml</DependentUpon>
     </Compile>
@@ -125,6 +126,7 @@
     <Compile Include="SilabiPage.xaml.cs">
       <DependentUpon>SilabiPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sound.cs" />
     <Compile Include="Tarakimu.xaml.cs">
       <DependentUpon>Tarakimu.xaml</DependentUpon>
     </Compile>
@@ -326,9 +328,7 @@
     <Resource Include="Images\chumvi.jpg" />
     <Resource Include="Images\rangi.JPG" />
     <Resource Include="Images\ukimwi.jpg" />
-    <Content Include="Images\alfabeti.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Images\alfabeti.jpg" />
     <Resource Include="Images\hadithi.jpg" />
     <Resource Include="Images\tarakimu.jpg" />
     <Resource Include="Images\zoezi.png" />
@@ -337,6 +337,9 @@
     <Resource Include="Images\nyimbo.jpg" />
     <Resource Include="Images\kusikiliza.jpg" />
     <Resource Include="Images\imla.gif" />
+    <Content Include="Media\bgd.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Media\sample.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
