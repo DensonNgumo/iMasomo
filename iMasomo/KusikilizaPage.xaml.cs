@@ -49,6 +49,12 @@ namespace iMasomo
             this.NavigationService.Navigate(hadithiPage);
         }
 
+        private void nyimboTile_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            NyimboPage nyimboPage = new NyimboPage();
+            this.NavigationService.Navigate(nyimboPage);
+        }
+
        
 
        

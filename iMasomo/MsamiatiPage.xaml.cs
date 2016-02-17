@@ -5,14 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Telerik.Windows.Controls;
+using iMasomo_Teacher;
 
 namespace iMasomo
 {
@@ -24,6 +19,7 @@ namespace iMasomo
         public MsamiatiPage()
         {
             InitializeComponent();
+            Sound.PauseBackgroundMusic();
             
         }
 
@@ -47,8 +43,13 @@ namespace iMasomo
 
         private void OpenSehemuYaMwili(object sender, MouseButtonEventArgs e)
         {
-            MediaPlayer mediaPlayer = new MediaPlayer();
+            MediaPlayer mediaPlayer = new MediaPlayer(Environment.CurrentDirectory+@"\Media\KICD_Sehemu_ya_mwili.mp4");
             mediaPlayer.Show();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Sound.PauseBackgroundMusic();
         }
        
     }

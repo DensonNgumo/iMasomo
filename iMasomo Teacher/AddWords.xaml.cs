@@ -23,7 +23,6 @@ namespace iMasomo_Teacher
     {
         char alphabet;
         string kiswahiliWord;
-        string wordMeaning;
         string recordingPath;
         string category;
 
@@ -37,9 +36,9 @@ namespace iMasomo_Teacher
 
         public void AddWordsToDatabase()
         {
-            alphabet = kiswahiliWordTxtBox.Text[0];
-            wordMeaning = wordMeaningTxtBox.Text;
-            kiswahiliWord = kiswahiliWordTxtBox.Text;
+                     
+            kiswahiliWord = kiswahiliWordTxtBox.Text.ToLower();
+            alphabet = kiswahiliWord[0]; 
 
             if(yesRadioBtn.IsChecked==true)
             {
@@ -49,8 +48,8 @@ namespace iMasomo_Teacher
             {
                 category = "zote";
             }
-            string query = "insert into word_details (word,alphabet,sound_path,category,meaning) values('"+kiswahiliWord+"'"
-            +",'"+alphabet+"','"+recordingPath+"','"+category+"','"+wordMeaning+"')";
+            string query = "insert into word_details (word,alphabet,sound_path,category) values('"+kiswahiliWord+"'"
+            +",'"+alphabet+"','"+recordingPath+"','"+category+"')";
             SQLiteCommand sqliteComm = new SQLiteCommand(query, Database.GetDatabaseConnection());
             if (sqliteComm.ExecuteNonQuery()==1)
             {
@@ -66,8 +65,9 @@ namespace iMasomo_Teacher
 
         private void addWordBtn_Click(object sender, RoutedEventArgs e)
         {
-            kiswahiliWord = kiswahiliWordTxtBox.Text;
-            CopySound();
+           // kiswahiliWord = kiswahiliWordTxtBox.Text;
+           // CopySound();
+            AddWordsToDatabase();
         }
 
         private void CopySound()
@@ -108,6 +108,7 @@ namespace iMasomo_Teacher
                 Sound.RecordSound(kiswahiliWordTxtBox.Text);
                 recording = true;
                 recordBtnText.Text = "Stop Recording";
+                recordingPath = @"\Media\" + kiswahiliWordTxtBox.Text + ".wav";
                 
             }
            

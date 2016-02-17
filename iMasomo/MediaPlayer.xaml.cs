@@ -22,12 +22,15 @@ namespace iMasomo
     {
         DispatcherTimer timer;
 
-        public MediaPlayer()
+        string filePath;
+
+        public MediaPlayer(string path)
         {
             InitializeComponent();
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(500);
             timer.Tick += timer_Tick;
+            filePath = path;
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -62,8 +65,8 @@ namespace iMasomo
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            string fileName = @"C:\Users\Davinci\Downloads\Video\KICD_Sehemu_ya_mwili.mp4";
-            myMediaElement.Source = new Uri(fileName,UriKind.RelativeOrAbsolute);
+            
+            myMediaElement.Source = new Uri(filePath,UriKind.RelativeOrAbsolute);
             myMediaElement.LoadedBehavior = MediaState.Manual;
             myMediaElement.UnloadedBehavior = MediaState.Manual;
 

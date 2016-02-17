@@ -21,7 +21,7 @@
                     <TextBlock Text="Alfabeti"/>
                 </Grid>
             </telerik:Tile>
-            <telerik:Tile TileType="Single">
+            <telerik:Tile TileType="Single" x:Name="nyimboTile" MouseDoubleClick="nyimboTile_MouseDoubleClick">
                 <Grid>
                     <Image Source="/Images/nyimbo.jpg"  Stretch="Fill"/>
                     <TextBlock Text="Nyimbo|Shairi"/>

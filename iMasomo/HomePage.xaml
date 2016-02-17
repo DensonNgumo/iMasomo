@@ -5,7 +5,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="Home Page" Width="716.417" Height="552.985">
+	Title="Home Page" Width="716.417" Height="552.985" Loaded="Page_Loaded">
 
     <DockPanel>
         <DockPanel.Resources>

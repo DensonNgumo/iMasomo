@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Telerik.Windows.Controls;
+using iMasomo_Teacher;
 
 namespace iMasomo
 {
@@ -26,6 +27,7 @@ namespace iMasomo
         public HomePage()
         {
             InitializeComponent();
+           
 
         }
 
@@ -56,6 +58,11 @@ namespace iMasomo
         {
             ImlaPage imlaPage = new ImlaPage();
             this.NavigationService.Navigate(imlaPage);
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

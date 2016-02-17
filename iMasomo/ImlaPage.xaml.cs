@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Navigation;
 using System.Media;
 using System.Data.SQLite;
+using iMasomo_Teacher;
 
 
 
@@ -27,19 +28,17 @@ namespace iMasomo
         private string path;
         private string neno;
         int count = 0;
+        
         bool isGrowing = false;
 
         SortedList<string, string> wordInfo = new SortedList<string, string>();
         
 
-        private SQLiteConnection databaseConn;
-
         public ImlaPage()
         {
             InitializeComponent();
             Database.OpenDatabase();
-            SetDatabaseConnection();
-            
+            Sound.PauseBackgroundMusic();
             
         }
 
@@ -69,10 +68,7 @@ namespace iMasomo
             jibuTxt.Clear();
         }
 
-        private void SetDatabaseConnection()
-        {
-            databaseConn = Database.GetDatabaseConnection();
-        }
+ 
 
         private void PlaySound()
         {
@@ -91,8 +87,8 @@ namespace iMasomo
         private void LoadManeno()
         {
             
-            string loadManenoQuery = "select word, sound_path from word_details where word_id=3";
-            SQLiteCommand sqliteComm = new SQLiteCommand(loadManenoQuery, databaseConn);
+            string loadManenoQuery = "select word, sound_path from word_details where category='imla'";
+            SQLiteCommand sqliteComm = new SQLiteCommand(loadManenoQuery, Database.GetDatabaseConnection());
             sqliteComm.ExecuteNonQuery();
             SQLiteDataReader dr = sqliteComm.ExecuteReader();
             while (dr.Read())
@@ -104,9 +100,29 @@ namespace iMasomo
             neno = wordInfo.Keys[count];
         }
 
+        private int  GetTotalNumberOfWords()
+        {
+            string loadManenoQuery = "select count(*) from word_details where category='imla'";
+            SQLiteCommand sqliteComm = new SQLiteCommand(loadManenoQuery, Database.GetDatabaseConnection());
+            sqliteComm.ExecuteNonQuery();
+            SQLiteDataReader dr = sqliteComm.ExecuteReader();
+            int no = 0;
+            while (dr.Read())
+            {
+                var value = dr.GetValue(0);
+                no = int.Parse(value.ToString());
+
+            }
+            return no;
+        }
         private void LoadNextWord()
         {
-            count++;
+            int totalNumberOfWords = GetTotalNumberOfWords();
+            if(++count>=totalNumberOfWords)
+            {
+                count = 0;
+            }
+            //count++;
             path = wordInfo.Values[count];
             neno = wordInfo.Keys[count];
         }
@@ -139,13 +155,13 @@ namespace iMasomo
             if(jibuTxt.Text.ToLower()==neno)
             {
                 MessageBox.Show("Hongera!");
-                LoadNextWord();
-                PlaySound();
+               // LoadNextWord();
+               // PlaySound();
             }
             else
             {
                 //jibu is wrong
-                MessageBox.Show("La Hasha! Unaweza jaribu tena ama bonyeza 'Onyesha Jibu' kuona jibu.");
+                MessageBox.Show("La Hasha! Jaribu Tena.");
                 onyeshaJibuBtn.Visibility = Visibility.Visible;
             }
 
@@ -153,7 +169,9 @@ namespace iMasomo
 
         private void endeleaBtn_Click(object sender, RoutedEventArgs e)
         {
+            jawabuTxtBlock.Visibility = Visibility.Hidden;
             LoadNextWord();
+            PlaySound();
         }
 
         private void onyeshaJibuBtn_Click(object sender, RoutedEventArgs e)
@@ -167,6 +185,7 @@ namespace iMasomo
         {
             wordInfo.Clear();
             RefreshPageElements();
+            Sound.PlayBackgroundMusic();
            
         }
 

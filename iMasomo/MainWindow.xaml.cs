@@ -23,13 +23,14 @@ namespace iMasomo
         {
             InitializeComponent();
             Database.OpenDatabase();
-            Sound.PlayBackgroundMusic();
+            
            
         }
 
 
         private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            Sound.StartBackgroundMusic();
             mainFrame.Navigate(new WelcomePage());
         }
     }

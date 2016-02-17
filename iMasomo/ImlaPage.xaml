@@ -15,8 +15,8 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label FontWeight="Bold" Grid.Row="0" Margin="311,10,151,33" FontFamily="Segoe UI" FontSize="30" Grid.Column="0">IMLA</Label>
-        <TextBlock x:Name="anzaTxtBlock" Text="ANZA!" FontSize="26" FontFamily="Segoe UI" Grid.Column="0" Margin="311,60,373,33" Cursor="Hand" MouseDown="anzaTxtBlock_MouseDown" MouseEnter="anzaTxtBlock_MouseEnter"/>
+        <Label FontWeight="Bold" Grid.Row="0" Margin="311,10,151,63" FontFamily="Segoe UI" FontSize="30" Grid.Column="0">IMLA</Label>
+        <TextBlock x:Name="anzaTxtBlock" Text="ANZA!" FontSize="26" FontFamily="Segoe UI" Grid.Column="0" Margin="311,68,373,10" Cursor="Hand" MouseDown="anzaTxtBlock_MouseDown" MouseEnter="anzaTxtBlock_MouseEnter"/>
         <Button x:Name="onyeshaJibuBtn" Content="Onyesha Jibu" FontSize="30" FontFamily="Segoe UI" Grid.Column="0" Grid.Row="1" Margin="597,7,10,76" Cursor="Hand" Click="onyeshaJibuBtn_Click" Visibility="Hidden"/>
         <TextBlock x:Name="jawabuTxtBlock" Grid.Row="1" Margin="143,66,76,10" TextWrapping="Wrap" FontSize="28" FontFamily="Segoe UI" Grid.Column="0" Visibility="Hidden" Text="Jawabu"/> 
         <StackPanel x:Name="inputStackPanel" Orientation="Horizontal" Grid.Row="2" Grid.Column="0" >

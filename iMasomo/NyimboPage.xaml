@@ -1,0 +1,29 @@
+﻿<Page x:Class="iMasomo.NyimboPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d"
+	Title="NyimboPage" Height="632.089" Width="796.642" Unloaded="Page_Unloaded">
+
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="26"/>
+                <EventSetter Event="MouseDown" Handler="TextBlock_MouseDown"/>
+                <Setter Property="Cursor" Value="Hand"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Nyimbo!" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Margin="0,0,0,61" FontSize="26"/>
+        <Label Content="Bonyeza wimbo kusikiza" Grid.Row="0" Margin="0,127,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="26"/>
+        <StackPanel x:Name="contentStackPanel" Grid.Row="1">
+            <TextBlock Text="1. Wimbo Wa Taifa" HorizontalAlignment="Center" Margin="0,20,0,0" Tag="Wimbo_Wa_Taifa.mp4"/>
+            <TextBlock Text="2. Jambo" HorizontalAlignment="Center" Margin="276,40,331,0" Width="158" Tag="Jambo.mp4"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

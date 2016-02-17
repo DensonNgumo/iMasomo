@@ -31,7 +31,7 @@ namespace iMasomo_Teacher
             wordName = name;
             try
             {
-                MessageBox.Show("Recording...");
+                
                 waveIn = new WaveIn();
                 waveIn.DeviceNumber = inputDevice;
                 waveIn.WaveFormat = new NAudio.Wave.WaveFormat(44100, WaveIn.GetCapabilities(inputDevice).Channels);
@@ -71,6 +71,23 @@ namespace iMasomo_Teacher
 
         public static void PlayBackgroundMusic()
         {
+            if (waveOut.PlaybackState == PlaybackState.Paused)
+            {
+                waveOut.Play();
+            }
+        }
+        public static void PauseBackgroundMusic()
+        {
+            if(waveOut.PlaybackState==PlaybackState.Playing)
+            {
+                waveOut.Pause();
+            }
+
+          
+        }
+
+        public static void StartBackgroundMusic()
+        {
             if (waveOut == null)
             {
                 WaveFileReader reader = new WaveFileReader(@"Media\bgd.wav");
@@ -85,13 +102,7 @@ namespace iMasomo_Teacher
                 waveOut.Dispose();
                 waveOut = null;
             }
-        }
-        public static void PauseBackgroundMusic()
-        {
-            if(waveOut.PlaybackState==PlaybackState.Playing)
-            {
-                waveOut.Pause();
-            }
+            
         }
     }
 
