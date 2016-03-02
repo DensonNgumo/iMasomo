@@ -31,6 +31,11 @@ namespace iMasomo
 
         }
 
+        private void playButtonSound(object sender,MouseButtonEventArgs e)
+        {
+            Sound.PlayButtonSound();
+        }
+
         private void creationTile_MouseDown(object sender, MouseButtonEventArgs e)
         {
             CreationCenter creationPage = new CreationCenter();

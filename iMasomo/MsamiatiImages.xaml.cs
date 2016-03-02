@@ -105,9 +105,9 @@ namespace iMasomo
             }
  
             imageHolder.Source = imageCollection.Values[0];
-            imageNameLabel.Content = imageCollection.Keys[0].ToUpper();
+            imageNameLabel.Content = imageCollection.Keys[0];
             categoryNameLabel.Content = category.ToUpper();
-            imagePretext.Content = imageDetails.Values[0].ToUpper();
+            imagePretext.Content = imageDetails.Values[0];
             AnimateText();
 
         }
@@ -121,8 +121,8 @@ namespace iMasomo
             }
 
             imageHolder.Source = imageCollection.Values[currImage];
-            imagePretext.Content = imageDetails.Values[currImage].ToUpper();          
-            imageNameLabel.Content = imageCollection.Keys[currImage].ToUpper();
+            imagePretext.Content = imageDetails.Values[currImage];          
+            imageNameLabel.Content = imageCollection.Keys[currImage];
             AnimateText();
             
             
@@ -134,8 +134,8 @@ namespace iMasomo
 
                 currImage = MAXIMAGE - 1;
             imageHolder.Source = imageCollection.Values[currImage];
-            imageNameLabel.Content = imageCollection.Keys[currImage].ToUpper();
-            imagePretext.Content = imageDetails.Values[currImage].ToUpper();
+            imageNameLabel.Content = imageCollection.Keys[currImage];
+            imagePretext.Content = imageDetails.Values[currImage];
             AnimateText();
         }
 

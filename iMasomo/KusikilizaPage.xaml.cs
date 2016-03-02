@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using iMasomo_Teacher;
 using Telerik.Windows.Controls;
 
 namespace iMasomo
@@ -55,7 +51,16 @@ namespace iMasomo
             this.NavigationService.Navigate(nyimboPage);
         }
 
-       
+        private void maamkuziTile_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MaamkuziPage maamkuziPage = new MaamkuziPage();
+            this.NavigationService.Navigate(maamkuziPage);
+        }
+
+        private void playButtonSound(object sender, MouseButtonEventArgs e)
+        {
+            Sound.PlayButtonSound();
+        }
 
        
     }

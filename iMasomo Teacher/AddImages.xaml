@@ -4,9 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="AddImages" Height="372.582" Width="610.448" Loaded="Page_Loaded">
+	Title="AddImages" Height="375.582" Width="610.448" Loaded="Page_Loaded">
 
-    <Grid>
+    <Grid Margin="0,0,0,10">
         <Grid.RowDefinitions>
             <RowDefinition Height="75*"/>
             <RowDefinition Height="52*"/>
@@ -19,15 +19,15 @@
             <ColumnDefinition Width="71*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Text="Add Image Content" FontFamily="Segoe UI" FontSize="26" Grid.ColumnSpan="2" Grid.Row="0" TextAlignment="Center"/>
-        <TextBlock Text="Choose Image" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="1"/>
+        <TextBlock Text="Choose Image:" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="1"/>
         <TextBox x:Name="imagePathTextBox" Grid.Column="1" Grid.Row="1" Margin="0,5,146,10"/>
         <Button Content="Browse Images.." x:Name="browseImagesButton" Click="browseImagesButton_Click" FontFamily="Segoe UI" Grid.Column="1" Grid.Row="1" Margin="207,5,0,10"/>
-        <TextBlock Text="Kiswahili Name for Image" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="2"/>
+        <TextBlock Text="Kiswahili Name for Image:" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="2"/>
         <TextBox x:Name="kiswahiliTagTxtBox" Grid.Column="1" Grid.Row="2" Margin="0,0,59,24" HorizontalAlignment="Right" Width="296"/>
-        <TextBlock Text="Category" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="3"/>
-        <TextBlock Text="Utangulizi" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="3" Margin="0,53,0,0"/>
+        <TextBlock Text="Category:" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="3"/>
+        <TextBlock Text="Utangulizi:" FontFamily="Segoe UI" FontSize="22" Grid.Column="0" Grid.Row="3" Margin="0,53,0,0" ToolTip="e.g Hii ni"/>
         <TextBox x:Name="utanguliziTxtBox" FontFamily="Segoe UI" FontSize="22" Grid.Column="1" Grid.Row="3" Margin="0,53,0,5"/>
         <ComboBox x:Name="categoryComboBox" Grid.Column="1" Grid.Row="3" Margin="0,0,59,61"/>
-        <Button x:Name="addImageBtn" Content="Add Image" Click="addImageBtn_Click" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="4" Margin="186,0,245,0" Width="179"/>
+        <Button x:Name="addImageBtn" Content="Add Image" Click="addImageBtn_Click" HorizontalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="4" Margin="183,10,237,10" Width="190"/>
     </Grid>
 </Page>

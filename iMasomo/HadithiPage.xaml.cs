@@ -49,9 +49,9 @@ namespace iMasomo
 
         private void hadithiTitle_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            string title = ((TextBlock)sender).Text.ToUpper();
             string path = hadithi_details[((TextBlock)sender).Text];
-            MessageBox.Show(path);
-            PDFViewer myPdfViewer = new PDFViewer();
+            PDFViewer myPdfViewer = new PDFViewer(title);
             myPdfViewer.LoadPDF(path);
             myPdfViewer.Show();
         }

@@ -73,6 +73,7 @@ namespace iMasomo
         private void PlaySound()
         {
             //MessageBox.Show(path);
+            /*
             Uri testPath = new Uri(currDirectoryPath +path, UriKind.RelativeOrAbsolute);
             using(SoundPlayer mPlayer = new SoundPlayer())
             {
@@ -80,7 +81,8 @@ namespace iMasomo
                 mPlayer.Load();
                 mPlayer.Play();
             }
-            
+            */
+            Sound.PlaySound(path);
              
         }
 
@@ -144,6 +146,7 @@ namespace iMasomo
 
         private void jibuBtn_Click(object sender, RoutedEventArgs e)
         {
+            
             //validation
             if(String.IsNullOrEmpty(jibuTxt.Text)||jibuTxt.Text.Any(c=>Char.IsNumber(c)))
             {
@@ -185,6 +188,7 @@ namespace iMasomo
         {
             wordInfo.Clear();
             RefreshPageElements();
+            Sound.Dispose();
             Sound.PlayBackgroundMusic();
            
         }

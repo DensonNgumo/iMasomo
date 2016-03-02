@@ -23,14 +23,16 @@ namespace iMasomo
         DispatcherTimer timer;
 
         string filePath;
+        string category;
 
-        public MediaPlayer(string path)
+        public MediaPlayer(string path,string cat)
         {
             InitializeComponent();
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(500);
             timer.Tick += timer_Tick;
             filePath = path;
+            category = cat;
         }
 
         void timer_Tick(object sender, EventArgs e)
@@ -65,13 +67,13 @@ namespace iMasomo
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            this.Title = category;
             myMediaElement.Source = new Uri(filePath,UriKind.RelativeOrAbsolute);
             myMediaElement.LoadedBehavior = MediaState.Manual;
             myMediaElement.UnloadedBehavior = MediaState.Manual;
 
             myMediaElement.Volume = (double)vol_slider.Value;
-            myMediaElement.Play();
+            myMediaElement.Play(); 
         }
 
         private void myMediaElement_MediaOpened(object sender, RoutedEventArgs e)
@@ -80,5 +82,13 @@ namespace iMasomo
             seek_slider.Maximum = ts.TotalSeconds;
             timer.Start();
         }
+
+        private void Window_Unloaded(object sender, RoutedEventArgs e)
+        {
+            myMediaElement.Stop();
+            
+        }
+
+       
     }
 }

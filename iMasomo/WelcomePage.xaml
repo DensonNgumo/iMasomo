@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="WelcomePage" Height="277.97" Width="796.642">
+	Title="Karibu" Height="277.97" Width="796.642" Loaded="Page_Loaded">
     <Page.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Segoe UI"/>
@@ -16,7 +16,7 @@
         <Label FontSize="28" Content="KARIBU iMASOMO!" HorizontalAlignment="Center"/>
         <TextBlock Text="Karibu iMasomo. Chombo cha kufunza Kiswahili sanifu kwa wanafunzi." Height="37"/>
         <TextBlock Text="Bonyeza Endelea kusonga mbele " Height="40"/>
-        <Button x:Name="endeleaBtn" Margin="522,0,10,0" Height="61" Click="endeleaBtn_Click">
+        <Button x:Name="endeleaBtn" Margin="522,0,44,0" Height="61" Click="endeleaBtn_Click">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Width="86" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="22"><Run Text="Endelea"/></TextBlock>
                 <Viewbox Height="38" Width="45">

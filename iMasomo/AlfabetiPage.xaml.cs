@@ -5,14 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+using iMasomo_Teacher;
 namespace iMasomo
 {
     /// <summary>
@@ -24,6 +19,8 @@ namespace iMasomo
         {
             InitializeComponent();
             this.comboBoxAlfabeti.SelectedIndex = 0;
+            Sound.PauseBackgroundMusic();
+            
         }
 
         private void LoadAlfabeti(object sender, SelectionChangedEventArgs e)
@@ -42,6 +39,14 @@ namespace iMasomo
             words.Show();
 
             
+        }
+
+        private void videoBtn_Click(object sender, RoutedEventArgs e)
+        {
+          
+            
+            MediaPlayer myMediaPlayer = new MediaPlayer(Environment.CurrentDirectory + @"\Media\" + videoBtn.Tag.ToString(),"Vokali na Mwandiko");
+            myMediaPlayer.Show();
         }
     }
 }

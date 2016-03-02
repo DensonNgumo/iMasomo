@@ -4,11 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
-      d:DesignHeight="632.089" d:DesignWidth="796.642" 
-	Title="AlfabetiPage">
-    <Page.Background>
-        <ImageBrush ImageSource="Images/green_bgd.jpg"/>
-    </Page.Background>
+      d:DesignHeight="632.089" d:DesignWidth="796.642" Background="Orange"
+	Title="Alfabeti Za Kiswahili">
+
 
     <Grid>
         <Grid.Resources>
@@ -39,21 +37,21 @@
 
         </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="22*"></RowDefinition>
-            <RowDefinition Height="57*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
 
-        <TextBlock FontFamily="Segoe UI" FontSize="28" Grid.Row="0" Margin="111,0,161,122">ALFABETI</TextBlock>
-        <TextBlock FontFamily="Segoe UI" FontSize="22" Grid.Row="1" Margin="0,0,0,358">Haya ni ma alfabeti ya kiswahili</TextBlock>
-        <ComboBox x:Name="comboBoxAlfabeti" Grid.Row="0" Margin="554,75,0,55" SelectionChanged="LoadAlfabeti">
+        </Grid.RowDefinitions>
+       
+
+        <TextBlock FontFamily="Segoe UI" FontSize="28" Grid.Row="0" Margin="341,0,329,109" HorizontalAlignment="Center" Text="ALFABETI"/>
+        <TextBlock FontFamily="Segoe UI" FontSize="22" Grid.Row="0" HorizontalAlignment="Center" Margin="252,54,228,55" Text="Haya ni ma alfabeti ya kiswahili"/>
+        <ComboBox x:Name="comboBoxAlfabeti" Grid.Row="0" Margin="0,108,504,0" SelectionChanged="LoadAlfabeti">
             <ComboBoxItem>Alfabeti Zote</ComboBoxItem>
             <ComboBoxItem x:Name="irabu" Content="Irabu"/>
             <ComboBoxItem x:Name="konsonanti" Content="Konsonanti"/>
 
         </ComboBox>
+        <Button x:Name="videoBtn" Content="Video ya Vokali na Mwandiko" Cursor="Hand" Tag="KICD_Vokali.mp4" Margin="554,108,0,0" Click="videoBtn_Click"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="35,63,10,255" x:Name="labelStackPanel">
             <Label Width="42" Tag="irabu" Content="a" Style="{StaticResource irabuLabelStyle}"/>
             <Label Width="46" Content="b" Style="{StaticResource konsonantiLabelStyle}"/>
@@ -92,5 +90,6 @@
             <Label Width="54" Content="y" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Content="z" Style="{StaticResource konsonantiLabelStyle}"/>
         </StackPanel>
+
     </Grid>
 </Page>

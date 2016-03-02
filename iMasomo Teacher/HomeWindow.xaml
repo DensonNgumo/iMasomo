@@ -2,13 +2,37 @@
                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-                Title="MainWindow" Height="512.686" Width="804.104" x:Name="addStories">
-    <Grid>
+                Title="iMasomo Admin" Height="600" Width="1150" x:Name="homeWindow">
+    <Grid x:Name="mainGrid">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <EventSetter Event="MouseEnter" Handler="TextBlock_MouseEnter"/>
+                <EventSetter Event="MouseLeave" Handler="TextBlock_MouseLeave"/>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="224*"/>
-            <RowDefinition Height="17*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Frame x:Name="mainFrame" Grid.Row="0" Source="AddStories.xaml"/>
-        <Button Content="Next Page" Grid.Row="1" Margin="0,0,0,-4" Click="Button_Click"></Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="283*"/>
+            <ColumnDefinition Width="513*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame x:Name="mainFrame" Grid.Column="1" Grid.Row="0" Grid.RowSpan="4"/>
+        <StackPanel x:Name="menuPanel" Background="Coral" Grid.Column="0" Grid.Row="0" Grid.RowSpan="4">
+            <TextBlock Text="iMasomo" Foreground="LemonChiffon" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="24" Margin="154,0" Style="{x:Null}" Height="53" />
+            <TextBlock x:Name="usersPanel" Text="Wanafunzi" Height="37" PreviewMouseDown="usersPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
+            <TextBlock x:Name="addImagesPanel" Text="Ongeza Picha" Height="45" PreviewMouseDown="addImagesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
+            <TextBlock x:Name="addWordsPanel" Text="Ongeza Maneno" Height="44" PreviewMouseDown="addWordsPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
+            <TextBlock x:Name="addStoriesPanel" Text="Ongeza Hadithi" Height="44" PreviewMouseDown="addStoriesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
+            <TextBlock x:Name="viewPerformancePanel" Text="Ona Matokeo ya Mazoezi" Height="48" PreviewMouseDown="viewPerformancePanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
+        </StackPanel>
+
     </Grid>
 </Window>

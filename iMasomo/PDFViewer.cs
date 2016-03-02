@@ -12,9 +12,10 @@ namespace iMasomo
 {
     public partial class PDFViewer : Form
     {
-        public PDFViewer()
+        public PDFViewer(string title)
         {
             InitializeComponent();
+            this.Text = title;
             
         }
 
@@ -22,6 +23,11 @@ namespace iMasomo
         {
             
             myReader.LoadFile(path);
+        }
+
+         ~PDFViewer()
+        {
+
         }
     }
 }

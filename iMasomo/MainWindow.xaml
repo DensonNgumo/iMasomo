@@ -2,13 +2,16 @@
                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-                x:Name="mainWindow" x:Class="iMasomo.MainWindow"
-                Title="iMasomo" Height="632.089" Width="796.642" Loaded="mainWindow_Loaded" WindowStartupLocation="CenterScreen" Cursor="Arrow" BorderBrush="#FF026E15" WindowStyle="ThreeDBorderWindow">
-    <Window.Background>
-        <ImageBrush x:Name="iMasomoBackgroundImage" ImageSource="Images/purple_bgd.jpg"/>
-    </Window.Background>
+                x:Name="mainWindow" x:Class="iMasomo.MainWindow" 
+                Title="iMasomo" Height="632.089" Width="796.642" Loaded="mainWindow_Loaded" WindowStartupLocation="CenterScreen"
+                Cursor="Arrow" BorderBrush="#FF026E15" Background="Orange" >
+
     <DockPanel LastChildFill="True">
         <Frame x:Name="mainFrame"/>
+
+
+
+
     </DockPanel>
 
 </Window>

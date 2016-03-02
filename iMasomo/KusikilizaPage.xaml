@@ -12,6 +12,11 @@
         <DockPanel.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontWeight" Value="ExtraBlack"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style TargetType="telerik:Tile">
+                <EventSetter Event="MouseDoubleClick" Handler="playButtonSound"/>
             </Style>
         </DockPanel.Resources>
         <telerik:RadTileList  x:Name="menuTileList" Margin="0,10,0,87" Width="692">
@@ -33,7 +38,12 @@
                     <TextBlock Text="Silabi"/>
                 </Grid>
             </telerik:Tile>
-            <telerik:Tile Content="Maamkuzi" />
+            <telerik:Tile x:Name="maamkuziTile" MouseDoubleClick="maamkuziTile_MouseDoubleClick">
+                <Grid>
+                    <Image Source="/Images/maamkuzi.jpg"  Stretch="Fill"/>
+                    <TextBlock Text="Maamkuzi"/>
+                </Grid>
+            </telerik:Tile>
             <telerik:Tile  x:Name="hadithiTile" MouseDoubleClick="hadithiTile_MouseDoubleClick">
                 <Grid>
                     <Image Source="/Images/hadithi.jpg"  Stretch="Fill"/>

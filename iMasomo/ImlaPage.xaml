@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="632.089" d:DesignWidth="796.642" x:Name="imlaPage"
-	Title="ImlaPage" Loaded="imlaPage_Loaded"  Unloaded="Page_Unloaded" >
+	Title="Imla" Loaded="imlaPage_Loaded"  Unloaded="Page_Unloaded" >
 
     <Grid>
         <Grid.RowDefinitions>

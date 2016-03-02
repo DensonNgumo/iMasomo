@@ -12,16 +12,18 @@
         <Grid.Resources>
             <Style TargetType="telerik:Tile">
                 <EventSetter Event="MouseDoubleClick" Handler="OpenMsamiatiImages"/>
-                <Setter Property="FontFamily" Value="Segoe UI"/>
-                <Setter Property="FontSize" Value="18"/>
                 <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontWeight" Value="ExtraBlack"/>
+                <Setter Property="FontSize" Value="15"/>
             </Style>
             <Style TargetType="telerik:Tile" x:Key="tarakimuStyle">
                 <EventSetter Event="MouseDoubleClick" Handler="Tile_MouseDown"/>
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontWeight" Value="ExtraBlack"/>
+                <Setter Property="FontSize" Value="15"/>
             </Style>
-            <Style TargetType="telerik:Tile" x:Key="sehemuYaMwiliStyle">
-                <EventSetter Event="MouseDoubleClick" Handler="OpenSehemuYaMwili"/>
-            </Style>
+            
+
         </Grid.Resources>
         
         <telerik:RadTileList Margin="24,10,10,10" x:Name="menuTileList">
@@ -87,14 +89,14 @@
             </telerik:Tile>
             <telerik:Tile Tag="Maumbo">
                 <Grid>
-                    
+                    <Image Source="/Images/maumbo.jpg" Stretch="Fill"/>
                     <TextBlock Text="Maumbo"/>
                 </Grid>
             </telerik:Tile>
-            <telerik:Tile Tag="Angani">
+            <telerik:Tile Tag="Angani" Background="White">
                 <Grid>
-                    
-                    <TextBlock Text="Angani"/>
+                    <Image Source="/Images/upepo.jpg" Stretch="Fill"/>
+                    <TextBlock Text="Hali ya Anga"/>
                 </Grid>
             </telerik:Tile>
             <telerik:Tile Tag="Tarakimu" Style="{StaticResource tarakimuStyle}">
@@ -108,13 +110,7 @@
                     <Image Source="/Images/ukimwi.jpg" Stretch="Fill"/>
                     <TextBlock Text="Maswala ya Ibuka"/>
                 </Grid>
-            </telerik:Tile>
-            <telerik:Tile Tag="Sehemu Ya Mwili" Style="{StaticResource sehemuYaMwiliStyle}">
-                <Grid>
-                    <Image Source="/Images/ukimwi.jpg" Stretch="Fill"/>
-                    <TextBlock Text="Sehemu ya Mwili"/>
-                </Grid>
-            </telerik:Tile>
+            </telerik:Tile>          
 
 
 

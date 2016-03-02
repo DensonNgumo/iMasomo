@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
+using System.Windows.Media.Animation;
 using iMasomo_Teacher;
 
 
@@ -24,6 +25,7 @@ namespace iMasomo
             InitializeComponent();
             Database.OpenDatabase();
             
+            
            
         }
 
@@ -31,7 +33,9 @@ namespace iMasomo
         private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             Sound.StartBackgroundMusic();
+                      
             mainFrame.Navigate(new WelcomePage());
+            
         }
     }
 }

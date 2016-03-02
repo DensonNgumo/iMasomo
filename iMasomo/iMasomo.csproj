@@ -108,6 +108,9 @@
       <DependentUpon>KusikilizaPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="LoopStream.cs" />
+    <Compile Include="MaamkuziPage.xaml.cs">
+      <DependentUpon>MaamkuziPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MediaPlayer.xaml.cs">
       <DependentUpon>MediaPlayer.xaml</DependentUpon>
     </Compile>
@@ -163,6 +166,10 @@
     <Page Include="KusikilizaPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaamkuziPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MediaPlayer.xaml">
       <SubType>Designer</SubType>
@@ -282,6 +289,9 @@
     <Resource Include="Images\speaker.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Media\Yesu_Ni_Wangu.MP4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Media\Wimbo_Wa_Taifa.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -347,6 +357,11 @@
     <Resource Include="Images\nyimbo.jpg" />
     <Resource Include="Images\kusikiliza.jpg" />
     <Resource Include="Images\imla.gif" />
+    <Resource Include="Images\maamkuzi.jpg" />
+    <Resource Include="Images\maumbo.jpg" />
+    <Resource Include="Images\upepo.JPG" />
+    <Resource Include="Images\salamu.jpg" />
+    <Resource Include="Images\salamu2.png" />
     <Content Include="Media\bgd.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -354,6 +369,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Media\Jambo.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Media\ButtonSound1.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Media\ButtonSound2.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Media\KICD_shairi.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Media\KICD_Vokali.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Content Include="Media\sample.wav">

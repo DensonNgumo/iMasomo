@@ -16,6 +16,9 @@ namespace iMasomo_Teacher
         private static WaveIn waveIn = null;
         private static WaveOut waveOut = null;
         static WaveFileWriter waveWriter = null;
+        private static BlockAlignReductionStream stream = null;
+        private static DirectSoundOut output = null;
+
         private static int inputDevice = -1;
 
         private static string wordName;
@@ -103,6 +106,50 @@ namespace iMasomo_Teacher
                 waveOut = null;
             }
             
+        }
+
+        public static void PlaySound(string path)
+        {
+            string soundPath = Environment.CurrentDirectory + path;
+
+            if (soundPath.EndsWith(".wav"))
+           {
+               WaveStream pcm = new NAudio.Wave.WaveChannel32(new NAudio.Wave.WaveFileReader(soundPath));
+               stream = new BlockAlignReductionStream(pcm);
+           }
+            else if (soundPath.EndsWith(".mp3"))
+           {
+               WaveStream pcm = NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(new NAudio.Wave.Mp3FileReader(soundPath));
+               stream = new BlockAlignReductionStream(pcm);
+           }
+           output = new DirectSoundOut();
+           output.Init(stream);
+           output.Play();
+        }
+
+        public static void PlayButtonSound()
+        {
+            string soundPath = Environment.CurrentDirectory + @"\Media\ButtonSound2.mp3";
+            WaveStream pcm = NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(new NAudio.Wave.Mp3FileReader(soundPath));
+            stream = new BlockAlignReductionStream(pcm);
+            output = new DirectSoundOut();
+            output.Init(stream);
+            output.Play();
+        }
+
+        public static void Dispose()
+        {
+            if(output!=null)
+            {
+                if (output.PlaybackState== PlaybackState.Playing) output.Stop();
+                output.Dispose();
+                output = null;
+            }
+            if(stream!=null)
+            {
+                stream.Dispose();
+                stream = null;
+            }
         }
     }
 

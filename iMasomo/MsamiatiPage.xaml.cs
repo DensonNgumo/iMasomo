@@ -26,6 +26,7 @@ namespace iMasomo
        
         private void OpenMsamiatiImages(object sender, MouseButtonEventArgs e)
         {
+            Sound.PlayButtonSound();
             string categoryName = ((Tile)sender).Tag.ToString().ToLower();            
             MsamiatiImages msamiatiWindow = new MsamiatiImages();
             msamiatiWindow.SetCategory(categoryName);
@@ -36,16 +37,12 @@ namespace iMasomo
 
         private void Tile_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            Sound.PlayButtonSound();
             Tarakimu tarakimuWindow = new Tarakimu();
             tarakimuWindow.ShowActivated = true;
             tarakimuWindow.Show();
         }
 
-        private void OpenSehemuYaMwili(object sender, MouseButtonEventArgs e)
-        {
-            MediaPlayer mediaPlayer = new MediaPlayer(Environment.CurrentDirectory+@"\Media\KICD_Sehemu_ya_mwili.mp4");
-            mediaPlayer.Show();
-        }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {

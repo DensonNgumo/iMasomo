@@ -27,6 +27,7 @@ namespace iMasomo_Teacher
         string category;
 
         bool recording = false;
+        bool useRecording = false;
 
         public AddWords()
         {
@@ -65,16 +66,25 @@ namespace iMasomo_Teacher
 
         private void addWordBtn_Click(object sender, RoutedEventArgs e)
         {
-           // kiswahiliWord = kiswahiliWordTxtBox.Text;
-           // CopySound();
-            AddWordsToDatabase();
+            
+            if(useRecording)
+            {
+                AddWordsToDatabase();
+            }
+            else
+            {
+                CopySound();
+                AddWordsToDatabase();
+            }
+            
         }
 
         private void CopySound()
         {
             string ext = Path.GetExtension(recordingPathTxtBox.Text);
-            recordingPath = Environment.CurrentDirectory + @"\Media\" +kiswahiliWord+ ext;
-            File.Copy(recordingPathTxtBox.Text, recordingPath);
+            kiswahiliWord = kiswahiliWordTxtBox.Text;
+            recordingPath =@"\Media\" +kiswahiliWord+ ext;
+            File.Copy(recordingPathTxtBox.Text, Environment.CurrentDirectory+recordingPath);
 
         }
 
@@ -82,14 +92,16 @@ namespace iMasomo_Teacher
         {
             Microsoft.Win32.OpenFileDialog fileDlg = new Microsoft.Win32.OpenFileDialog();
             fileDlg.DefaultExt = ".wav";
-            fileDlg.Filter = "Sound File(*.wav)|*.wav";
+            fileDlg.Filter = "Sound File(*.wav;*.mp3)|*.wav;*.mp3";
 
             Nullable<bool> result = fileDlg.ShowDialog();
             if(result.HasValue)
             {
                 
                 recordingPathTxtBox.Text = fileDlg.FileName;
+                useRecording = false;
             }
+            
         }
 
        
@@ -109,6 +121,7 @@ namespace iMasomo_Teacher
                 recording = true;
                 recordBtnText.Text = "Stop Recording";
                 recordingPath = @"\Media\" + kiswahiliWordTxtBox.Text + ".wav";
+                useRecording = true;
                 
             }
            

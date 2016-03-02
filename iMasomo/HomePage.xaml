@@ -5,16 +5,20 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="Home Page" Width="716.417" Height="552.985" Loaded="Page_Loaded">
+	Title="iMasomo" Width="716.417" Height="552.985" Loaded="Page_Loaded">
 
-    <DockPanel>
+    <DockPanel LastChildFill="True">
         <DockPanel.Resources>
             <Style TargetType="TextBlock">
-                <Setter Property="FontFamily" Value="Segoe UI"/>
                 <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontWeight" Value="ExtraBlack"/>
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style TargetType="telerik:Tile">
+                <EventSetter Event="MouseDoubleClick" Handler="playButtonSound"/>
             </Style>
         </DockPanel.Resources>
-        <telerik:RadTileList x:Name="menuTileList" Width="653" Margin="0,57,0,42">
+        <telerik:RadTileList x:Name="menuTileList" Width="680" Margin="0,60,0,0">
             <telerik:RadTileList.Groups>
 
                 <telerik:TileGroup DisplayIndex="0">

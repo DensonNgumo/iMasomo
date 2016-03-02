@@ -21,13 +21,18 @@ namespace iMasomo
         {
             InitializeComponent();
             Sound.PauseBackgroundMusic();
+            
         }
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            string videoTitle = (sender as TextBlock).Tag.ToString(); MessageBox.Show(videoTitle);
-            MediaPlayer mediaPlayer = new MediaPlayer(Environment.CurrentDirectory + @"\Media\" + videoTitle);
+            string videoTitle = (sender as TextBlock).Tag.ToString();
+            string songName=(sender as TextBlock).Text;
+
+            MediaPlayer mediaPlayer = new MediaPlayer(Environment.CurrentDirectory + @"\Media\" + videoTitle,songName);
+            
             mediaPlayer.Show();
+                                
         }
 
         private void Page_Unloaded(object sender, RoutedEventArgs e)
