@@ -4,19 +4,28 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="Hadithi" Height="429.699" Width="523.308" Loaded="Page_Loaded">
+	Title="Hadithi" Height="429.699" Width="523.308" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
 
-    <Grid>
+    <Grid x:Name="mainGrid">
+        <Grid.Resources>
+            <Style TargetType="TextBlock" x:Key="titleStyle">
+                <Setter Property="FontSize" Value="22"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <EventSetter Event="MouseEnter" Handler="TextBlock_MouseEnter"/>
+                <EventSetter Event="MouseLeave" Handler="TextBlock_MouseLeave"/>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="97*"/>
+            <RowDefinition Height="333*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="HADITHI ZANGU" Grid.Row="0" HorizontalAlignment="Center" FontSize="28"/>
-        <TextBlock Text="Chague Hadithi ya kusoma:" Grid.Row="0" HorizontalAlignment="Center" FontSize="28" Margin="0,52,0,0"/>
+        <TextBlock Text="HADITHI ZANGU" Grid.Row="0" HorizontalAlignment="Center" FontSize="28" Margin="158,0,157,0" Width="208"/>
+        <TextBlock Text="Chagua Hadithi ya kusoma:" Grid.Row="0" HorizontalAlignment="Center" FontSize="28" Margin="93,52,93,0" Width="337"/>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="hadithiPanel" Grid.Row="1" />
+            <StackPanel x:Name="hadithiPanel" Grid.Row="1"/>
         </ScrollViewer>
-        
+
 
     </Grid>
 </Page>

@@ -48,6 +48,11 @@ namespace iMasomo
         {
             Sound.PauseBackgroundMusic();
         }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            Sound.PlayBackgroundMusic();
+        }
        
     }
 }

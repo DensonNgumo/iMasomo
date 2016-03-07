@@ -72,20 +72,17 @@ namespace iMasomo
 
         private void AnimateText()
         {
-            imageNameLabel.Visibility = Visibility.Visible;
             DoubleAnimation dblAnim = new DoubleAnimation();
             dblAnim.To = 1.0;
             dblAnim.From = 0.0;
-            dblAnim.BeginTime = TimeSpan.FromSeconds(5);
-            dblAnim.Duration = TimeSpan.FromSeconds(5);
+            dblAnim.BeginTime = TimeSpan.FromSeconds(0);
+            dblAnim.Duration = TimeSpan.FromSeconds(20);
 
             var storyboard = new Storyboard();
             storyboard.Children.Add(dblAnim);
             Storyboard.SetTarget(dblAnim, imageNameLabel);
             Storyboard.SetTargetProperty(dblAnim, new PropertyPath(OpacityProperty));
-            storyboard.Completed += delegate { imageNameLabel.Visibility = Visibility.Hidden; };
             storyboard.Begin();
-           // imageNameLabel.BeginAnimation(OpacityProperty, dblAnim);
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
@@ -114,7 +111,7 @@ namespace iMasomo
       
         private void NextImage()
         {
-            
+            imageNameLabel.Opacity = 0.0;
             if (++currImage >= MAXIMAGE)
             {
                 currImage = 0;
@@ -130,6 +127,7 @@ namespace iMasomo
 
         private void PreviousImage()
         {
+            imageNameLabel.Opacity = 0.0;
             if (--currImage < 0)
 
                 currImage = MAXIMAGE - 1;
@@ -148,6 +146,19 @@ namespace iMasomo
         {
             PreviousImage();
 
+        }
+
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.Right)
+            {
+                NextImage();
+            }
+
+            if(e.Key==Key.Left)
+            {
+                PreviousImage();
+            }
         }
     }
 }

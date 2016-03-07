@@ -31,7 +31,7 @@ namespace iMasomo
 
         private void LoadNextNumber()
         {
-            if(nambari<999)
+            if(nambari<100)
             {
                 nambari++;
                 LoadNumberName();
@@ -61,14 +61,11 @@ namespace iMasomo
                 nambariJina = tarakimuJina[nambari];
             }
             
-            else if(nambari>=10 && nambari<100)
+            else if(nambari>=10 && nambari<=100)
             {
                 nambariJina=LoadDoubleDigits(nambari);//load name for double digit number
             }
-            else if(nambari>=100 && nambari<1000)
-            {
-                nambariJina=LoadTripleDigits(nambari);//load name for triple digit number
-            }
+               
         }
 
         //returns the first digit of an integer
@@ -104,7 +101,9 @@ namespace iMasomo
                 case 80:
                     return "themanini";
                 case 90:
-                    return "tisini";                
+                    return "tisini";   
+                case 100:
+                    return "mia moja";
                 
             }
             if (no > 10 && no < 20)
@@ -145,26 +144,7 @@ namespace iMasomo
             }
             
         }
-        private string LoadTripleDigits(int no)
-        {
-            int n=nambari%10;//last digit
-            int fNumber = GetFirstDigit(no);//first digit
-            int lastTwoNumbers = no % 100;
-            if(lastTwoNumbers==00)
-            {
-                return "mia " + tarakimuJina[fNumber];
-            }
-            
-            if(lastTwoNumbers>0 && lastTwoNumbers<10)
-            {
-                return "mia "+tarakimuJina[fNumber]+" na " + tarakimuJina[n];
-            }
-            else
-            {
-                return "mia " + tarakimuJina[fNumber] + " na " + LoadDoubleDigits(lastTwoNumbers);
-            }
-        }
-
+       
         private void Image_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             LoadNextNumber();
@@ -173,6 +153,18 @@ namespace iMasomo
         private void Image_PreviewMouseDown_1(object sender, MouseButtonEventArgs e)
         {
             LoadPreviousNumber();
+        }
+
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key==Key.Left)
+            {
+                LoadPreviousNumber();
+            }
+            if(e.Key==Key.Right)
+            {
+                LoadNextNumber();
+            }
         }
     }
 }

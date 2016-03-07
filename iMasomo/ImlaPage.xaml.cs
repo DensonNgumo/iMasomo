@@ -220,6 +220,12 @@ namespace iMasomo
             }
         }
 
+        private void jibuTxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //input validation
+            jibuTxt.Text = string.Concat(jibuTxt.Text.Where(char.IsLetter));
+        }
+
        
 
     }

@@ -43,10 +43,14 @@ namespace iMasomo
 
         private void videoBtn_Click(object sender, RoutedEventArgs e)
         {
-          
-            
+                    
             MediaPlayer myMediaPlayer = new MediaPlayer(Environment.CurrentDirectory + @"\Media\" + videoBtn.Tag.ToString(),"Vokali na Mwandiko");
             myMediaPlayer.Show();
+        }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            Sound.PlayBackgroundMusic();
         }
     }
 }
