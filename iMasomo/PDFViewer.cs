@@ -29,5 +29,11 @@ namespace iMasomo
         {
 
         }
+
+         private void PDFReaderClosing(object sender, FormClosingEventArgs e)
+         {
+             myReader.Dispose();
+             Application.Exit();
+         }
     }
 }

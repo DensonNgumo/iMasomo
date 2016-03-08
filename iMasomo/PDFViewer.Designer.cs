@@ -54,6 +54,7 @@
             this.Text = "Hadithi";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PDFReaderClosing);
             ((System.ComponentModel.ISupportInitialize)(this.myReader)).EndInit();
             this.ResumeLayout(false);
 
