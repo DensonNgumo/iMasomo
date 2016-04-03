@@ -21,7 +21,7 @@ namespace iMasomo
 
         public void LoadPDF(string path)
         {
-            
+            //load path for the pdf
             myReader.LoadFile(path);
         }
 
@@ -32,6 +32,7 @@ namespace iMasomo
 
          private void PDFReaderClosing(object sender, FormClosingEventArgs e)
          {
+             //dispose of all pdf resources and exit window
              myReader.Dispose();
              Application.Exit();
          }

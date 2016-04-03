@@ -4,9 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="SilabiPage" Height="317.91" Width="408.955">
+	Title="SilabiPage" Height="567.089" Width="724.642">
 
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="ComboBoxItem">
+                <Setter Property="FontWeight" Value="ExtraBlack"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="79*"/>
             <RowDefinition Height="57*"/>
@@ -16,9 +22,9 @@
             <ColumnDefinition Width="196*"/>
             <ColumnDefinition Width="213*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Silabi Zenye Sauti Mbili" FontSize="26" FontFamily="Segoe UI" Grid.Row="0" Grid.ColumnSpan="2" Margin="51,0,0,0"/>
-        <TextBlock Text="Chagua alfabeti: " FontFamily="Segoe UI" FontSize="22" Grid.Row="1" Grid.Column="0"/>
-        <ComboBox x:Name="alfabetiComboBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,22" SelectionChanged="alfabetiComboBox_SelectionChanged">
+        <Label Content="Silabi Zenye Sauti Mbili" HorizontalAlignment="Center" FontSize="26" FontFamily="Comic Sans MS" Grid.Row="0" Grid.ColumnSpan="2" Margin="51,0,0,0"/>
+        <TextBlock Text="Chagua alfabeti: " HorizontalAlignment="Right" FontFamily="Comic Sans MS" FontSize="22" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox x:Name="alfabetiComboBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,48" SelectionChanged="alfabetiComboBox_SelectionChanged">
             <ComboBoxItem Content="b"/>
             <ComboBoxItem Content="ch"/>
             <ComboBoxItem Content="dh"/>
@@ -44,6 +50,7 @@
             <ComboBoxItem Content="y"/>
             <ComboBoxItem Content="z"/>
         </ComboBox>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" FontFamily="Segoe UI" FontSize="22" x:Name="silabiTextBlock"/>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" FontFamily="Segoe UI" FontSize="22" x:Name="silabiTextBlock" Margin="0,0,0,260"/>
+        <Image Grid.Row="2" Grid.Column="1" Source="/Images/school_girl.jpg" Stretch="Fill" Margin="136,124,0,0"/>
     </Grid>
 </Page>

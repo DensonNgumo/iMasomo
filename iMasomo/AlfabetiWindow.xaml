@@ -1,7 +1,8 @@
 ﻿<Window x:Class="iMasomo.AlfabetiWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Alfabeti za Kiswahili" Height="326" Width="343" Loaded="Window_Loaded" Background="Orange" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+        Title="Alfabeti za Kiswahili" Height="326" Width="343" Loaded="Window_Loaded" Background="Orange"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" Icon="/iMasomo;component/Images/logo2.png">
   
     <Grid>
         <Grid.Resources>

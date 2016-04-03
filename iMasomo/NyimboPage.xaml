@@ -4,37 +4,35 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="Nyimbo" Height="632.089" Width="796.642" Unloaded="Page_Unloaded">
+	Title="Nyimbo" Height="632.089" Width="796.642" Unloaded="Page_Unloaded" Loaded="Page_Loaded" DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <Grid>
         <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="FontSize" Value="26"/>
+                <Setter Property="FontFamily" Value="Comic Sans MS"/>
                 <EventSetter Event="MouseDown" Handler="TextBlock_MouseDown"/>
                 <Setter Property="Cursor" Value="Hand"/>
+                <EventSetter Event="MouseEnter" Handler="TextBlock_MouseEnter"/>
+                <EventSetter Event="MouseLeave" Handler="TextBlock_MouseLeave"/>
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="181*"/>
-            <RowDefinition Height="451*"/>
+            <RowDefinition Height="159*"/>
+            <RowDefinition Height="473*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Nyimbo na Shairi!" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Margin="0,0,0,61" FontSize="26"/>
-        <Label Content="Bonyeza wimbo kusikiza" Grid.Row="0" Margin="0,120,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="26"/>
-        <StackPanel x:Name="contentStackPanel" Grid.Row="1" HorizontalAlignment="Center">
-            <TextBlock Text="1. Wimbo Wa Taifa" HorizontalAlignment="Center" Margin="0,20,0,0" Tag="Wimbo_Wa_Taifa.mp4"/>
-            <TextBlock Text="2. Jambo" HorizontalAlignment="Center" Margin="276,40,331,0" Width="158" Tag="Jambo.mp4"/>
-            <TextBlock Text="3. Nyakati Za Siku" HorizontalAlignment="Center" Margin="292,40,292,0" Width="213" Tag="KICD_shairi.mp4"/>
-            <TextBlock Text="4. Yesu Ni Wangu" HorizontalAlignment="Center" Margin="292,40,292,0" Width="213" Tag="Yesu_Ni_Wangu.MP4"/>
-            <TextBlock Text="5. Sehemu Ya Mwili" HorizontalAlignment="Center" Margin="292,40,272,0" Width="233" Tag="KICD_Sehemu_ya_mwili.mp4"/>
-        </StackPanel>
+        <Label Content="Nyimbo na Shairi!" Foreground="Firebrick" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Margin="0,0,0,90" FontSize="26"/>
+        <Label Content="Chagua wimbo kusikiza" Foreground="Firebrick" Grid.Row="0" Margin="0,64,0,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="26"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Visibility="Visible" Grid.Row="1" CanContentScroll="True" Margin="34,0,53,163">
+            <StackPanel x:Name="contentStackPanel" Height="215">
+                <TextBlock Text="Wimbo Wa Taifa" HorizontalAlignment="Center" Tag="Wimbo_Wa_Taifa.mp4" Height="47"/>
+                <TextBlock Text="Jambo" HorizontalAlignment="Center"   Tag="Jambo.mp4" Height="53"/>
+                <TextBlock Text="Nyakati Za Siku" HorizontalAlignment="Center"  Tag="KICD_shairi.mp4" Height="47"/>
+                <TextBlock Text="Yesu Ni Wangu" HorizontalAlignment="Center"   Tag="Yesu_Ni_Wangu.MP4" Height="50"/>
+                <TextBlock Text="Sehemu Ya Mwili" HorizontalAlignment="Center" Tag="KICD_Sehemu_ya_mwili.mp4" Height="51"/>
+            </StackPanel>
 
-
-
-
-
-
-
-
+        </ScrollViewer>
     </Grid>
 </Page>

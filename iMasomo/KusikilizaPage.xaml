@@ -26,18 +26,13 @@
                     <TextBlock Text="Alfabeti"/>
                 </Grid>
             </telerik:Tile>
-            <telerik:Tile TileType="Single" x:Name="nyimboTile" MouseDoubleClick="nyimboTile_MouseDoubleClick">
+            <telerik:Tile  x:Name="nyimboTile" MouseDoubleClick="nyimboTile_MouseDoubleClick">
                 <Grid>
                     <Image Source="/Images/nyimbo.jpg"  Stretch="Fill"/>
                     <TextBlock Text="Nyimbo|Shairi"/>
                 </Grid>
             </telerik:Tile>
-            <telerik:Tile TileType="Single" x:Name="silabiTile" MouseDoubleClick="silabiTile_MouseDown">
-                <Grid>
-                    <Image Source="/Images/abc.jpg"  Stretch="Fill"/>
-                    <TextBlock Text="Silabi"/>
-                </Grid>
-            </telerik:Tile>
+           
             <telerik:Tile x:Name="maamkuziTile" MouseDoubleClick="maamkuziTile_MouseDoubleClick">
                 <Grid>
                     <Image Source="/Images/maamkuzi.jpg"  Stretch="Fill"/>

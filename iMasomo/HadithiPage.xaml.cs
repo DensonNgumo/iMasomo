@@ -52,7 +52,7 @@ namespace iMasomo
         {
             Sound.PlayButtonSound();
             string title = ((TextBlock)sender).Text.ToUpper();
-            string path = hadithi_details[((TextBlock)sender).Text];
+            string path = Environment.CurrentDirectory+hadithi_details[((TextBlock)sender).Text];
             PDFViewer myPdfViewer = new PDFViewer(title);
             myPdfViewer.LoadPDF(path);
             myPdfViewer.Show();

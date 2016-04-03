@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using System.IO;
 using System.Windows.Ink;
+using System.Windows.Media.Imaging;
 using iMasomo_Teacher;
 
 namespace iMasomo
@@ -20,6 +21,7 @@ namespace iMasomo
     /// </summary>
     public partial class CreationCenter : Page
     {
+        string fileName = Environment.CurrentDirectory + @"\Resources\myImage.bin";
         public CreationCenter()
         {
             InitializeComponent();
@@ -51,9 +53,11 @@ namespace iMasomo
         
         private void Save()
         {
-            using (FileStream fs = new FileStream("StrokeData.bin", FileMode.Create))
+            //save strokes as .bin
+            
+            using (FileStream fs = new FileStream(fileName, FileMode.Create))
             {
-                myInkCanvas.Strokes.Save(fs);
+                myInkCanvas.Strokes.Save(fs);               
                 fs.Close();
 
             }
@@ -61,7 +65,8 @@ namespace iMasomo
 
         private void Load()
         {
-            using (FileStream fs = new FileStream("StrokeData.bin", FileMode.Open, FileAccess.Read))
+            
+            using (FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read))
             {
                 StrokeCollection strokes = new StrokeCollection(fs);
                 myInkCanvas.Strokes = strokes;

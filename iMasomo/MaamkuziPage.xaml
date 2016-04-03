@@ -18,12 +18,23 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Label Content="MAAMKUZI/SALAMU" HorizontalAlignment="Center" FontSize="28" Grid.Row="0"/>
+        <Label Content="MAAMKUZI/SALAMU" HorizontalAlignment="Center" FontSize="28" Grid.Row="0" Margin="260,0,261,36"/>
         <Image Grid.Row="1" Stretch="Fill" Source="/Images/salamu2.png"/>
         <TextBlock x:Name="salamuTxt" HorizontalAlignment="Left" Margin="243,117,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Habari yako?" VerticalAlignment="Top" Height="92" Width="223"/>
         <TextBlock x:Name="jibuTxt" HorizontalAlignment="Left" Margin="314,242,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Nzuri sana." VerticalAlignment="Top" Height="108" Width="222"/>
-        <Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="646,438,0,0" Grid.Row="1" VerticalAlignment="Top" Width="107" Height="43" Click="Button_Click"/>
-        <Button Content="&lt;&lt;" HorizontalAlignment="Left" Margin="183,438,0,0" Grid.Row="1" VerticalAlignment="Top" Width="103" Height="43" Click="Button_Click_1"/>
+        <Rectangle Fill="{DynamicResource Arrow45}" HorizontalAlignment="Left" Margin="641,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="84" Height="40" PreviewMouseDown="Button_Click"/>
+        <Rectangle Fill="{DynamicResource Arrow45}" HorizontalAlignment="Left" Margin="37,13,0,0" Grid.Row="1" VerticalAlignment="Top" Width="128" Height="39" PreviewMouseDown="Button_Click_1" RenderTransformOrigin="0.511,0.514">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-180"/>
+                    <TranslateTransform X="-2.926" Y="-0.98"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <!--Button Content="&gt;&gt;" HorizontalAlignment="Left" Margin="646,438,0,0" Grid.Row="1" VerticalAlignment="Top" Width="107" Height="43" Click="Button_Click"/>
+        <Button Content="&lt;&lt;" HorizontalAlignment="Left" Margin="183,438,0,0" Grid.Row="1" VerticalAlignment="Top" Width="103" Height="43" Click="Button_Click_1"/-->
 
     </Grid>
 </Page>

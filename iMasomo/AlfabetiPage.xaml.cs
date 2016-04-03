@@ -52,5 +52,11 @@ namespace iMasomo
         {
             Sound.PlayBackgroundMusic();
         }
+
+        private void silabiBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SilabiPage silabiPage = new SilabiPage();
+            this.NavigationService.Navigate(silabiPage);
+        }
     }
 }

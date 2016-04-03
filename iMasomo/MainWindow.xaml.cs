@@ -34,8 +34,17 @@ namespace iMasomo
         {
             Sound.StartBackgroundMusic();
                       
-            mainFrame.Navigate(new WelcomePage());
+            mainFrame.Navigate(new WelcomePage()); 
             
         }
+
+        private void mainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Sound.Dispose();
+            MessageBox.Show("Kwaheri!");
+            
+        }
+
+       
     }
 }

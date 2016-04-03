@@ -69,5 +69,18 @@ namespace iMasomo
         {
             
         }
+
+        private void sarufiTile_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            SarufiPage sarufPage = new SarufiPage();
+            this.NavigationService.Navigate(sarufPage);
+        }
+
+        private void mchezoTile_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            TicTacToe newGame = new TicTacToe();
+            newGame.Show();
+        }
+
     }
 }

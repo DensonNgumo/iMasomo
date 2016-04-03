@@ -18,7 +18,7 @@ namespace iMasomo
     /// </summary>
     public partial class MaamkuziPage : Page
     {
-        int txtID = 0;
+        int txtID = 1;
         public MaamkuziPage()
         {
             InitializeComponent();

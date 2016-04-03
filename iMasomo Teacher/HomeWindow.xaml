@@ -2,7 +2,9 @@
                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-                Title="iMasomo Admin" Height="600" Width="1150" x:Name="homeWindow" WindowStartupLocation="CenterOwner" Topmost="True" WindowState="Maximized">
+                Title="iMasomo Admin" Height="600" Width="1150" x:Name="homeWindow" 
+        WindowStartupLocation="CenterOwner" Topmost="False"  Icon="pack://application:,,,/Resources/iMasomoAdmin.png"
+        Closing="homeWindow_Closing">
     <Grid x:Name="mainGrid">
         <Grid.Resources>
             <Style TargetType="TextBlock">
@@ -27,11 +29,11 @@
         <Frame x:Name="mainFrame" Grid.Column="1" Grid.Row="0" Grid.RowSpan="4"/>
         <StackPanel x:Name="menuPanel" Background="Coral" Grid.Column="0" Grid.Row="0" Grid.RowSpan="4">
             <TextBlock Text="iMasomo" Foreground="LemonChiffon" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="24" Margin="154,0" Style="{x:Null}" Height="53" />
-            <TextBlock x:Name="usersPanel" Text="Wanafunzi" Height="37" PreviewMouseDown="usersPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
-            <TextBlock x:Name="addImagesPanel" Text="Ongeza Picha" Height="45" PreviewMouseDown="addImagesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
-            <TextBlock x:Name="addWordsPanel" Text="Ongeza Maneno" Height="44" PreviewMouseDown="addWordsPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
-            <TextBlock x:Name="addStoriesPanel" Text="Ongeza Hadithi" Height="44" PreviewMouseDown="addStoriesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
-            <TextBlock x:Name="viewPerformancePanel" Text="Ona Matokeo ya Mazoezi" Height="48" PreviewMouseDown="viewPerformancePanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
+            <TextBlock x:Name="musicPanel" Text="Add Music Videos" Height="37" PreviewMouseDown="musicPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
+            <TextBlock x:Name="addImagesPanel" Text="Add Images" Height="45" PreviewMouseDown="addImagesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
+            <TextBlock x:Name="addWordsPanel" Text="Add Words" Height="44" PreviewMouseDown="addWordsPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
+            <TextBlock x:Name="addStoriesPanel" Text="Add Stories" Height="44" PreviewMouseDown="addStoriesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
+            <TextBlock x:Name="viewPerformancePanel" Text="View Performance" Height="48" PreviewMouseDown="viewPerformancePanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
         </StackPanel>
 
     </Grid>

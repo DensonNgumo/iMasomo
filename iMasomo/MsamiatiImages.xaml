@@ -1,7 +1,8 @@
 ﻿<Window x:Class="iMasomo.MsamiatiImages"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Msamiati" Height="554.7" Width="719" Loaded="Window_Loaded" Background="Orange" PreviewKeyDown="Window_PreviewKeyDown">
+        Title="Msamiati" Height="554.7" Width="719" Loaded="Window_Loaded" Background="Orange"
+        PreviewKeyDown="Window_PreviewKeyDown" Icon="/iMasomo;component/Images/logo2.png">
     <Grid>
         
         <Grid.ColumnDefinitions>

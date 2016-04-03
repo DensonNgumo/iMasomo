@@ -38,7 +38,7 @@ namespace iMasomo
         {
             InitializeComponent();
             Database.OpenDatabase();
-            Sound.PauseBackgroundMusic();
+           
             
         }
 
@@ -72,16 +72,7 @@ namespace iMasomo
 
         private void PlaySound()
         {
-            //MessageBox.Show(path);
-            /*
-            Uri testPath = new Uri(currDirectoryPath +path, UriKind.RelativeOrAbsolute);
-            using(SoundPlayer mPlayer = new SoundPlayer())
-            {
-                mPlayer.SoundLocation = testPath.ToString();
-                mPlayer.Load();
-                mPlayer.Play();
-            }
-            */
+            
             Sound.PlaySound(path);
              
         }
@@ -188,7 +179,6 @@ namespace iMasomo
         {
             wordInfo.Clear();
             RefreshPageElements();
-            Sound.Dispose();
             Sound.PlayBackgroundMusic();
            
         }
@@ -199,6 +189,7 @@ namespace iMasomo
             LoadManeno();
             HidePageElements();
             anzaTxtBlock.Visibility = Visibility.Visible;
+            Sound.PauseBackgroundMusic();
            
                        
         }

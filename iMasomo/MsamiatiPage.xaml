@@ -53,7 +53,7 @@
             </telerik:Tile>
             <telerik:Tile Tag="Shuleni">
                 <Grid>
-                    <Image Source="/Images/mwanafunzi.jpg" Stretch="Fill"/>
+                    <Image Source="/Images/wanafunzi.jpg" Stretch="Fill"/>
                     <TextBlock Text="Shuleni"/>
                 </Grid>
             </telerik:Tile>

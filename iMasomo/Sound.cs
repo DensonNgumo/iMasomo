@@ -141,14 +141,22 @@ namespace iMasomo_Teacher
         {
             if(output!=null)
             {
-                if (output.PlaybackState== PlaybackState.Playing) output.Stop();
-                output.Dispose();
-                output = null;
+                if (output.PlaybackState== PlaybackState.Playing) 
+                    output.Stop();
+                    output.Dispose();
+                    output = null;
             }
             if(stream!=null)
             {
                 stream.Dispose();
                 stream = null;
+            }
+            if(waveOut!=null)
+            {
+                if (waveOut.PlaybackState == PlaybackState.Playing)
+                    waveOut.Stop();
+                waveOut.Dispose();
+                waveOut = null;
             }
         }
     }

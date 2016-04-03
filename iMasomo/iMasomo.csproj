@@ -14,6 +14,22 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>G:\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -33,6 +49,24 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iMasomo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7467CC687A37D7AFEAB4B4AE73786DA32EC35B9B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>iMasomo_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MahApps.Metro">
@@ -62,18 +96,6 @@
     </Reference>
     <Reference Include="Telerik.Windows.Controls">
       <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Data">
-      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Controls.Input">
-      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Controls.Input.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Telerik.Windows.Data">
-      <HintPath>..\lib\RCWPF\2014.3.1202.45\Telerik.Windows.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WindowsBase" />
@@ -129,12 +151,21 @@
     <Compile Include="PDFViewer.Designer.cs">
       <DependentUpon>PDFViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="SarufiPage.xaml.cs">
+      <DependentUpon>SarufiPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SilabiPage.xaml.cs">
       <DependentUpon>SilabiPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sound.cs" />
     <Compile Include="Tarakimu.xaml.cs">
       <DependentUpon>Tarakimu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TicTacToe.xaml.cs">
+      <DependentUpon>TicTacToe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UmojaWingiPage.xaml.cs">
+      <DependentUpon>UmojaWingiPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
@@ -208,6 +239,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SarufiPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="segd-arrow-symbols-icons [WPF Paths].xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -217,6 +252,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tarakimu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TicTacToe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UmojaWingiPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -249,19 +292,30 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Resources\Anansi Na Kasa.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="app.manifest" />
     <None Include="Database\iMasomoDB.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="iMasomo_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Resources\Adhabu.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Ah_Mpira.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Meno.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Rangi_za_upinde.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -289,12 +343,20 @@
     <Resource Include="Images\speaker.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Media\Yesu_Ni_Wangu.MP4">
+    <Resource Include="Images\iMasomoHome.png" />
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\pause.png" />
+    <Resource Include="Images\play2.png" />
+    <Resource Include="Images\stop.png" />
+    <Resource Include="Images\logo2.png" />
+    <Resource Include="Images\school_girl.jpg" />
+    <Resource Include="Images\placeholder.png" />
+    <Content Include="Media\Yesu_Ni_Wangu.MP4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Media\Wimbo_Wa_Taifa.mp4">
+    </Content>
+    <Content Include="Media\Wimbo_Wa_Taifa.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <Resource Include="Images\green_bgd.jpg" />
     <Resource Include="Images\arrow-left.png" />
     <Resource Include="Images\arrow-right.png" />
@@ -306,7 +368,6 @@
     <Resource Include="Images\mswaki.jpg" />
     <Resource Include="Images\pasi.jpg" />
     <Resource Include="Images\ufagio.jpg" />
-    <Resource Include="Images\dawati.jpg" />
     <Resource Include="Images\mwanafunzi2.jpg" />
     <Resource Include="Images\ubao.png" />
     <Resource Include="Images\peremende.jpg" />
@@ -343,7 +404,6 @@
     <Resource Include="Images\mbuzi.jpg" />
     <Resource Include="Images\eye.jpg" />
     <Resource Include="Images\sahani.jpg" />
-    <Resource Include="Images\mwanafunzi.jpg" />
     <Resource Include="Images\mwalimu.png" />
     <Resource Include="Images\chumvi.jpg" />
     <Resource Include="Images\rangi.JPG" />
@@ -362,28 +422,47 @@
     <Resource Include="Images\upepo.JPG" />
     <Resource Include="Images\salamu.jpg" />
     <Resource Include="Images\salamu2.png" />
+    <Resource Include="Images\UmojaWingi\dawati.jpg" />
+    <Resource Include="Images\UmojaWingi\kikombe.jpg" />
+    <Resource Include="Images\UmojaWingi\kitabu.png" />
+    <Resource Include="Images\UmojaWingi\kiti.jpg" />
+    <Resource Include="Images\UmojaWingi\madawati.jpg" />
+    <Resource Include="Images\UmojaWingi\masahani.jpg" />
+    <Resource Include="Images\UmojaWingi\masamaki.jpg" />
+    <Resource Include="Images\UmojaWingi\mayai.jpg" />
+    <Resource Include="Images\UmojaWingi\mikate.png" />
+    <Resource Include="Images\UmojaWingi\mkate.jpg" />
+    <Resource Include="Images\UmojaWingi\mwanafunzi.jpg" />
+    <Resource Include="Images\UmojaWingi\samaki.jpg" />
+    <Resource Include="Images\UmojaWingi\vijiko.jpg" />
+    <Resource Include="Images\UmojaWingi\vikombe.jpg" />
+    <Resource Include="Images\UmojaWingi\vitabu.jpg" />
+    <Resource Include="Images\UmojaWingi\viti.jpg" />
+    <Resource Include="Images\UmojaWingi\wanafunzi.jpg" />
+    <Resource Include="Images\UmojaWingi\yai.jpg" />
+    <Resource Include="Images\dawati.jpg" />
+    <Resource Include="Images\wanafunzi.jpg" />
+    <Resource Include="Images\iMasomoIcon.png" />
+    <Resource Include="iMasomo.ico" />
     <Content Include="Media\bgd.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Media\KICD_Sehemu_ya_mwili.mp4">
+    <Content Include="Media\KICD_Sehemu_ya_mwili.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Media\Jambo.mp4">
+    </Content>
+    <Content Include="Media\Jambo.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Media\ButtonSound1.mp3">
+    </Content>
+    <Content Include="Media\ButtonSound1.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Media\ButtonSound2.mp3">
+    </Content>
+    <Content Include="Media\ButtonSound2.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Media\KICD_shairi.mp4">
+    </Content>
+    <Content Include="Media\KICD_shairi.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Media\KICD_Vokali.mp4">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <Content Include="Media\sample.wav">
+    </Content>
+    <Content Include="Media\KICD_Vokali.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -405,6 +484,23 @@
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

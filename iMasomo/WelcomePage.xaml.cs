@@ -23,17 +23,34 @@ namespace iMasomo
                                
         }
 
-        private void endeleaBtn_Click(object sender, RoutedEventArgs e)
+        private void Endelea()
         {
             Sound.PlayButtonSound();
-            this.NavigationService.Navigate(new HomePage()); 
+            this.NavigationService.Navigate(new HomePage());
+        }
+        private void endeleaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Endelea();
            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-           
+            this.PreviewKeyDown += KeyPressed;
         }
+
+        private void KeyPressed(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show("pressed");
+            if(e.Key==Key.Enter)
+            {
+                MessageBox.Show("pressed");
+                Endelea();
+            }
+            
+        }
+
+      
 
  
     }

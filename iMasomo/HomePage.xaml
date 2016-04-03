@@ -5,10 +5,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="iMasomo" Width="716.417" Height="552.985" Loaded="Page_Loaded">
+	Title="iMasomo" Width="659.329" Height="632.089" Loaded="Page_Loaded">
 
-    <DockPanel LastChildFill="True">
-        <DockPanel.Resources>
+    <Grid Margin="10,0,10,28">
+        <Grid.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="Foreground" Value="Black"/>
                 <Setter Property="FontWeight" Value="ExtraBlack"/>
@@ -17,19 +17,16 @@
             <Style TargetType="telerik:Tile">
                 <EventSetter Event="MouseDoubleClick" Handler="playButtonSound"/>
             </Style>
-        </DockPanel.Resources>
-        <telerik:RadTileList x:Name="menuTileList" Width="680" Margin="0,60,0,0">
-            <telerik:RadTileList.Groups>
-
-                <telerik:TileGroup DisplayIndex="0">
-                    <telerik:TileGroup.Items>
+        </Grid.Resources>
+        <telerik:RadTileList HorizontalAlignment="Center" x:Name="menuTileList" Margin="0,10,0,-21">
+       
                         <telerik:Tile Background="LawnGreen" x:Name="kusikilizaTile"  MouseDoubleClick="kusikilizaTile_MouseDown">
                             <Grid>
                                 <Image Source="/Images/kusikiliza.jpg" Stretch="Fill"/>
                                 <TextBlock Text="Kusikiliza na Kuongea"/>
                             </Grid>
                         </telerik:Tile>
-                        <telerik:Tile Background="PaleVioletRed">
+                        <telerik:Tile x:Name="sarufiTile" Background="PaleVioletRed" MouseDoubleClick="sarufiTile_MouseDoubleClick">
                             <Grid>
                                 <Image Source="/Images/sarufi.jpg" Stretch="Fill"/>
                                 <TextBlock Text="Sarufi"/>
@@ -47,21 +44,17 @@
                                 <TextBlock Text="Imla"/>
                             </Grid>
                         </telerik:Tile>
-                    </telerik:TileGroup.Items>
-                </telerik:TileGroup>
-
-                <telerik:TileGroup DisplayIndex="1">
-                    <telerik:TileGroup.Items>
+             
                         <telerik:Tile  x:Name="mazoeziTile" Background="Thistle"  MouseDoubleClick="mazoeziTile_MouseDown">
                             <Grid>
                                 <Image Source="/Images/zoezi.png" Height="100"/>
                                 <TextBlock Text="Mazoezi"/>
                             </Grid>
                         </telerik:Tile>
-                        <telerik:Tile   TileType="Single">
+                        <telerik:Tile x:Name="mchezoTile"  TileType="Single" MouseDoubleClick="mchezoTile_MouseDoubleClick">
                             <Grid>
                                 <Image Source="/Images/michezo.png" Height="100"/>
-                                <TextBlock Text="Michezo"/>
+                                <TextBlock Text="Mchezo"/>
                             </Grid>
                         </telerik:Tile>
                         <telerik:Tile  x:Name="creationTile" TileType="Single" Background="Red" MouseDoubleClick="creationTile_MouseDown">
@@ -71,11 +64,8 @@
                             </Grid>
                         </telerik:Tile>
 
-                    </telerik:TileGroup.Items>
-                </telerik:TileGroup>
-            </telerik:RadTileList.Groups>
         </telerik:RadTileList>
 
 
-    </DockPanel>
+    </Grid>
 </Page>

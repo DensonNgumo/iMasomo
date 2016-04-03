@@ -21,15 +21,15 @@ namespace iMasomo_Teacher
         public HomeWindow()
         {
             InitializeComponent();
-            MessageBox.Show(Environment.CurrentDirectory);
             Database.OpenDatabase();
         }
 
        
 
-        private void usersPanel_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        private void musicPanel_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            AddMusicVideos addMusicPage = new AddMusicVideos();
+            mainFrame.Content = addMusicPage;
         }
 
         private void addImagesPanel_PreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -65,6 +65,11 @@ namespace iMasomo_Teacher
         {
             (sender as TextBlock).Foreground = (Brush)(new BrushConverter().ConvertFrom("#000000"));
             (sender as TextBlock).Background = Brushes.Coral;
+        }
+
+        private void homeWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Database.CloseDatabase();
         }
     }
 }

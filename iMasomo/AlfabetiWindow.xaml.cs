@@ -68,7 +68,7 @@ namespace iMasomo
                 while (dr.Read())
                 {
                     path = dr.GetString(0); MessageBox.Show(path);
-                    //Sound.PlaySound(path);
+                    Sound.PlaySound(path);
                     
                 }
                 

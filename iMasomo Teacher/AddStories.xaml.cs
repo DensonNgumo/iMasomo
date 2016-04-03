@@ -70,8 +70,9 @@ namespace iMasomo_Teacher
 
         private void CopyFile()
         {
-            newPath=Environment.CurrentDirectory+@"\Resources\"+title+".pdf";
-            File.Copy(hadithiFilePath, newPath);
+            string targetPath=Environment.CurrentDirectory+@"\Resources\"+title+".pdf";
+            File.Copy(hadithiFilePath, targetPath);
+            newPath = @"\Resources\" + title + ".pdf";
         }
     }
 }
