@@ -63,6 +63,10 @@ namespace iMasomo_Teacher
             list.Add("Maumbo");
             list.Add("Angani");
             list.Add("Maswala ya Ibuka");
+            list.Add("Umoja na Wingi");
+            list.Add("Vihusishi");
+            list.Add("Kike na Kiume");
+            list.Add("Vitenzi");
             categoryComboBox.ItemsSource = list;
         }
         private void browseImagesButton_Click(object sender, RoutedEventArgs e)

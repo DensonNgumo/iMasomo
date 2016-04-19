@@ -144,16 +144,6 @@ namespace iMasomo
             }
             
         }
-       
-        private void Image_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            LoadNextNumber();
-        }
-
-        private void Image_PreviewMouseDown_1(object sender, MouseButtonEventArgs e)
-        {
-            LoadPreviousNumber();
-        }
 
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
@@ -165,6 +155,16 @@ namespace iMasomo
             {
                 LoadNextNumber();
             }
+        }
+
+        private void nextArrowRectangle_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoadNextNumber();
+        }
+
+        private void previousArrowRectangle_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoadPreviousNumber();
         }
     }
 }

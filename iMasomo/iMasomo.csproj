@@ -164,8 +164,8 @@
     <Compile Include="TicTacToe.xaml.cs">
       <DependentUpon>TicTacToe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UmojaWingiPage.xaml.cs">
-      <DependentUpon>UmojaWingiPage.xaml</DependentUpon>
+    <Compile Include="SarufiImages.xaml.cs">
+      <DependentUpon>SarufiImages.xaml</DependentUpon>
     </Compile>
     <Compile Include="WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
@@ -259,9 +259,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UmojaWingiPage.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="SarufiImages.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="WelcomePage.xaml">
       <SubType>Designer</SubType>
@@ -325,9 +325,6 @@
     <Resource Include="Images\fish.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\footballer.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\leaves.jpg" />
     <Resource Include="Images\pumpkins.jpg" />
     <Resource Include="Images\tree.png" />
@@ -336,7 +333,6 @@
     <Resource Include="Images\sun-background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\kitabu.jpg" />
     <Resource Include="Images\pesa.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -351,6 +347,7 @@
     <Resource Include="Images\logo2.png" />
     <Resource Include="Images\school_girl.jpg" />
     <Resource Include="Images\placeholder.png" />
+    <Resource Include="Images\mwanafunzi.jpg" />
     <Content Include="Media\Yesu_Ni_Wangu.MP4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -358,8 +355,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="Images\green_bgd.jpg" />
-    <Resource Include="Images\arrow-left.png" />
-    <Resource Include="Images\arrow-right.png" />
     <Resource Include="Images\dirisha.jpg" />
     <Resource Include="Images\kijiko.jpg" />
     <Resource Include="Images\kitanda.jpg" />
@@ -422,24 +417,6 @@
     <Resource Include="Images\upepo.JPG" />
     <Resource Include="Images\salamu.jpg" />
     <Resource Include="Images\salamu2.png" />
-    <Resource Include="Images\UmojaWingi\dawati.jpg" />
-    <Resource Include="Images\UmojaWingi\kikombe.jpg" />
-    <Resource Include="Images\UmojaWingi\kitabu.png" />
-    <Resource Include="Images\UmojaWingi\kiti.jpg" />
-    <Resource Include="Images\UmojaWingi\madawati.jpg" />
-    <Resource Include="Images\UmojaWingi\masahani.jpg" />
-    <Resource Include="Images\UmojaWingi\masamaki.jpg" />
-    <Resource Include="Images\UmojaWingi\mayai.jpg" />
-    <Resource Include="Images\UmojaWingi\mikate.png" />
-    <Resource Include="Images\UmojaWingi\mkate.jpg" />
-    <Resource Include="Images\UmojaWingi\mwanafunzi.jpg" />
-    <Resource Include="Images\UmojaWingi\samaki.jpg" />
-    <Resource Include="Images\UmojaWingi\vijiko.jpg" />
-    <Resource Include="Images\UmojaWingi\vikombe.jpg" />
-    <Resource Include="Images\UmojaWingi\vitabu.jpg" />
-    <Resource Include="Images\UmojaWingi\viti.jpg" />
-    <Resource Include="Images\UmojaWingi\wanafunzi.jpg" />
-    <Resource Include="Images\UmojaWingi\yai.jpg" />
     <Resource Include="Images\dawati.jpg" />
     <Resource Include="Images\wanafunzi.jpg" />
     <Resource Include="Images\iMasomoIcon.png" />

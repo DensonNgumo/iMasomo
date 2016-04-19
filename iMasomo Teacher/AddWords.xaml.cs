@@ -66,15 +66,31 @@ namespace iMasomo_Teacher
 
         private void addWordBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            //input validation
+            if (String.IsNullOrEmpty(kiswahiliWordTxtBox.Text))
+            {
+                MessageBox.Show("Please enter the Kiswahili word", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                kiswahiliWordTxtBox.Focus();
+                return;
+            }
             if(useRecording)
             {
                 AddWordsToDatabase();
             }
             else
             {
-                CopySound();
-                AddWordsToDatabase();
+                //input validation
+                if(String.IsNullOrEmpty(recordingPathTxtBox.Text))
+                {
+                    MessageBox.Show("Please select sound recording again", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    recordingPathTxtBox.Focus();
+                }
+                else
+                {
+                    CopySound();
+                    AddWordsToDatabase();
+                }
+                
             }
             
         }
@@ -117,11 +133,20 @@ namespace iMasomo_Teacher
             }
             else
             {
-                Sound.RecordSound(kiswahiliWordTxtBox.Text);
-                recording = true;
-                recordBtnText.Text = "Stop Recording";
-                recordingPath = @"\Media\" + kiswahiliWordTxtBox.Text + ".wav";
-                useRecording = true;
+                if(String.IsNullOrEmpty(kiswahiliWordTxtBox.Text))
+                {
+                    MessageBox.Show("Enter the Kiswahili word first", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    kiswahiliWordTxtBox.Focus();
+                }
+                else
+                {
+                    Sound.RecordSound(kiswahiliWordTxtBox.Text);
+                    recording = true;
+                    recordBtnText.Text = "Stop Recording";
+                    recordingPath = @"\Media\" + kiswahiliWordTxtBox.Text + ".wav";
+                    useRecording = true;
+                }
+                
                 
             }
            

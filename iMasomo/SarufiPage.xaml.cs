@@ -22,10 +22,44 @@ namespace iMasomo
             InitializeComponent();
         }
 
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+      
+
+        private void kike_kiumeTxtBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            UmojaWingiPage umojaWingiPage = new UmojaWingiPage();
-            this.NavigationService.Navigate(umojaWingiPage);
+            SarufiImages sarufiImages = new SarufiImages();
+            sarufiImages.SetCategory("Kike na Kiume");
+            sarufiImages.GetMaxImageCount();
+            sarufiImages.LoadKikeKiumeImages();
+            this.NavigationService.Navigate(sarufiImages);
+        }
+
+        private void umoja_wingiTxtBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SarufiImages sarufiImages = new SarufiImages();
+            sarufiImages.SetCategory("Umoja na Wingi");
+            sarufiImages.GetMaxImageCount();
+            sarufiImages.LoadUmojaWingiImages();
+            this.NavigationService.Navigate(sarufiImages);
+        }
+
+        private void vihusishiTxtBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SarufiImages sarufiImages = new SarufiImages();
+            sarufiImages.SetCategory("Vihusishi");
+            sarufiImages.GetMaxImageCount();
+            sarufiImages.ModifyPageUI();
+            sarufiImages.LoadVihusishiImages();
+            this.NavigationService.Navigate(sarufiImages);
+        }
+
+        private void vitenziTxtBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            SarufiImages sarufiImages = new SarufiImages();
+            sarufiImages.SetCategory("Vitenzi");
+            sarufiImages.GetMaxImageCount();
+            sarufiImages.ModifyPageUI();
+            sarufiImages.LoadVitenziImages();
+            this.NavigationService.Navigate(sarufiImages);
         }
     }
 }

@@ -73,6 +73,9 @@
     <Compile Include="AddMusicVideos.xaml.cs">
       <DependentUpon>AddMusicVideos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddSarufiContent.xaml.cs">
+      <DependentUpon>AddSarufiContent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddStories.xaml.cs">
       <DependentUpon>AddStories.xaml</DependentUpon>
     </Compile>
@@ -81,6 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddMusicVideos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddSarufiContent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

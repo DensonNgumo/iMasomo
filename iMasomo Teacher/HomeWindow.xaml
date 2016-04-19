@@ -33,7 +33,7 @@
             <TextBlock x:Name="addImagesPanel" Text="Add Images" Height="45" PreviewMouseDown="addImagesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
             <TextBlock x:Name="addWordsPanel" Text="Add Words" Height="44" PreviewMouseDown="addWordsPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
             <TextBlock x:Name="addStoriesPanel" Text="Add Stories" Height="44" PreviewMouseDown="addStoriesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
-            <TextBlock x:Name="viewPerformancePanel" Text="View Performance" Height="48" PreviewMouseDown="viewPerformancePanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
+            <TextBlock x:Name="addSarufiContentPanel" Text="Add Sarufi Content" Height="48" PreviewMouseDown="addSarufiContentPanel_PreviewMouseDown"  Margin="0,0,0,0" Width="406" />
         </StackPanel>
 
     </Grid>

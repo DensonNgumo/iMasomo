@@ -44,10 +44,7 @@ namespace iMasomo_Teacher
             mainFrame.Content = addWordsPage;
         }
 
-        private void viewPerformancePanel_PreviewMouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+   
 
         private void addStoriesPanel_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -70,6 +67,12 @@ namespace iMasomo_Teacher
         private void homeWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Database.CloseDatabase();
+        }
+
+        private void addSarufiContentPanel_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AddSarufiContent addSarufi = new AddSarufiContent();
+            mainFrame.Content = addSarufi;
         }
     }
 }

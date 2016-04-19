@@ -17,11 +17,12 @@
             </Style>
         </StackPanel.Resources>
         <TextBlock Text="SARUFI" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
-        <TextBlock Text="Umoja na Wingi" Style="{StaticResource listStyle}" MouseDown="TextBlock_MouseDown"/>
-        <TextBlock Text="Vitenzi" Style="{StaticResource listStyle}" />
-        <TextBlock Text="Vihusishi" Style="{StaticResource listStyle}"/>
+        <TextBlock x:Name="umoja_wingiTxtBlock" Text="Umoja na Wingi" Style="{StaticResource listStyle}" PreviewMouseDown="umoja_wingiTxtBlock_PreviewMouseDown"/>
+        <TextBlock x:Name="kike_kiumeTxtBlock" Text="Kike na Kiume" Style="{StaticResource listStyle}" PreviewMouseDown="kike_kiumeTxtBlock_PreviewMouseDown"/>
+        <TextBlock x:Name="vitenziTxtBlock" Text="Vitenzi" Style="{StaticResource listStyle}" PreviewMouseDown="vitenziTxtBlock_PreviewMouseDown" />
+        <TextBlock x:Name="vihusishiTxtBlock" Text="Vihusishi" Style="{StaticResource listStyle}" PreviewMouseDown="vihusishiTxtBlock_PreviewMouseDown"/>
         <TextBlock Text="Kumiliki" Style="{StaticResource listStyle}"/>
-        <TextBlock Text="Vinyume" Style="{StaticResource listStyle}"/>
+        
         <TextBlock Text="Nyakati" Style="{StaticResource listStyle}"/>
     </StackPanel>
 </Page>
