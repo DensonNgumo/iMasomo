@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+
+
 
 namespace iMasomo
 {
@@ -21,7 +20,7 @@ namespace iMasomo
     {
         int nambari = 0;
         string[] tarakimuJina = {"nunge","moja","mbili","tatu","nne","tano","sita","saba","nane","tisa" };
-        string nambariJina="";
+        
         public Tarakimu()
         {
             InitializeComponent();
@@ -34,9 +33,8 @@ namespace iMasomo
             if(nambari<100)
             {
                 nambari++;
-                LoadNumberName();
                 nambariTextBlock.Text = nambari.ToString();
-                nambariJinaTextBlock.Text = nambariJina.ToUpper();
+                nambariJinaTextBlock.Text = GetNumberName(nambari).ToUpper();
             }
             
         }
@@ -45,37 +43,34 @@ namespace iMasomo
         {
             if(nambari>0)
             {
-                nambari--;
-                LoadNumberName();
+                nambari--;              
                 nambariTextBlock.Text = nambari.ToString();
-                nambariJinaTextBlock.Text = nambariJina.ToUpper();
+                nambariJinaTextBlock.Text =GetNumberName(nambari).ToUpper();
             }
             
         }
 
-        private void LoadNumberName()
+
+        public string GetNumberName(int no)
         {
+            string nambariJina = "";
             //load name for single digit number
-            if(nambari>=0 && nambari<10)
+            if (no >= 0 && no < 10)
             {
-                nambariJina = tarakimuJina[nambari];
+                nambariJina = tarakimuJina[no];
+                return nambariJina;
+            }
+
+            else if (no >= 10 && no <= 100)
+            {
+                nambariJina = LoadDoubleDigits(no);//load name for double digit number
+                return nambariJina;
+            }
+            else
+            {
+                return nambariJina;
             }
             
-            else if(nambari>=10 && nambari<=100)
-            {
-                nambariJina=LoadDoubleDigits(nambari);//load name for double digit number
-            }
-               
-        }
-
-        //returns the first digit of an integer
-        private int GetFirstDigit(int number)
-        {
-            if (number < 10)
-            {
-                return number;
-            }
-            return GetFirstDigit((number - (number % 10)) / 10);
         }
 
         private string LoadDoubleDigits(int no)
