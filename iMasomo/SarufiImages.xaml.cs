@@ -8,7 +8,9 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using iMasomo_Teacher;
 using System.Data.SQLite;
 
 
@@ -73,6 +75,20 @@ namespace iMasomo
                       
     
         }
+        private void AnimateText()
+        {
+            DoubleAnimation dblAnim = new DoubleAnimation();
+            dblAnim.To = 1.0;
+            dblAnim.From = 0.0;
+            dblAnim.BeginTime = TimeSpan.FromSeconds(0);
+            dblAnim.Duration = TimeSpan.FromSeconds(10);
+
+            var storyboard = new Storyboard();
+            storyboard.Children.Add(dblAnim);
+            Storyboard.SetTarget(dblAnim, rightTxtBlock);
+            Storyboard.SetTargetProperty(dblAnim, new PropertyPath(OpacityProperty));
+            storyboard.Begin();
+        }
 
         public void LoadUmojaWingiImages()
         {
@@ -99,35 +115,12 @@ namespace iMasomo
 
                 path2 = LoadImagePath(wingiId);
                 wingiTxt = LoadImageTag(wingiId);
-                /*
-                string query1 = "select kiswahili_tag,path from image_details where image_id='" + umojaId + "'";
-                string query2 = "select kiswahili_tag,path from image_details where image_id='" + wingiId + "'";
-
-                SQLiteCommand sqliteCommand1 = new SQLiteCommand(query1, Database.GetDatabaseConnection());
-                sqliteCommand1.ExecuteNonQuery();
-                SQLiteDataReader sqliteReader1 = sqliteCommand1.ExecuteReader();
-                while (sqliteReader1.Read())
-                {
-
-                    umojaTxt = sqliteReader1.GetString(0);
-                    path1 = sqliteReader1.GetString(1);
-
-                }
-
-                SQLiteCommand sqliteCommand2 = new SQLiteCommand(query2, Database.GetDatabaseConnection());
-                sqliteCommand2.ExecuteNonQuery();
-                SQLiteDataReader sqliteReader2 = sqliteCommand2.ExecuteReader();
-                while (sqliteReader2.Read())
-                {
-                    wingiTxt = sqliteReader2.GetString(0);
-                    path2 = sqliteReader2.GetString(1);
-
-                }*/
 
                 leftTxtBlock.Text = umojaTxt;
                 rightTxtBlock.Text = wingiTxt;
                 image1.Source = new BitmapImage(new Uri(path1, UriKind.RelativeOrAbsolute));
                 image2.Source = new BitmapImage(new Uri(path2, UriKind.RelativeOrAbsolute));
+                AnimateText();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
             
@@ -159,35 +152,12 @@ namespace iMasomo
 
                 path2 = LoadImagePath(kiumeId);
                 kiumeTxt = LoadImageTag(kiumeId);
-                /*
-                string query1 = "select kiswahili_tag,path from image_details where image_id='" + kikeId + "'";
-                string query2 = "select kiswahili_tag,path from image_details where image_id='" + kiumeId + "'";
-
-                SQLiteCommand sqliteCommand1 = new SQLiteCommand(query1, Database.GetDatabaseConnection());
-                sqliteCommand1.ExecuteNonQuery();
-                SQLiteDataReader sqliteReader1 = sqliteCommand1.ExecuteReader();
-                while (sqliteReader1.Read())
-                {
-
-                    kikeTxt = sqliteReader1.GetString(0);
-                    path1 = sqliteReader1.GetString(1);
-
-                }
-
-                SQLiteCommand sqliteCommand2 = new SQLiteCommand(query2, Database.GetDatabaseConnection());
-                sqliteCommand2.ExecuteNonQuery();
-                SQLiteDataReader sqliteReader2 = sqliteCommand2.ExecuteReader();
-                while (sqliteReader2.Read())
-                {
-                    kiumeTxt = sqliteReader2.GetString(0);
-                    path2 = sqliteReader2.GetString(1);
-
-                }*/
-
+      
                 leftTxtBlock.Text = kikeTxt;
                 rightTxtBlock.Text = kiumeTxt;
                 image1.Source = new BitmapImage(new Uri(path1, UriKind.RelativeOrAbsolute));
                 image2.Source = new BitmapImage(new Uri(path2, UriKind.RelativeOrAbsolute));
+                AnimateText();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
@@ -290,8 +260,7 @@ namespace iMasomo
         }
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //GetMaxImageCount();
-            //LoadUmojaWingiImages();
+            Sound.PauseBackgroundMusic();
         }
 
         private void leftArrow_PreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -351,6 +320,11 @@ namespace iMasomo
             image1.SetValue(Grid.ColumnSpanProperty, 3);
             image1.Stretch = Stretch.Uniform;
             leftTxtBlock.SetValue(Grid.ColumnSpanProperty, 3);
+        }
+
+        private void Page_Unloaded(object sender, RoutedEventArgs e)
+        {
+            Sound.PlayBackgroundMusic();
         }
 
      

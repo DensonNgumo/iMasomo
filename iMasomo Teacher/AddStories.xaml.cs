@@ -24,6 +24,7 @@ namespace iMasomo_Teacher
         private string hadithiFilePath;
         private string title;
         string newPath;
+        bool overwrite = false;
 
         public AddStories()
         {
@@ -46,8 +47,44 @@ namespace iMasomo_Teacher
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (String.IsNullOrEmpty(titleTxtBox.Text))
+            {
+                MessageBox.Show("No title has been entered", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                titleTxtBox.Focus();
+                return;
+            }
+            if(String.IsNullOrEmpty(hadithiPath.Text))
+            {
+                MessageBox.Show("No file has been selected", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                hadithiPath.Focus();
+                return;
+            }
             title = titleTxtBox.Text;
-            CopyFile();
+            if(DuplicateExists())
+            {
+                MessageBoxResult result = MessageBox.Show("Story with the same title already exists, do you wish to overwrite?", "iMasomoAdmin", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+                if(result==MessageBoxResult.No)
+                {
+                    return;
+                }
+                if(result==MessageBoxResult.Yes)
+                {
+                    overwrite = true;
+                    CopyFile();
+                }
+
+            }
+            else
+            {
+                CopyFile();
+                SaveFile();
+            }
+            
+            
+        }
+
+        private void SaveFile()
+        {
             string query = "insert into hadithi_details(hadithi_title,location_path) values ('" + title + "','" + newPath + "')";
             try
             {
@@ -68,10 +105,38 @@ namespace iMasomo_Teacher
             }
         }
 
+        private bool DuplicateExists()
+        {
+            string query = "select * from hadithi_details where hadithi_title ='" + title + "' ";
+            int count = 0;
+            try
+            {
+                SQLiteCommand sqliteCommand = new SQLiteCommand(query, Database.GetDatabaseConnection());
+                sqliteCommand.ExecuteNonQuery();
+                SQLiteDataReader reader = sqliteCommand.ExecuteReader();
+                while(reader.Read())
+                {
+                    count++;
+                }
+
+                if(count>0)
+                {
+                    return true;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return false;
+        }
+
         private void CopyFile()
         {
             string targetPath=Environment.CurrentDirectory+@"\Resources\"+title+".pdf";
-            File.Copy(hadithiFilePath, targetPath);
+            File.Copy(hadithiFilePath, targetPath,overwrite);
             newPath = @"\Resources\" + title + ".pdf";
         }
     }

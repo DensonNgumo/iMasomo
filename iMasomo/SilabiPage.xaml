@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="SilabiPage" Height="567.089" Width="724.642">
+	Title="SilabiPage" Height="567.089" Width="724.642" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.Resources>
@@ -12,6 +12,7 @@
                 <Setter Property="FontWeight" Value="ExtraBlack"/>
                 <Setter Property="FontSize" Value="20"/>
             </Style>
+            <DoubleAnimation x:Key="sampleAnim" Storyboard.TargetProperty="Opacity" Duration="0:0:8"/>
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="79*"/>
@@ -50,7 +51,17 @@
             <ComboBoxItem Content="y"/>
             <ComboBoxItem Content="z"/>
         </ComboBox>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" FontFamily="Segoe UI" FontSize="22" x:Name="silabiTextBlock" Margin="0,0,0,260"/>
+        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="26" FontWeight="Bold" x:Name="silabiTextBlock" Margin="0,0,0,260" Text="{Binding ErrorMsg,NotifyOnTargetUpdated=True}">
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="Binding.TargetUpdated">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation BeginTime="0:0:0" Duration="0:0:10" From="0.0" Storyboard.TargetProperty="Opacity" To="1.0"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
         <Image Grid.Row="2" Grid.Column="1" Source="/Images/school_girl.jpg" Stretch="Fill" Margin="136,124,0,0"/>
     </Grid>
 </Page>

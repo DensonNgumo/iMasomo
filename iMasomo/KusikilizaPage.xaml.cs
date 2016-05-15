@@ -18,14 +18,11 @@ namespace iMasomo
     public partial class KusikilizaPage : Page
     {
                
-
         public KusikilizaPage()
         {
             InitializeComponent();
                                
         }
-
-       
 
         private void alfabetiTile_MouseDown(object sender, MouseButtonEventArgs e)
         {

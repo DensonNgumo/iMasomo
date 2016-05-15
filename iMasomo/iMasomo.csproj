@@ -51,7 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>iMasomo.ico</ApplicationIcon>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -67,6 +67,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>iMasomo.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MahApps.Metro">
@@ -133,6 +136,9 @@
     <Compile Include="MaamkuziPage.xaml.cs">
       <DependentUpon>MaamkuziPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MazoeziPage.xaml.cs">
+      <DependentUpon>MazoeziPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MediaPlayer.xaml.cs">
       <DependentUpon>MediaPlayer.xaml</DependentUpon>
     </Compile>
@@ -170,6 +176,9 @@
     <Compile Include="WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ZoeziTemplate.xaml.cs">
+      <DependentUpon>ZoeziTemplate.xaml</DependentUpon>
+    </Compile>
     <Page Include="AlfabetiPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -199,6 +208,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MaamkuziPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MazoeziPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -264,6 +277,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="WelcomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZoeziTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -348,6 +365,14 @@
     <Resource Include="Images\school_girl.jpg" />
     <Resource Include="Images\placeholder.png" />
     <Resource Include="Images\mwanafunzi.jpg" />
+    <Resource Include="Images\tickImage.png" />
+    <Resource Include="icon.ico" />
+    <Resource Include="Images\nambari.jpg" />
+    <Resource Include="Images\cross.png" />
+    <Resource Include="Images\tick.png" />
+    <Content Include="Media\Hongera.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Media\Yesu_Ni_Wangu.MP4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -420,7 +445,6 @@
     <Resource Include="Images\dawati.jpg" />
     <Resource Include="Images\wanafunzi.jpg" />
     <Resource Include="Images\iMasomoIcon.png" />
-    <Resource Include="iMasomo.ico" />
     <Content Include="Media\bgd.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

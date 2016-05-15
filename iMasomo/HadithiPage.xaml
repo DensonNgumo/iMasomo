@@ -12,6 +12,7 @@
                 <Setter Property="FontSize" Value="22"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="FontFamily" Value="Comic Sans MS"/>
                 <EventSetter Event="MouseEnter" Handler="TextBlock_MouseEnter"/>
                 <EventSetter Event="MouseLeave" Handler="TextBlock_MouseLeave"/>
             </Style>
@@ -20,8 +21,8 @@
             <RowDefinition Height="97*"/>
             <RowDefinition Height="333*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="HADITHI ZANGU" Grid.Row="0" HorizontalAlignment="Center" FontSize="28" Margin="158,0,157,0" Width="208"/>
-        <TextBlock Text="Chagua Hadithi ya kusoma:" Grid.Row="0" HorizontalAlignment="Center" FontSize="28" Margin="93,52,93,0" Width="337"/>
+        <TextBlock Text="HADITHI ZANGU" Grid.Row="0" HorizontalAlignment="Center" Foreground="DarkMagenta" FontSize="28" FontFamily="Comic Sans MS" FontWeight="Black" Margin="131,0,130,50" Width="262"/>
+        <TextBlock Text="Chagua Hadithi ya kusoma:" Grid.Row="0" HorizontalAlignment="Center" Foreground="DarkMagenta" FontSize="28" FontFamily="Comic Sans MS" Margin="93,52,93,0" Width="337"/>
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="hadithiPanel" Grid.Row="1"/>
         </ScrollViewer>

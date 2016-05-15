@@ -23,17 +23,13 @@ namespace iMasomo
         public MainWindow()
         {
             InitializeComponent();
-            Database.OpenDatabase();
-            
-            
-           
+            Database.OpenDatabase();          
         }
 
 
         private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            Sound.StartBackgroundMusic();
-                      
+            Sound.StartBackgroundMusic();                     
             mainFrame.Navigate(new WelcomePage()); 
             
         }
@@ -41,6 +37,7 @@ namespace iMasomo
         private void mainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Sound.Dispose();
+            Database.CloseDatabase();
             MessageBox.Show("Kwaheri!");
             
         }

@@ -28,7 +28,7 @@
 
         <Frame x:Name="mainFrame" Grid.Column="1" Grid.Row="0" Grid.RowSpan="4"/>
         <StackPanel x:Name="menuPanel" Background="Coral" Grid.Column="0" Grid.Row="0" Grid.RowSpan="4">
-            <TextBlock Text="iMasomo" Foreground="LemonChiffon" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="24" Margin="154,0" Style="{x:Null}" Height="53" />
+            <TextBlock Text="iMasomo" Foreground="LemonChiffon" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="24"  Style="{x:Null}"  />
             <TextBlock x:Name="musicPanel" Text="Add Music Videos" Height="37" PreviewMouseDown="musicPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
             <TextBlock x:Name="addImagesPanel" Text="Add Images" Height="45" PreviewMouseDown="addImagesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
             <TextBlock x:Name="addWordsPanel" Text="Add Words" Height="44" PreviewMouseDown="addWordsPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />

@@ -1,0 +1,53 @@
+﻿<Page x:Class="iMasomo.ZoeziTemplate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="578.358" d:DesignWidth="778.732" Loaded="Page_Loaded" Unloaded="Page_Unloaded"
+	Title="ZoeziTemplate">
+
+    <Grid x:Name="mainGrid">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="Image">
+                <Setter Property="Visibility" Value="Hidden"/>
+                <Setter Property="Stretch" Value="Fill"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <EventSetter Event="TextChanged" Handler="answerTxtBox_TextChanged"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="questionTxtBlock" Text="Andika majina ya nambari yafuatayo:" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Row="0" 
+                   Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" Style="{x:Null}"/>
+        <TextBlock x:Name="qn1TxtBlock" Text="a)." Grid.Row="1" Grid.Column="0" Margin="10,0,0,0"/>
+        <TextBlock x:Name="qn2TxtBlock" Text="b)."  Grid.Row="2" Grid.Column="0" Margin="10,0,0,0"/>
+        <TextBlock x:Name="qn3TxtBlock" Text="c)."  Grid.Row="3" Grid.Column="0" Margin="10,0,0,0"/>
+        <TextBlock x:Name="qn4TxtBlock" Text="d)."  Grid.Row="4" Grid.Column="0" Margin="10,0,0,0"/>
+        <TextBox x:Name="ans1TxtBox" Grid.Row="1" Grid.Column="1" Margin="0,21,0,23"/>
+        <TextBox x:Name="ans2TxtBox" Grid.Row="2" Grid.Column="1" Margin="0,19,0,23"/>
+        <TextBox x:Name="ans3TxtBox" Grid.Row="3" Grid.Column="1" Margin="0,21"/>
+        <TextBox x:Name="ans4TxtBox" Grid.Row="4" Grid.Column="1" Margin="0,23,0,20"/>
+        <Image x:Name="img1" Grid.Row="1" Grid.Column="2" Source="/Images/tick.png" Margin="5,21,10,23"/>
+        <Image x:Name="img2" Grid.Row="2" Grid.Column="2" Source="/Images/tick.png" Margin="5,21,10,23"/>
+        <Image x:Name="img3" Grid.Row="3" Grid.Column="2" Source="/Images/tick.png" Margin="5,21,10,23"/>
+        <Image x:Name="img4" Grid.Row="4" Grid.Column="2" Source="/Images/tick.png" Margin="5,21,10,23"/>
+        <Button x:Name="evaluateBtn" Content="Bonyeza" HorizontalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="2" Margin="276,0,265,0" Width="238" Click="evaluateBtn_Click"/>
+    </Grid>
+</Page>

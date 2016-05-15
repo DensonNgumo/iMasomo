@@ -18,7 +18,7 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Label Content="MAAMKUZI/SALAMU" HorizontalAlignment="Center" FontSize="28" Grid.Row="0" Margin="260,0,261,36"/>
+        <Label Content="MAAMKUZI/SALAMU" HorizontalAlignment="Center" FontSize="28" FontFamily="Comic Sans MS" FontWeight="Black" Grid.Row="0" Margin="243,0,239,36" Width="315"/>
         <Image Grid.Row="1" Stretch="Fill" Source="/Images/salamu2.png"/>
         <TextBlock x:Name="salamuTxt" HorizontalAlignment="Left" Margin="243,117,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Habari yako?" VerticalAlignment="Top" Height="92" Width="223"/>
         <TextBlock x:Name="jibuTxt" HorizontalAlignment="Left" Margin="314,242,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Nzuri sana." VerticalAlignment="Top" Height="108" Width="222"/>

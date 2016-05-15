@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="Karibu" Height="632.089" Width="796.642" Loaded="Page_Loaded" PreviewKeyDown="KeyPressed" >
+	Title="Karibu" Height="635.089" Width="796.642" Loaded="Page_Loaded" PreviewKeyDown="KeyPressed" >
     <Page.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
@@ -16,14 +16,14 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="296*"/>
+            <RowDefinition Height="339*"/>
         </Grid.RowDefinitions>
-        <Label FontSize="28" Content="KARIBU MWANAFUNZI!" Foreground="DarkMagenta" HorizontalAlignment="Center" Grid.Row="0" Margin="246,56,247,200"/>
+        <Label FontSize="28" Content="KARIBU MWANAFUNZI!" Foreground="DarkMagenta" FontWeight="Black" HorizontalAlignment="Center" Grid.Row="0" Margin="218,24,230,231" Width="349"/>
         <Image Grid.Row="0" Source="/Images/placeholder.png" Margin="653,10,28,195" Stretch="Fill"/>
-        <TextBlock Text="iMasomo itakusaidia kuelewa Kiswahili kwa njia ya urahisi na raha." TextWrapping="Wrap" Grid.Row="0" Margin="10,121,5,106" Width="782" />
-        <TextBlock Text="Bonyeza Endelea kusonga mbele "  TextWrapping="Wrap" Grid.Row="0" Margin="10,215,203,267" Width="584" Grid.RowSpan="2"/>
-        <Button x:Name="endeleaBtn"  Height="81" Click="endeleaBtn_Click" Grid.Row="1" Margin="564,118,28,118">
+        <TextBlock Text="iMasomo itakusaidia kuelewa Kiswahili kwa njia ya urahisi na raha." TextWrapping="Wrap" Grid.Row="0" Margin="10,123,5,106" Width="782" />
+        <TextBlock Text="Bonyeza Endelea kusonga mbele "  TextWrapping="Wrap" Grid.Row="0" Margin="10,215,203,38" Width="584"/>
+        <Button x:Name="endeleaBtn" Click="endeleaBtn_Click" Grid.Row="1" Margin="564,121,28,121">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Width="104" VerticalAlignment="Center" FontFamily="Segoe UI" FontSize="22" Style="{x:Null}"><Run Text="ENDELEA"/></TextBlock>
                 <Viewbox Height="38" Width="45">

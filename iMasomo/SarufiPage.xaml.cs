@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
-
+using System.Windows.Media;
 
 
 namespace iMasomo
@@ -60,6 +60,17 @@ namespace iMasomo
             sarufiImages.ModifyPageUI();
             sarufiImages.LoadVitenziImages();
             this.NavigationService.Navigate(sarufiImages);
+        }
+        private void TextBlock_MouseEnter(object sender, MouseEventArgs e)
+        {
+            (sender as TextBlock).Foreground = (Brush)(new BrushConverter().ConvertFrom("#880880"));
+            (sender as TextBlock).Background = Brushes.BurlyWood;
+        }
+
+        private void TextBlock_MouseLeave(object sender, MouseEventArgs e)
+        {
+            (sender as TextBlock).Foreground = (Brush)(new BrushConverter().ConvertFrom("#000000"));
+            (sender as TextBlock).Background = Brushes.Orange;
         }
     }
 }

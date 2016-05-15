@@ -8,9 +8,9 @@
     <Grid>
         <Grid.Resources>
             <Style TargetType="TextBlock" x:Key="textStyle">
-                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Foreground" Value="DarkMagenta"/>
                 <Setter Property="FontSize" Value="28"/>
-                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="FontFamily" Value="Comic Sans MS"/>
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -23,7 +23,7 @@
             <ColumnDefinition Width="567*"/>
             <ColumnDefinition Width="116*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Tarakimu" FontFamily="Segoe UI" FontSize="28" Grid.Row="0" Grid.Column="1" TextAlignment="Center"/>
+        <TextBlock Text="Tarakimu" FontFamily="Comic Sans MS" FontWeight="Black" FontSize="28" Grid.Row="0" Grid.Column="1" TextAlignment="Center"/>
         <TextBlock x:Name="nambariTextBlock" Text="11"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" TextAlignment="Center" Margin="0,45,0,36" Style="{StaticResource textStyle}" Height="50" />
         <Rectangle x:Name="nextArrowRectangle" Grid.Column="2" Grid.Row="1" Margin="31,27,42,22" Fill="{DynamicResource Arrow45}" PreviewMouseDown="nextArrowRectangle_PreviewMouseDown" />
         <Rectangle x:Name="previousArrowRectangle" Grid.Column="0" Grid.Row="1" Margin="35,27,36,22"  Fill="{DynamicResource Arrow45}" RenderTransformOrigin="0.5,0.5" PreviewMouseDown="previousArrowRectangle_PreviewMouseDown" >

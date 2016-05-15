@@ -25,28 +25,16 @@ namespace iMasomo_Teacher
     /// </summary>
     public partial class AddImages : Page
     {
-        private SQLiteConnection sqliteConn;
         string newImagePath;
         string fileName;
+        bool overwrite = false;
+
         public AddImages()
         {
-            try
-            {
-                InitializeComponent();
-                Database.OpenDatabase();
-                SetDatabaseConnection();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
+            InitializeComponent();
+        
         }
 
-        private void SetDatabaseConnection()
-        {
-            sqliteConn = Database.GetDatabaseConnection();
-        }
         private void LoadComboBoxElements()
         {
             ObservableCollection<string> list = new ObservableCollection<string>();
@@ -68,6 +56,7 @@ namespace iMasomo_Teacher
             list.Add("Kike na Kiume");
             list.Add("Vitenzi");
             categoryComboBox.ItemsSource = list;
+            categoryComboBox.SelectedIndex = 0;
         }
         private void browseImagesButton_Click(object sender, RoutedEventArgs e)
         {
@@ -89,6 +78,7 @@ namespace iMasomo_Teacher
                     //Open document
                     fileName = dlg.FileName;
                     imagePathTextBox.Text = fileName;
+                    imagePathTextBox.Text = imagePathTextBox.Text.Replace("'", "''");
                    
                 }
             }
@@ -108,20 +98,86 @@ namespace iMasomo_Teacher
         private void CopyImage()
         {
             string ext = Path.GetExtension(fileName);
+            kiswahiliTagTxtBox.Text = kiswahiliTagTxtBox.Text.Replace("'", "''");//To enable the text with an apostrophe to be added to the database
             newImagePath=Environment.CurrentDirectory + @"\Images\" + kiswahiliTagTxtBox.Text + ext;
-            File.Copy(fileName,newImagePath);
+            File.Copy(fileName,newImagePath,overwrite);
             
         }
 
         private void addImageBtn_Click(object sender, RoutedEventArgs e)
         {
-            CopyImage();
+            if (String.IsNullOrEmpty(kiswahiliTagTxtBox.Text))
+            {
+                MessageBox.Show("No title has been entered", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                kiswahiliTagTxtBox.Focus();
+                return;
+            }
+            if (String.IsNullOrEmpty(imagePathTextBox.Text))
+            {
+                MessageBox.Show("No image has been selected", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                imagePathTextBox.Focus();
+                return;
+            }
+            if(DuplicateExists())
+            {
+                MessageBoxResult result = MessageBox.Show("Image with the same title and in the same category already exists, do you wish to overwrite?", "iMasomoAdmin", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+                if (result == MessageBoxResult.No)
+                {
+                    return;
+                }
+                if (result == MessageBoxResult.Yes)
+                {
+                    overwrite = true;
+                    CopyImage();
+                }
+            }
+            else
+            {
+                CopyImage();
+                SaveImage();
+            }
             
-            string query="insert into image_details(kiswahili_tag,category,path,image_type,utangulizi) values ('"+kiswahiliTagTxtBox.Text.ToLower()+"','"+categoryComboBox.SelectedItem.ToString().ToLower()+"','"+newImagePath+"','user_defined','"+utanguliziTxtBox.Text+"')";
+           
+            
+        }
+
+        private bool DuplicateExists()
+        {
+            MessageBox.Show(categoryComboBox.SelectedItem.ToString());
+            string query = "select * from image_details where kiswahili_tag ='" + kiswahiliTagTxtBox.Text + "' and category='"+categoryComboBox.SelectedItem.ToString().ToLower()+"' ";
+            int count = 0;
             try
             {
-                SQLiteCommand sqliteCommand = new SQLiteCommand(query, sqliteConn);
-                if(sqliteCommand.ExecuteNonQuery()==1)
+                SQLiteCommand sqliteCommand = new SQLiteCommand(query, Database.GetDatabaseConnection());
+                sqliteCommand.ExecuteNonQuery();
+                SQLiteDataReader reader = sqliteCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    count++;
+                }
+
+                if (count > 0)
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return false;
+        }
+
+        private void SaveImage()
+        {
+            try
+            {
+
+                string query = "insert into image_details(kiswahili_tag,category,path,image_type,utangulizi) values ('" + kiswahiliTagTxtBox.Text.ToLower() + "','" + categoryComboBox.SelectedItem.ToString().ToLower() + "','" + newImagePath + "','user_defined','" + utanguliziTxtBox.Text + "')";
+                SQLiteCommand sqliteCommand = new SQLiteCommand(query, Database.GetDatabaseConnection());
+                if (sqliteCommand.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Image added to the system");
                 }
@@ -129,13 +185,13 @@ namespace iMasomo_Teacher
                 {
                     MessageBox.Show("Error:Image not added");
                 }
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
+
     }
 }

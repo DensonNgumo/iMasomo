@@ -23,6 +23,7 @@ namespace iMasomo_Teacher
         private string videoFile;
         private string newPath;
         private string ext;
+        private bool overwrite = false;
         public AddMusicVideos()
         {
             InitializeComponent();
@@ -60,7 +61,7 @@ namespace iMasomo_Teacher
         {
             ext = Path.GetExtension(videoFile);
             newPath = Environment.CurrentDirectory + @"\Media\" + titleTxtBox.Text + ext;
-            File.Copy(videoFile, newPath);
+            File.Copy(videoFile, newPath,overwrite);
 
         }
 
@@ -78,30 +79,81 @@ namespace iMasomo_Teacher
             }
             else
             {
-                CopyVideo();
-                string title = titleTxtBox.Text;
-                string tag=titleTxtBox.Text + ext;
-
-                string query = "insert into video_details (title,video_tag) values('"+title+"','"+tag+"')";
-                try
+                if(DuplicateExists())
                 {
-                    SQLiteCommand sqliteComm = new SQLiteCommand(query, Database.GetDatabaseConnection());
-                    if (sqliteComm.ExecuteNonQuery() == 1)
+                    MessageBoxResult result = MessageBox.Show("Video with the same title already exists, do you wish to overwrite?", "iMasomoAdmin", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+                    if (result == MessageBoxResult.No)
                     {
-                        MessageBox.Show("Video added to system", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Information);
+                        return;
                     }
-                    else
+                    if (result == MessageBoxResult.Yes)
                     {
-                        MessageBox.Show("Video not added to system", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        overwrite = true;
+                        CopyVideo();
                     }
                 }
-                catch(Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    CopyVideo();
+                    SaveVideo();
                 }
+                
                
                 
             }
         }
+
+        private void SaveVideo()
+        {
+            string title = titleTxtBox.Text;
+            string tag = titleTxtBox.Text + ext;
+
+            string query = "insert into video_details (title,video_tag) values('" + title + "','" + tag + "')";
+            try
+            {
+                SQLiteCommand sqliteComm = new SQLiteCommand(query, Database.GetDatabaseConnection());
+                if (sqliteComm.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Video added to system", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Video not added to system", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private bool DuplicateExists()
+        {
+            string query = "select * from video_details where title ='" + titleTxtBox.Text + "' ";
+            int count = 0;
+            try
+            {
+                SQLiteCommand sqliteCommand = new SQLiteCommand(query, Database.GetDatabaseConnection());
+                sqliteCommand.ExecuteNonQuery();
+                SQLiteDataReader reader = sqliteCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    count++;
+                }
+
+                if (count > 0)
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return false;
+        }
+
     }
 }

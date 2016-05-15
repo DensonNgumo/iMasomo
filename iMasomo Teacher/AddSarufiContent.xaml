@@ -31,7 +31,7 @@
 
         </ComboBox>
         <TextBlock  Text="Image:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center"  Height="30" Margin="5,115,0,109" Width="65"/>
-        <ComboBox x:Name="imageComboBox" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,121,0,111" Width="179" Height="22" ItemsSource="{Binding}">
+        <ComboBox x:Name="imageComboBox" SelectedIndex="{Binding ID}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,121,0,111" Width="179" Height="22" ItemsSource="{Binding}" SelectionChanged="imageComboBox_SelectionChanged" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

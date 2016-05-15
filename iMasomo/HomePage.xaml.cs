@@ -44,7 +44,8 @@ namespace iMasomo
 
         private void mazoeziTile_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            MazoeziPage mazoezi = new MazoeziPage();
+            this.NavigationService.Navigate(mazoezi);
         }
 
         private void kusikilizaTile_MouseDown(object sender, MouseButtonEventArgs e)

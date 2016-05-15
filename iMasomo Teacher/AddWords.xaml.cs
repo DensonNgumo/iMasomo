@@ -28,6 +28,7 @@ namespace iMasomo_Teacher
 
         bool recording = false;
         bool useRecording = false;
+        bool overwrite = false;
 
         public AddWords()
         {
@@ -37,31 +38,30 @@ namespace iMasomo_Teacher
 
         public void AddWordsToDatabase()
         {
-                     
-            kiswahiliWord = kiswahiliWordTxtBox.Text.ToLower();
+                                
             alphabet = kiswahiliWord[0]; 
 
-            if(yesRadioBtn.IsChecked==true)
-            {
-                category = "imla";
-            }
-            else
-            {
-                category = "zote";
-            }
             string query = "insert into word_details (word,alphabet,sound_path,category) values('"+kiswahiliWord+"'"
             +",'"+alphabet+"','"+recordingPath+"','"+category+"')";
-            SQLiteCommand sqliteComm = new SQLiteCommand(query, Database.GetDatabaseConnection());
-            if (sqliteComm.ExecuteNonQuery()==1)
+            try
             {
-                MessageBox.Show("The word has been added to the system");
+                SQLiteCommand sqliteComm = new SQLiteCommand(query, Database.GetDatabaseConnection());
+                if (sqliteComm.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("The word has been added to the system");
+                    ClearInput();
+                }
+                else
+                {
+                    MessageBox.Show("Error:Word not added");
+                }
             }
-            else
-            {
-                MessageBox.Show("Error:Word not added");
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
                 
         }
+
+       
             
 
         private void addWordBtn_Click(object sender, RoutedEventArgs e)
@@ -73,14 +73,86 @@ namespace iMasomo_Teacher
                 kiswahiliWordTxtBox.Focus();
                 return;
             }
-            if(useRecording)
+            kiswahiliWord = kiswahiliWordTxtBox.Text.ToLower();
+           
+            //check for duplicates
+            if(DuplicateExists())
+            {
+                MessageBoxResult result = MessageBox.Show("That word is already in the system, do you wish to overwrite?", "iMasomoAdmin", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
+                if (result == MessageBoxResult.No)
+                {
+                    return;
+                }
+                if (result == MessageBoxResult.Yes)
+                {
+                    
+                    if(yesRadioBtn.IsChecked==true)
+                    {
+                        overwrite = true;
+                        Save();
+                    }
+            
+                }
+
+            }
+            else
+            {
+                if (yesRadioBtn.IsChecked == true)
+                {
+                    category = "imla";
+                    Save();
+
+                }
+                else
+                {
+                    category = "kuongea";
+                    recordingPath = "n/a";
+                    AddWordsToDatabase();
+                }
+                
+            }
+            
+        }
+
+        private bool DuplicateExists()
+        {
+            string query = "select * from word_details where word ='" + kiswahiliWord + "' ";
+            int count = 0;
+            try
+            {
+                SQLiteCommand sqliteCommand = new SQLiteCommand(query, Database.GetDatabaseConnection());
+                sqliteCommand.ExecuteNonQuery();
+                SQLiteDataReader reader = sqliteCommand.ExecuteReader();
+                while (reader.Read())
+                {
+                    count++;
+                }
+
+                if (count > 0)
+                {
+                    return true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return false;
+        }
+
+        private void Save()
+        {
+            if (useRecording)
             {
                 AddWordsToDatabase();
             }
             else
             {
+                
                 //input validation
-                if(String.IsNullOrEmpty(recordingPathTxtBox.Text))
+                if (String.IsNullOrEmpty(recordingPathTxtBox.Text))
                 {
                     MessageBox.Show("Please select sound recording again", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                     recordingPathTxtBox.Focus();
@@ -90,9 +162,8 @@ namespace iMasomo_Teacher
                     CopySound();
                     AddWordsToDatabase();
                 }
-                
+
             }
-            
         }
 
         private void CopySound()
@@ -100,7 +171,7 @@ namespace iMasomo_Teacher
             string ext = Path.GetExtension(recordingPathTxtBox.Text);
             kiswahiliWord = kiswahiliWordTxtBox.Text;
             recordingPath =@"\Media\" +kiswahiliWord+ ext;
-            File.Copy(recordingPathTxtBox.Text, Environment.CurrentDirectory+recordingPath);
+            File.Copy(recordingPathTxtBox.Text, Environment.CurrentDirectory+recordingPath,overwrite);
 
         }
 
@@ -150,6 +221,13 @@ namespace iMasomo_Teacher
                 
             }
            
+        }
+
+        void ClearInput()
+        {
+            kiswahiliWordTxtBox.Clear();
+            recordingPathTxtBox.Clear();
+            
         }
         
     }

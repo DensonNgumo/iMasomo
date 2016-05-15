@@ -28,21 +28,13 @@ namespace iMasomo
         private int currImage = 0;
         private int MAXIMAGE = 0;
         private string category="";
-        private SQLiteConnection databaseConn;
         
        
         public MsamiatiImages()
         {
-            InitializeComponent();
-            Database.OpenDatabase();
-            SetDatabaseConnection();
-           
-                             
+            InitializeComponent();                           
         }
-        private void SetDatabaseConnection()
-        {
-            databaseConn = Database.GetDatabaseConnection();
-        }
+ 
 
         public void SetCategory(string cat)
         {
@@ -53,7 +45,7 @@ namespace iMasomo
             try
             {
                  string query = "select count(*) from image_details where category='"+category+"'";
-                SQLiteCommand sqliteComm = new SQLiteCommand(query, databaseConn);
+                SQLiteCommand sqliteComm = new SQLiteCommand(query,Database.GetDatabaseConnection());
                 sqliteComm.ExecuteNonQuery();
                 SQLiteDataReader dr = sqliteComm.ExecuteReader();
                 while (dr.Read())
@@ -90,7 +82,7 @@ namespace iMasomo
             imageDetails = new SortedList<string, string>();
             //load system images
             string query = "select kiswahili_tag,path,image_id,utangulizi from image_details where  category='"+category+"'";
-            SQLiteCommand sqliteComm = new SQLiteCommand(query,databaseConn);
+            SQLiteCommand sqliteComm = new SQLiteCommand(query,Database.GetDatabaseConnection());
             sqliteComm.ExecuteNonQuery();
             SQLiteDataReader dr = sqliteComm.ExecuteReader();
             while (dr.Read())

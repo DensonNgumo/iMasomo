@@ -58,7 +58,7 @@ namespace iMasomo
             using (FileStream fs = new FileStream(fileName, FileMode.Create))
             {
                 myInkCanvas.Strokes.Save(fs);               
-                fs.Close();
+                //fs.Close();
 
             }
         }

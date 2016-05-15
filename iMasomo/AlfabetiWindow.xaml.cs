@@ -18,16 +18,12 @@ namespace iMasomo
     /// </summary>
     public partial class AlfabetiWindow : Window
     {
-        private string alfabeti;
-
-        
-        
+        private string alfabeti;     
 
         public AlfabetiWindow()
         {
             InitializeComponent();
-            //Database.OpenDatabase();
-            
+          
         }
 
         public void SetAlphabet(string a)

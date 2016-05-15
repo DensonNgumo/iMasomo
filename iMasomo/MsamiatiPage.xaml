@@ -101,7 +101,7 @@
             </telerik:Tile>
             <telerik:Tile Tag="Tarakimu" Style="{StaticResource tarakimuStyle}">
                 <Grid>
-                    <Image Source="/Images/tarakimu.jpg" Stretch="Fill"/>
+                    <Image Source="/Images/nambari.jpg" Stretch="Fill"/>
                     <TextBlock Text="Tarakimu"/>
                 </Grid>
             </telerik:Tile>

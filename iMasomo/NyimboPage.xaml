@@ -22,8 +22,8 @@
             <RowDefinition Height="473*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Nyimbo na Shairi!" Foreground="Firebrick" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Margin="0,0,0,90" FontSize="26"/>
-        <Label Content="Chagua wimbo kusikiza" Foreground="Firebrick" Grid.Row="0" Margin="0,64,0,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="26"/>
+        <Label Content="Nyimbo na Shairi!" Foreground="DarkMagenta" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Margin="0,0,0,90" FontSize="26" FontWeight="Black" FontFamily="Comic Sans MS"/>
+        <Label Content="Chagua wimbo kusikiza" Foreground="DarkMagenta" Grid.Row="0" Margin="0,64,0,32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="26" FontFamily="Comic Sans MS"/>
         <ScrollViewer VerticalScrollBarVisibility="Auto" Visibility="Visible" Grid.Row="1" CanContentScroll="True" Margin="34,0,53,163">
             <StackPanel x:Name="contentStackPanel" Height="215">
                 <TextBlock Text="Wimbo Wa Taifa" HorizontalAlignment="Center" Tag="Wimbo_Wa_Taifa.mp4" Height="47"/>

@@ -18,8 +18,9 @@ namespace iMasomo
     /// </summary>
     public partial class Tarakimu : Window
     {
+        private static Random random = new Random();
         int nambari = 0;
-        string[] tarakimuJina = {"nunge","moja","mbili","tatu","nne","tano","sita","saba","nane","tisa" };
+        static string[] tarakimuJina = {"nunge","moja","mbili","tatu","nne","tano","sita","saba","nane","tisa" };
         
         public Tarakimu()
         {
@@ -51,7 +52,7 @@ namespace iMasomo
         }
 
 
-        public string GetNumberName(int no)
+        public static string GetNumberName(int no)
         {
             string nambariJina = "";
             //load name for single digit number
@@ -73,7 +74,14 @@ namespace iMasomo
             
         }
 
-        private string LoadDoubleDigits(int no)
+        public static int GetRandomNumber()
+        {
+            
+            int number = 0;
+            number = random.Next(0, 100);
+            return number;
+        }
+        private static string LoadDoubleDigits(int no)
         {
             int n = no % 10;
             

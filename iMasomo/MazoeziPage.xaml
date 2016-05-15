@@ -1,11 +1,11 @@
-﻿<Page x:Class="iMasomo.SarufiPage"
+﻿<Page x:Class="iMasomo.MazoeziPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
-	Title="SarufiPage">
+	Title="MazoeziPage">
 
     <StackPanel>
         <StackPanel.Resources>
@@ -19,13 +19,14 @@
                 <EventSetter Event="MouseLeave" Handler="TextBlock_MouseLeave"/>
             </Style>
         </StackPanel.Resources>
-        <TextBlock Text="SARUFI" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" FontWeight="Black" FontFamily="Comic Sans MS" Foreground="DarkMagenta"/>
-        <TextBlock x:Name="umoja_wingiTxtBlock" Text="Umoja na Wingi" Style="{StaticResource listStyle}" PreviewMouseDown="umoja_wingiTxtBlock_PreviewMouseDown"/>
-        <TextBlock x:Name="kike_kiumeTxtBlock" Text="Kike na Kiume" Style="{StaticResource listStyle}" PreviewMouseDown="kike_kiumeTxtBlock_PreviewMouseDown"/>
-        <TextBlock x:Name="vitenziTxtBlock" Text="Vitenzi" Style="{StaticResource listStyle}" PreviewMouseDown="vitenziTxtBlock_PreviewMouseDown" />
-        <TextBlock x:Name="vihusishiTxtBlock" Text="Vihusishi" Style="{StaticResource listStyle}" PreviewMouseDown="vihusishiTxtBlock_PreviewMouseDown"/>
-        <TextBlock Text="Kumiliki" Style="{StaticResource listStyle}"/>
+        <TextBlock Text="MAZOEZI" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28" FontFamily="Comic Sans MS" FontWeight="Black" Foreground="DarkMagenta"/>
+        <TextBlock x:Name="zoeziATxtBlock" Text="Zoezi A" Style="{StaticResource listStyle}" PreviewMouseDown="zoeziATxtBlock_PreviewMouseDown"/>
+        <TextBlock x:Name="zoeziBTxtBlock" Text="Zoezi B" Style="{StaticResource listStyle}" PreviewMouseDown="zoeziBTxtBlock_PreviewMouseDown"/>
+        <TextBlock x:Name="zoeziCTxtBlock" Text="Zoezi C" Style="{StaticResource listStyle}" PreviewMouseDown="zoeziCTxtBlock_PreviewMouseDown"/>
+        <TextBlock x:Name="zoeziDiTxtBlock" Text="Zoezi D" Style="{StaticResource listStyle}" PreviewMouseDown="zoeziDiTxtBlock_PreviewMouseDown"/>
         
-        <TextBlock Text="Nyakati" Style="{StaticResource listStyle}"/>
     </StackPanel>
+        
+      
+   
 </Page>

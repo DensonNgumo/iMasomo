@@ -38,8 +38,7 @@ namespace iMasomo
         {
             InitializeComponent();
             Database.OpenDatabase();
-           
-            
+          
         }
 
 
@@ -148,9 +147,13 @@ namespace iMasomo
             //if jibu is correct
             if(jibuTxt.Text.ToLower()==neno)
             {
+                Sound.PlaySound(@"\Media\Hongera.mp3");
                 MessageBox.Show("Hongera!");
-               // LoadNextWord();
-               // PlaySound();
+                jawabuTxtBlock.Visibility = Visibility.Hidden;
+                onyeshaJibuBtn.Visibility = Visibility.Hidden;
+                LoadNextWord();
+                PlaySound();
+             
             }
             else
             {
@@ -164,8 +167,10 @@ namespace iMasomo
         private void endeleaBtn_Click(object sender, RoutedEventArgs e)
         {
             jawabuTxtBlock.Visibility = Visibility.Hidden;
+            onyeshaJibuBtn.Visibility = Visibility.Hidden;
             LoadNextWord();
             PlaySound();
+
         }
 
         private void onyeshaJibuBtn_Click(object sender, RoutedEventArgs e)
@@ -190,8 +195,7 @@ namespace iMasomo
             HidePageElements();
             anzaTxtBlock.Visibility = Visibility.Visible;
             Sound.PauseBackgroundMusic();
-           
-                       
+                      
         }
 
         private void anzaTxtBlock_MouseEnter(object sender, MouseEventArgs e)

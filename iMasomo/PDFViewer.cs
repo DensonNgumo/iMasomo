@@ -25,11 +25,7 @@ namespace iMasomo
             myReader.LoadFile(path);
         }
 
-         ~PDFViewer()
-        {
-
-        }
-
+      
          private void PDFReaderClosing(object sender, FormClosingEventArgs e)
          {
              //dispose of all pdf resources and exit window

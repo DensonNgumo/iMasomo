@@ -47,7 +47,7 @@
         <TextBlock FontFamily="Comic Sans MS" FontSize="22" Grid.Row="0" HorizontalAlignment="Center" Margin="243,41,195,97" Text="Haya ni ma alfabeti ya kiswahili" Width="341"/>
         <ComboBox x:Name="comboBoxAlfabeti" Grid.Row="0" FontWeight="Medium" Margin="0,145,504,0" SelectionChanged="LoadAlfabeti">
             <ComboBoxItem>Alfabeti Zote</ComboBoxItem>
-            <ComboBoxItem x:Name="irabu" Content="Irabu"/>
+            <ComboBoxItem x:Name="irabu" Content="Voweli"/>
             <ComboBoxItem x:Name="konsonanti" Content="Konsonanti"/>
 
         </ComboBox>

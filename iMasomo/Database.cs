@@ -21,7 +21,6 @@ namespace iMasomo
             {
                 sqliteConn = new SQLiteConnection(dbConnectionString);
                 sqliteConn.Open();
-                //MessageBox.Show("Database Opened");
             }
             catch (Exception ex)
             {
