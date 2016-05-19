@@ -26,9 +26,15 @@ namespace iMasomo_Teacher
         public static void RecordSound(string name)
         {
             int waveDeviceCount = WaveIn.DeviceCount;
+            //detect presence of recording hardware
             if (waveDeviceCount > 0)
             {
                 inputDevice = 0;
+            }
+            else
+            {
+                MessageBox.Show("No recording hardware detected", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
             }
 
             wordName = name;
@@ -39,6 +45,7 @@ namespace iMasomo_Teacher
                 waveIn.DeviceNumber = inputDevice;
                 waveIn.WaveFormat = new NAudio.Wave.WaveFormat(44100, WaveIn.GetCapabilities(inputDevice).Channels);
 
+                //in the presence of incoming data, write the data to a buffer
                 waveIn.DataAvailable += waveIn_DataAvailable;
                 waveWriter = new WaveFileWriter(Environment.CurrentDirectory + @"\Media\" + wordName + ".wav", waveIn.WaveFormat);
                 waveIn.StartRecording();
@@ -59,12 +66,14 @@ namespace iMasomo_Teacher
 
         public static void StopRecording()
         {
+            //if there is sound being recorded,stop recording
             if (waveIn != null)
             {
                 waveIn.StopRecording();
                 waveIn.Dispose();
                 waveIn = null;
             }
+            //if there is data in the buffer which is being written to the audio file,dispose of the data
             if (waveWriter != null)
             {
                 waveWriter.Dispose();
@@ -122,14 +131,30 @@ namespace iMasomo_Teacher
                WaveStream pcm = NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(new NAudio.Wave.Mp3FileReader(soundPath));
                stream = new BlockAlignReductionStream(pcm);
            }
-           output = new DirectSoundOut();
-           output.Init(stream);
-           output.Play();
+            if(output!=null)
+            {
+                output.Stop();
+                output = new DirectSoundOut();
+                output.Init(stream);
+                output.Play();
+            }
+           
+           
         }
 
         public static void PlayButtonSound()
         {
             string soundPath = Environment.CurrentDirectory + @"\Media\ButtonSound2.mp3";
+            WaveStream pcm = NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(new NAudio.Wave.Mp3FileReader(soundPath));
+            stream = new BlockAlignReductionStream(pcm);
+            output = new DirectSoundOut();
+            output.Init(stream);
+            output.Play();
+        }
+
+        public static void PlayButton2Sound()
+        {
+            string soundPath = Environment.CurrentDirectory + @"\Media\ButtonSound1.mp3";
             WaveStream pcm = NAudio.Wave.WaveFormatConversionStream.CreatePcmStream(new NAudio.Wave.Mp3FileReader(soundPath));
             stream = new BlockAlignReductionStream(pcm);
             output = new DirectSoundOut();

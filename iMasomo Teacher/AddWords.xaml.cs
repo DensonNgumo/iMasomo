@@ -33,6 +33,7 @@ namespace iMasomo_Teacher
         public AddWords()
         {
             InitializeComponent();
+            noRadioBtn.IsChecked = true;
             
         }
 
@@ -61,7 +62,24 @@ namespace iMasomo_Teacher
                 
         }
 
-       
+       public void UpdateDatabase()
+        {
+            string query = "update word_details set sound_path ='" + recordingPath + "' where word ='" + kiswahiliWord + "' ";
+            try
+            {
+                SQLiteCommand sqliteComm = new SQLiteCommand(query, Database.GetDatabaseConnection());
+                if (sqliteComm.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("The word has been updated");
+                    ClearInput();
+                }
+                else
+                {
+                    MessageBox.Show("Error:Word not added");
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
             
 
         private void addWordBtn_Click(object sender, RoutedEventArgs e)
@@ -88,8 +106,18 @@ namespace iMasomo_Teacher
                     
                     if(yesRadioBtn.IsChecked==true)
                     {
-                        overwrite = true;
-                        Save();
+                        if(useRecording)
+                        {
+                            UpdateDatabase();
+                        }
+                        else
+                        {
+                            overwrite = true;
+                            CopySound();
+                            UpdateDatabase();
+                        }
+
+                        
                     }
             
                 }
@@ -100,6 +128,7 @@ namespace iMasomo_Teacher
                 if (yesRadioBtn.IsChecked == true)
                 {
                     category = "imla";
+                    overwrite = true;
                     Save();
 
                 }
@@ -150,28 +179,28 @@ namespace iMasomo_Teacher
             }
             else
             {
-                
-                //input validation
-                if (String.IsNullOrEmpty(recordingPathTxtBox.Text))
-                {
-                    MessageBox.Show("Please select sound recording again", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                    recordingPathTxtBox.Focus();
-                }
-                else
-                {
-                    CopySound();
-                    AddWordsToDatabase();
-                }
-
+                CopySound();
+                AddWordsToDatabase();
+               
             }
         }
 
         private void CopySound()
         {
-            string ext = Path.GetExtension(recordingPathTxtBox.Text);
-            kiswahiliWord = kiswahiliWordTxtBox.Text;
-            recordingPath =@"\Media\" +kiswahiliWord+ ext;
-            File.Copy(recordingPathTxtBox.Text, Environment.CurrentDirectory+recordingPath,overwrite);
+            //input validation
+            if (String.IsNullOrEmpty(recordingPathTxtBox.Text))
+            {
+                MessageBox.Show("Please select sound recording again", "iMasomoAdmin", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                recordingPathTxtBox.Focus();
+            }
+            else
+            {
+                string ext = Path.GetExtension(recordingPathTxtBox.Text);
+                kiswahiliWord = kiswahiliWordTxtBox.Text;
+                recordingPath = @"\Media\" + kiswahiliWord + ext;
+                File.Copy(recordingPathTxtBox.Text, Environment.CurrentDirectory + recordingPath, overwrite);
+            }
+            
 
         }
 

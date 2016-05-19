@@ -92,6 +92,7 @@ namespace iMasomo_Teacher
                 if (sqliteCommand.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Hadithi added to the system");
+                    ClearText();
                 }
                 else
                 {
@@ -138,6 +139,12 @@ namespace iMasomo_Teacher
             string targetPath=Environment.CurrentDirectory+@"\Resources\"+title+".pdf";
             File.Copy(hadithiFilePath, targetPath,overwrite);
             newPath = @"\Resources\" + title + ".pdf";
+        }
+
+        private void ClearText()
+        {
+            hadithiPath.Clear();
+            titleTxtBox.Clear();
         }
     }
 }

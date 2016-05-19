@@ -35,7 +35,7 @@
 
             </StackPanel>
         </Button>
-        <Image Source="/Images/iMasomoHome.png" Grid.Row="1" Margin="5,0,426,0"/>
+        <Image Source="/Images/iMasomoHome.png" Grid.Row="1" Margin="10,0,426,10"/>
 
     </Grid>
 </Page>

@@ -74,5 +74,11 @@ namespace iMasomo_Teacher
             AddSarufiContent addSarufi = new AddSarufiContent();
             mainFrame.Content = addSarufi;
         }
+
+        private void viewDrawings_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ViewDrawings viewDrawings = new ViewDrawings();
+            mainFrame.Content = viewDrawings;
+        }
     }
 }

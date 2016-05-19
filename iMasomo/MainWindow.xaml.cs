@@ -38,7 +38,7 @@ namespace iMasomo
         {
             Sound.Dispose();
             Database.CloseDatabase();
-            MessageBox.Show("Kwaheri!");
+            MessageBox.Show("Kwaheri!","iMasomo",MessageBoxButton.OK,MessageBoxImage.Information,MessageBoxResult.OK);
             
         }
 

@@ -24,8 +24,6 @@
         <TextBlock x:Name="kike_kiumeTxtBlock" Text="Kike na Kiume" Style="{StaticResource listStyle}" PreviewMouseDown="kike_kiumeTxtBlock_PreviewMouseDown"/>
         <TextBlock x:Name="vitenziTxtBlock" Text="Vitenzi" Style="{StaticResource listStyle}" PreviewMouseDown="vitenziTxtBlock_PreviewMouseDown" />
         <TextBlock x:Name="vihusishiTxtBlock" Text="Vihusishi" Style="{StaticResource listStyle}" PreviewMouseDown="vihusishiTxtBlock_PreviewMouseDown"/>
-        <TextBlock Text="Kumiliki" Style="{StaticResource listStyle}"/>
-        
-        <TextBlock Text="Nyakati" Style="{StaticResource listStyle}"/>
+        <Image Source="/Images/ndani.jpg" Stretch="Uniform" Height="123" Margin="70,50,53,0"/>
     </StackPanel>
 </Page>

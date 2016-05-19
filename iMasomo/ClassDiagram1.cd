@@ -1,50 +1,141 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="iMasomo.Tarakimu">
-    <Position X="0.5" Y="0.5" Width="2.5" />
-    <Members>
-      <Method Name="GetFirstDigit" Hidden="true" />
-      <Method Name="Image_PreviewMouseDown" Hidden="true" />
-      <Method Name="Image_PreviewMouseDown_1" Hidden="true" />
-    </Members>
-    <TypeIdentifier>
-      <HashCode>ABABAAAAAAAAAAAAAAEUIAAAAAIBAQAAAAAAARAAAAA=</HashCode>
-      <FileName>Tarakimu.xaml.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="iMasomo.Database">
-    <Position X="3.5" Y="0.5" Width="2" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAACAEAAAAAAAAAACAAAAAAAQAAAAAAAAA=</HashCode>
-      <FileName>Database.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="iMasomo.MsamiatiImages">
-    <Position X="6.25" Y="0.5" Width="2" />
-    <Members>
-      <Method Name="nextArrowImage_PreviewMouseDown" Hidden="true" />
-      <Method Name="previousArrowImage_PreviewMouseDown" Hidden="true" />
-    </Members>
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAgAAIACAAFAAAAAgAgAAAACBEEAAIIAAAgAA=</HashCode>
-      <FileName>MsamiatiImages.xaml.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="iMasomo.CreationCenter">
-    <Position X="0.75" Y="4" Width="1.75" />
+    <Position X="4.75" Y="0.5" Width="2" />
     <Members>
+      <Method Name="Page_Loaded" Hidden="true" />
+      <Method Name="Page_Unloaded" Hidden="true" />
       <Method Name="RadioButtonClicked" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAgIAAAAAQAAAAAAAAAAAQAAAAABAAAIAAAABAAAA=</HashCode>
+      <HashCode>AAAAgIAAAAAQAAAAAAAAAEAQAQAAABAAAMAAAABAAAA=</HashCode>
       <FileName>CreationCenter.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="iMasomo.SilabiPage">
-    <Position X="3.25" Y="4" Width="2.75" />
+  <Class Name="iMasomo.Database">
+    <Position X="7" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAAAAAAgAAAA=</HashCode>
-      <FileName>SilabiPage.xaml.cs</FileName>
+      <HashCode>AAAAAAAgAAAACAEAAAAAAAAAACAAAACAAQAAAAAAAAA=</HashCode>
+      <FileName>Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo.HadithiPage">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="hadithiTitle_MouseDown" Hidden="true" />
+      <Method Name="Page_Loaded" Hidden="true" />
+      <Method Name="Page_Unloaded" Hidden="true" />
+      <Method Name="TextBlock_MouseEnter" Hidden="true" />
+      <Method Name="TextBlock_MouseLeave" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAACAAAAAAAAEAAIQAAAAAAAAAAAACEAAA=</HashCode>
+      <FileName>HadithiPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo.ImlaPage">
+    <Position X="4.5" Y="3.75" Width="2" />
+    <Members>
+      <Method Name="anzaTxtBlock_MouseDown" Hidden="true" />
+      <Method Name="anzaTxtBlock_MouseEnter" Hidden="true" />
+      <Method Name="endeleaBtn_Click" Hidden="true" />
+      <Method Name="Image_PreviewMouseDown" Hidden="true" />
+      <Method Name="imlaPage_Loaded" Hidden="true" />
+      <Method Name="jibuBtn_Click" Hidden="true" />
+      <Method Name="jibuTxt_TextChanged" Hidden="true" />
+      <Method Name="onyeshaJibuBtn_Click" Hidden="true" />
+      <Method Name="Page_Unloaded" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQAAAAQagAAIRABABAACAEgEAAAACAIAABAAASAAABA=</HashCode>
+      <FileName>ImlaPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo.LoopStream">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAQAAAAAAAAgBAAAAABgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoopStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo.MediaPlayer">
+    <Position X="9.25" Y="3" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QhQAAAAAAAgAAggACAACBAgAEAEAAEBAAAAIAAAIAAQ=</HashCode>
+      <FileName>MediaPlayer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo.MsamiatiImages">
+    <Position X="6.75" Y="5.5" Width="2.25" />
+    <Members>
+      <Method Name="MsamiatiImages" Hidden="true" />
+      <Method Name="nextArrowImage_PreviewMouseDown" Hidden="true" />
+      <Method Name="previousArrowImage_PreviewMouseDown" Hidden="true" />
+      <Method Name="Window_Loaded" Hidden="true" />
+      <Method Name="Window_PreviewKeyDown" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIACAAFIAAAAgAgAAAACFEEAAIAAAAgAQ=</HashCode>
+      <FileName>MsamiatiImages.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo.PDFViewer">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACCAAAAAAAACAAAACAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>PDFViewer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo.SarufiImages">
+    <Position X="9.25" Y="5.5" Width="2.5" />
+    <Members>
+      <Method Name="leftArrow_PreviewMouseDown" Hidden="true" />
+      <Method Name="Page_Loaded" Hidden="true" />
+      <Method Name="Page_Unloaded" Hidden="true" />
+      <Method Name="rightArrow_PreviewMouseDown" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAIEABMEiAAACAACEAAASAAgABBAAAIAAAgAAQ=</HashCode>
+      <FileName>SarufiImages.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo.Tarakimu">
+    <Position X="9.25" Y="0.5" Width="2" />
+    <Members>
+      <Method Name="nextArrowRectangle_PreviewMouseDown" Hidden="true" />
+      <Method Name="previousArrowRectangle_PreviewMouseDown" Hidden="true" />
+      <Method Name="Window_PreviewKeyDown" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAQAAAAIEEIAAEAAJAAQAAAAQAAAAAAAA=</HashCode>
+      <FileName>Tarakimu.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo.TicTacToe">
+    <Position X="7" Y="3" Width="2" />
+    <Members>
+      <Method Name="buttonClick" Hidden="true" />
+      <Method Name="exitMenuItem_Click" Hidden="true" />
+      <Method Name="newGameMenuItem_Click" Hidden="true" />
+      <Method Name="Window_Closing" Hidden="true" />
+      <Method Name="Window_Loaded" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAMAAFAAAAiAQABAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>TicTacToe.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="iMasomo_Teacher.Sound">
+    <Position X="0.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAkAACAEgAACIAAAAEgACAEAAAAACAgCgAAAAAA=</HashCode>
+      <FileName>Sound.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

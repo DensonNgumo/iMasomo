@@ -37,8 +37,7 @@ namespace iMasomo
         public ImlaPage()
         {
             InitializeComponent();
-            Database.OpenDatabase();
-          
+      
         }
 
 
@@ -88,6 +87,7 @@ namespace iMasomo
                 wordInfo.Add(dr.GetString(0), dr.GetString(1));
 
             }
+            wordInfo.Reverse();
             path = wordInfo.Values[count];
             neno = wordInfo.Keys[count];
         }

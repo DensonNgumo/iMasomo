@@ -32,7 +32,7 @@ namespace iMasomo
 
         private void buttonClick(object sender, RoutedEventArgs e)
         {
-            Sound.PlayButtonSound();
+            Sound.PlayButton2Sound();
             Button button=(Button)sender;
             if(turn)
                 button.Content="X";
@@ -80,7 +80,9 @@ namespace iMasomo
                     winner = "O";
                 else
                     winner = "X";
-                MessageBox.Show(winner + " ameshinda!");
+                Sound.PlaySound(@"\Media\Hongera.mp3");
+                MessageBox.Show(winner + " ameshinda!","iMasomo");
+                
             }
             else
             {

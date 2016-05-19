@@ -143,7 +143,7 @@ namespace iMasomo_Teacher
 
         private bool DuplicateExists()
         {
-            MessageBox.Show(categoryComboBox.SelectedItem.ToString());
+            
             string query = "select * from image_details where kiswahili_tag ='" + kiswahiliTagTxtBox.Text + "' and category='"+categoryComboBox.SelectedItem.ToString().ToLower()+"' ";
             int count = 0;
             try
@@ -179,11 +179,12 @@ namespace iMasomo_Teacher
                 SQLiteCommand sqliteCommand = new SQLiteCommand(query, Database.GetDatabaseConnection());
                 if (sqliteCommand.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("Image added to the system");
+                    MessageBox.Show("Image added to the system","iMasomoAdmin",MessageBoxButton.OK,MessageBoxImage.Information);
+                    ClearText();
                 }
                 else
                 {
-                    MessageBox.Show("Error:Image not added");
+                    MessageBox.Show("Error:Image not added","iMasomoAdmin",MessageBoxButton.OK,MessageBoxImage.Error);
                 }
 
             }
@@ -191,6 +192,13 @@ namespace iMasomo_Teacher
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ClearText()
+        {
+            kiswahiliTagTxtBox.Clear();
+            imagePathTextBox.Clear();
+            categoryComboBox.SelectedIndex = -1;
         }
 
     }

@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d"
-	Title="Maamkuzi" Height="632.089" Width="796.642" Loaded="Page_Loaded">
+	Title="Maamkuzi" Height="632.089" Width="796.642" Loaded="Page_Loaded" Unloaded="Page_Unloaded">
 
     <Grid>
         <Grid.Resources>

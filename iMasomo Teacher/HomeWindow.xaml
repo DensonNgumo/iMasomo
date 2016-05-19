@@ -26,14 +26,18 @@
             <ColumnDefinition Width="513*"/>
         </Grid.ColumnDefinitions>
 
-        <Frame x:Name="mainFrame" Grid.Column="1" Grid.Row="0" Grid.RowSpan="4"/>
+        <Frame x:Name="mainFrame" Grid.Column="1" Grid.Row="0" Grid.RowSpan="4" Background="#FFE2D4D6"/>
         <StackPanel x:Name="menuPanel" Background="Coral" Grid.Column="0" Grid.Row="0" Grid.RowSpan="4">
             <TextBlock Text="iMasomo" Foreground="LemonChiffon" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="24"  Style="{x:Null}"  />
             <TextBlock x:Name="musicPanel" Text="Add Music Videos" Height="37" PreviewMouseDown="musicPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
             <TextBlock x:Name="addImagesPanel" Text="Add Images" Height="45" PreviewMouseDown="addImagesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406"/>
             <TextBlock x:Name="addWordsPanel" Text="Add Words" Height="44" PreviewMouseDown="addWordsPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
             <TextBlock x:Name="addStoriesPanel" Text="Add Stories" Height="44" PreviewMouseDown="addStoriesPanel_PreviewMouseDown" Margin="0,0,0,0" Width="406" />
-            <TextBlock x:Name="addSarufiContentPanel" Text="Add Sarufi Content" Height="48" PreviewMouseDown="addSarufiContentPanel_PreviewMouseDown"  Margin="0,0,0,0" Width="406" />
+            <TextBlock x:Name="addSarufiContentPanel" Text="Add Sarufi Content" Height="41" PreviewMouseDown="addSarufiContentPanel_PreviewMouseDown"  Margin="0,0,0,0" Width="406" />
+            <TextBlock x:Name="viewDrawingsPanel" Text="View Drawings" Height="44" PreviewMouseDown="viewDrawings_PreviewMouseDown"  Margin="0,0,0,0" Width="406" />
+            <Image Height="238" Source="/Resources/banner.png"/>
+
+
         </StackPanel>
 
     </Grid>

@@ -64,7 +64,8 @@ namespace iMasomo
 
             else if (no >= 10 && no <= 100)
             {
-                nambariJina = LoadDoubleDigits(no);//load name for double digit number
+                //load name for double digit number
+                nambariJina = LoadDoubleDigits(no);
                 return nambariJina;
             }
             else

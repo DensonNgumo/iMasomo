@@ -5,7 +5,7 @@
                 x:Name="mainWindow" x:Class="iMasomo.MainWindow" 
                 Title="iMasomo" Height="632.089" Width="796.642" Loaded="mainWindow_Loaded" WindowStartupLocation="CenterScreen"
                 Cursor="Arrow" BorderBrush="#FF026E15" Background="Orange" 
-                Icon="/iMasomo;component/Images/logo2.png" Closing="mainWindow_Closing" >
+                Icon="/iMasomo;component/Images/logo2.png" Closing="mainWindow_Closing" ResizeMode="CanMinimize" >
 
     <DockPanel LastChildFill="True">
         <Frame x:Name="mainFrame"/>

@@ -310,10 +310,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.manifest" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Database\iMasomoDB.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="ClassDiagram1.cd" />
     <None Include="iMasomo_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -356,6 +356,63 @@
     <Resource Include="Images\speaker.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Media\chSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\dSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\fSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\gSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\hSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\jSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\kSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\lSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\mSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\nSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\pSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\rSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\sSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\tSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\vSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\wSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\ySilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Media\zSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Michoro\myImage.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Images\iMasomoHome.png" />
     <Resource Include="Images\exit.png" />
     <Resource Include="Images\pause.png" />
@@ -370,6 +427,14 @@
     <Resource Include="Images\nambari.jpg" />
     <Resource Include="Images\cross.png" />
     <Resource Include="Images\tick.png" />
+    <Resource Include="Images\nyota.png" />
+    <Resource Include="Images\mstari.png" />
+    <Resource Include="Images\uhuru.jpg" />
+    <Resource Include="Images\mazoezi.gif" />
+    <Resource Include="Images\ndani.jpg" />
+    <Content Include="Media\bSilabi.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Media\Hongera.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -392,12 +457,9 @@
     <Resource Include="Images\ubao.png" />
     <Resource Include="Images\peremende.jpg" />
     <Resource Include="Images\sabuni.jpg" />
-    <Resource Include="Images\matatu.jpg" />
     <Resource Include="Images\mgomo.jpg" />
     <Resource Include="Images\uchaguzi.jpg" />
     <Resource Include="Images\duara.png" />
-    <Resource Include="Images\mstari.jpg" />
-    <Resource Include="Images\nyota.jpg" />
     <Resource Include="Images\shati.jpg" />
     <Resource Include="Images\sketi.jpg" />
     <Resource Include="Images\soksi.jpg" />
@@ -503,6 +565,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

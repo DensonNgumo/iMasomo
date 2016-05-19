@@ -11,12 +11,12 @@
         <ToolBar x:Name="inkToolbar" Height="60" DockPanel.Dock="Top">
             <Border Margin="0,2,0,3" Width="300">
                 <Grid>
-                    <RadioButton x:Name="drawRadio" Content="Draw Mode!" GroupName="InkMode" Margin="0,0,200,0" Click="RadioButtonClicked"/>
-                    <RadioButton x:Name="eraseRadio" Content="Erase Mode!" GroupName="InkMode" Margin="100,0" Click="RadioButtonClicked" />
-                    <RadioButton x:Name="selectRadio" Content="Select Mode!" GroupName="InkMode" Margin="200,0,0,0" Click="RadioButtonClicked"/>
+                    <RadioButton x:Name="drawRadio" Content="Kuchora!" GroupName="InkMode" Margin="0,0,200,0" Click="RadioButtonClicked"/>
+                    <RadioButton x:Name="eraseRadio" Content="Kufuta!" GroupName="InkMode" Margin="100,0" Click="RadioButtonClicked" />
+                    <RadioButton x:Name="selectRadio" Content="Kuchagua!" GroupName="InkMode" Margin="200,0,0,0" Click="RadioButtonClicked"/>
                 </Grid>
             </Border>
-            <Separator/>
+            <Separator Margin="0,2"/>
             <ComboBox x:Name="comboColors" Width="164" Margin="0,18,0,17"  SelectionChanged="ColorChanged">
                 <StackPanel Orientation="Horizontal" Tag="Red">
                     <Ellipse Fill="Red" Width="50" Height="50"></Ellipse>
@@ -36,9 +36,9 @@
                 </StackPanel>
 
             </ComboBox>
-            <Button x:Name="btnSave" Content="Save Drawing" Height="55" VerticalAlignment="Top" Width="85" Click="SaveData" />
-            <Button x:Name="btnLoad" Content="Load Drawing" Height="55" VerticalAlignment="Top" Width="99" Click="LoadData"/>
-            <Button x:Name="btnClear" Content="Clear" Height="55" VerticalAlignment="Top" Width="75" Click="ClearData" />
+            <Button x:Name="btnSave" Content="Weka mchoro" Height="55" VerticalAlignment="Top" Width="85" Click="SaveData" />
+            <Button x:Name="btnLoad" Content="Ona mchoro wa mwisho" Height="55" VerticalAlignment="Top" Width="138" Click="LoadData"/>
+            <Button x:Name="btnClear" Content="Futa yote" Height="55" VerticalAlignment="Top" Width="63" Click="ClearData" />
 
         </ToolBar>
         <InkCanvas x:Name="myInkCanvas" Background="Aqua"/>

@@ -17,8 +17,9 @@ namespace iMasomo
     /// </summary>
     public partial class SilabiPage : Page
     {
-        string[] irabu = { "a", "e", "i", "o", "u" };
+        string[] irabu = { "A", "E", "I", "O", "U" };
         string[] silabi = new string[5];
+        string soundPath;
         public SilabiPage()
         {
             InitializeComponent();
@@ -30,13 +31,15 @@ namespace iMasomo
             string alfabeti = (alfabetiComboBox.SelectedItem as ComboBoxItem).Content.ToString();
             for(int i=0;i<5;i++)
             {
-                silabi[i] = alfabeti + irabu[i];
+                silabi[i] = alfabeti.ToUpper() + irabu[i];
             }
             for(int i=0;i<5;i++)
             {
                 silabiTextBlock.Text += silabi[i] + ",";
                 silabiTextBlock.Margin = new Thickness(0, 25, 0, 0);
             }
+            soundPath = string.Format("/Media/{0}.mp3", alfabeti+"Silabi");
+            Sound.PlaySound(soundPath);
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

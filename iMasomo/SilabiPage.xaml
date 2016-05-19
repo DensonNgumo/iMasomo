@@ -23,8 +23,10 @@
             <ColumnDefinition Width="196*"/>
             <ColumnDefinition Width="213*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="Silabi Zenye Sauti Mbili" HorizontalAlignment="Center" FontSize="26" FontFamily="Comic Sans MS" Grid.Row="0" Grid.ColumnSpan="2" Margin="51,0,0,0"/>
-        <TextBlock Text="Chagua alfabeti: " HorizontalAlignment="Right" FontFamily="Comic Sans MS" FontSize="22" Grid.Row="1" Grid.Column="0"/>
+        <Label Content="Silabi Zenye Sauti Mbili" HorizontalAlignment="Center" FontSize="26" FontFamily="Comic Sans MS"
+               Grid.Row="0" Grid.ColumnSpan="2" Margin="51,0,0,0" Foreground="DarkMagenta"/>
+        <TextBlock Text="Chagua alfabeti: " HorizontalAlignment="Right" FontFamily="Comic Sans MS" FontSize="22" Grid.Row="1" 
+                   Grid.Column="0" Foreground="DarkMagenta"/>
         <ComboBox x:Name="alfabetiComboBox" Grid.Row="1" Grid.Column="1" Margin="0,0,0,48" SelectionChanged="alfabetiComboBox_SelectionChanged">
             <ComboBoxItem Content="b"/>
             <ComboBoxItem Content="ch"/>
@@ -51,7 +53,7 @@
             <ComboBoxItem Content="y"/>
             <ComboBoxItem Content="z"/>
         </ComboBox>
-        <TextBlock Grid.Row="2" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" FontSize="26" FontWeight="Bold" x:Name="silabiTextBlock" Margin="0,0,0,260" Text="{Binding ErrorMsg,NotifyOnTargetUpdated=True}">
+        <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26" FontWeight="Bold" x:Name="silabiTextBlock" Margin="238,0,157,260" Text="{Binding ErrorMsg,NotifyOnTargetUpdated=True}" Width="330" Grid.ColumnSpan="2">
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="Binding.TargetUpdated">
                     <BeginStoryboard>

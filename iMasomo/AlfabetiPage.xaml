@@ -43,11 +43,11 @@
         </Grid.RowDefinitions>
 
 
-        <TextBlock FontFamily="Segoe UI" FontSize="28" Grid.Row="0" Margin="345,0,299,142" HorizontalAlignment="Center" Text="ALFABETI" Width="135"/>
-        <TextBlock FontFamily="Comic Sans MS" FontSize="22" Grid.Row="0" HorizontalAlignment="Center" Margin="243,41,195,97" Text="Haya ni ma alfabeti ya kiswahili" Width="341"/>
+        <TextBlock FontFamily="Comic Sans MS" FontSize="28" Grid.Row="0" Margin="345,0,299,142" HorizontalAlignment="Center" Text="ALFABETI" Foreground="DarkMagenta" />
+        <TextBlock FontFamily="Comic Sans MS" FontSize="22" Grid.Row="0" HorizontalAlignment="Center" Margin="243,41,195,97" Text="Haya ni ma alfabeti ya kiswahili" Width="341" Foreground="DarkMagenta"/>
         <ComboBox x:Name="comboBoxAlfabeti" Grid.Row="0" FontWeight="Medium" Margin="0,145,504,0" SelectionChanged="LoadAlfabeti">
             <ComboBoxItem>Alfabeti Zote</ComboBoxItem>
-            <ComboBoxItem x:Name="irabu" Content="Voweli"/>
+            <ComboBoxItem x:Name="irabu" Content="Vokali"/>
             <ComboBoxItem x:Name="konsonanti" Content="Konsonanti"/>
 
         </ComboBox>

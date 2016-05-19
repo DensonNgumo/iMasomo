@@ -73,6 +73,9 @@
     <Compile Include="AddMusicVideos.xaml.cs">
       <DependentUpon>AddMusicVideos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewDrawings.xaml.cs">
+      <DependentUpon>ViewDrawings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddSarufiContent.xaml.cs">
       <DependentUpon>AddSarufiContent.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
     <Page Include="AddMusicVideos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewDrawings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="AddSarufiContent.xaml">
       <SubType>Designer</SubType>
@@ -160,6 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="iMasomoAdmin.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\banner.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

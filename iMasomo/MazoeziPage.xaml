@@ -24,7 +24,7 @@
         <TextBlock x:Name="zoeziBTxtBlock" Text="Zoezi B" Style="{StaticResource listStyle}" PreviewMouseDown="zoeziBTxtBlock_PreviewMouseDown"/>
         <TextBlock x:Name="zoeziCTxtBlock" Text="Zoezi C" Style="{StaticResource listStyle}" PreviewMouseDown="zoeziCTxtBlock_PreviewMouseDown"/>
         <TextBlock x:Name="zoeziDiTxtBlock" Text="Zoezi D" Style="{StaticResource listStyle}" PreviewMouseDown="zoeziDiTxtBlock_PreviewMouseDown"/>
-        
+        <Image Source="/Images/mazoezi.gif" Stretch="Uniform" Height="117" Margin="10,20,0,0"/>
     </StackPanel>
         
       
