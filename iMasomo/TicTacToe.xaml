@@ -38,7 +38,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Help">
-                <MenuItem x:Name="aboutMenuItem" Header="About"/>
+                <MenuItem x:Name="aboutMenuItem" Header="About" Click="aboutMenuItem_Click"/>
             </MenuItem>
         </Menu>
         <Button x:Name="A1" Grid.Column="0" Grid.Row="1"/>

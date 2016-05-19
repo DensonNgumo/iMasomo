@@ -144,6 +144,12 @@ namespace iMasomo
         {
             Sound.PlayBackgroundMusic();
         }
+
+        private void aboutMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow about = new AboutWindow();
+            about.Show();
+        }
         
     }
 }

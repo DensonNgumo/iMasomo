@@ -164,6 +164,9 @@
       <DependentUpon>SilabiPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sound.cs" />
+    <Compile Include="Splash.xaml.cs">
+      <DependentUpon>Splash.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tarakimu.xaml.cs">
       <DependentUpon>Tarakimu.xaml</DependentUpon>
     </Compile>
@@ -264,6 +267,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Splash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tarakimu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -356,6 +363,7 @@
     <Resource Include="Images\speaker.png" />
   </ItemGroup>
   <ItemGroup>
+    <SplashScreen Include="Banner.png" />
     <Content Include="Media\chSilabi.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

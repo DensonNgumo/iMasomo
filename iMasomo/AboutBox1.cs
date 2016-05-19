@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace iMasomo
 {
-    partial class AboutBox1 : Form
+    partial class AboutWindow : Form
     {
-        public AboutBox1()
+        public AboutWindow()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
@@ -101,5 +101,10 @@ namespace iMasomo
             }
         }
         #endregion
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

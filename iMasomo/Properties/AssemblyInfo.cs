@@ -8,7 +8,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("iMasomo")]
-[assembly: AssemblyDescription("Kiswahili learning tool for class one students")]
+[assembly: AssemblyDescription("Chombo cha kufunza wanafunzi wa darasa la kwanza Kiswahili.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DensonNgumo")]
 [assembly: AssemblyProduct("iMasomo")]

@@ -1,0 +1,11 @@
+﻿<Window x:Class="iMasomo.Splash"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Splash" Height="300" Width="300" WindowStartupLocation="CenterScreen" BorderBrush="Transparent" WindowStyle="None">
+    <Window.Background>
+        <ImageBrush ImageSource="/Banner.png"/>
+    </Window.Background>
+    <Grid>
+        
+    </Grid>
+</Window>
