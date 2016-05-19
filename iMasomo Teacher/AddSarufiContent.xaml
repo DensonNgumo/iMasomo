@@ -25,13 +25,10 @@
         </Grid.ColumnDefinitions>
         <TextBlock Text="Add Sarufi Content" FontSize="28" HorizontalAlignment="Center" Grid.Row="0" Style="{x:Null}" Grid.Column="1" />
         <TextBlock Text="Category:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="28" Margin="5,26,0,26" Width="93"/>
-        <ComboBox x:Name="categoryComboBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="10,31,400,27" Height="22">
-            <ComboBoxItem Content="Vitenzi"/>
-            <ComboBoxItem Content="Vihusishi"/>
-
-        </ComboBox>
+        <ComboBox x:Name="categoryComboBox" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"
+                  Margin="10,31,400,27" Height="22" SelectionChanged="categoryComboBox_SelectionChanged"/>
         <TextBlock  Text="Image:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left"  VerticalAlignment="Center"  Height="30" Margin="5,115,0,109" Width="65"/>
-        <ComboBox x:Name="imageComboBox" SelectedIndex="{Binding ID}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,121,0,111" Width="179" Height="22" ItemsSource="{Binding}" SelectionChanged="imageComboBox_SelectionChanged" >
+        <ComboBox x:Name="imageComboBox" SelectedIndex="{Binding ID,Mode=OneWay}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,121,0,111" Width="187" Height="22" ItemsSource="{Binding}" SelectionChanged="imageComboBox_SelectionChanged" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -75,9 +72,9 @@
                 </Style>
             </ComboBox.ItemContainerStyle>
         </ComboBox>
-        <Image x:Name="image" Source="/Resources/iMasomoAdmin.png" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Stretch="Uniform" Width="127"/>
+        <Image x:Name="image" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Stretch="Uniform" Width="415"/>
         <TextBlock x:Name="maelezoTextBlock" Text="Maelezo:" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Margin="5,5,0,45" Width="87" />
-        <TextBox x:Name="maelezoTxtBox" Grid.Row="3" Grid.Column="1" Margin="10,0,5,85"/>
-        <Button Content="Enter" Grid.Row="3" Grid.Column="1" Margin="250,85,200,5" />
+        <TextBox x:Name="maelezoTxtBox" Grid.Row="3" Grid.Column="1" Margin="10,0,5,73" TextChanged="maelezoTxtBox_TextChanged"/>
+        <Button x:Name="editBtn" Content="OK" Grid.Row="3" Grid.Column="1" Margin="250,72,200,5" Click="editBtn_Click" />
     </Grid>
 </Page>

@@ -53,17 +53,17 @@
             <ComboBoxItem Content="y"/>
             <ComboBoxItem Content="z"/>
         </ComboBox>
-        <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26" FontWeight="Bold" x:Name="silabiTextBlock" Margin="238,0,157,260" Text="{Binding ErrorMsg,NotifyOnTargetUpdated=True}" Width="330" Grid.ColumnSpan="2">
+        <TextBlock Grid.Row="2" HorizontalAlignment="Center" FontFamily="Comic Sans MS" FontSize="26" Text="{Binding NotifyOnTargetUpdated=True}" FontWeight="Bold" x:Name="silabiTextBlock" Margin="238,0,157,260"   Width="330" Grid.ColumnSpan="2">
             <TextBlock.Triggers>
                 <EventTrigger RoutedEvent="Binding.TargetUpdated">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation BeginTime="0:0:0" Duration="0:0:10" From="0.0" Storyboard.TargetProperty="Opacity" To="1.0"/>
+                            <DoubleAnimation BeginTime="0:0:0" Duration="0:0:3" Storyboard.TargetProperty="Opacity" From="0.0" To="1.0"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
             </TextBlock.Triggers>
         </TextBlock>
-        <Image Grid.Row="2" Grid.Column="1" Source="/Images/school_girl.jpg" Stretch="Fill" Margin="136,124,0,0"/>
+        <Image Grid.Row="2" Grid.Column="1" Source="/Images/school_girl.jpg" Stretch="Fill" Margin="136,124,0,0"/> 
     </Grid>
 </Page>

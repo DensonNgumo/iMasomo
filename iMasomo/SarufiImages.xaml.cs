@@ -320,6 +320,7 @@ namespace iMasomo
             image1.SetValue(Grid.ColumnSpanProperty, 3);
             image1.Stretch = Stretch.Uniform;
             leftTxtBlock.SetValue(Grid.ColumnSpanProperty, 3);
+            leftTxtBlock.TextWrapping = TextWrapping.Wrap;
             titleTxtBlock.Margin = new Thickness(180, 0, 191, 0);
         }
 
