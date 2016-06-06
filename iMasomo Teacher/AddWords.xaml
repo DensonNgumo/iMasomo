@@ -8,6 +8,11 @@
 
     <Grid>
         <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="FontWeight" Value="Black"/>
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="FontSize" Value="23"/>
+            </Style>
             <Style TargetType="TextBlock">
                 <Setter Property="FontFamily" Value="Segoe UI"/>
                 <Setter Property="FontSize" Value="24"/>

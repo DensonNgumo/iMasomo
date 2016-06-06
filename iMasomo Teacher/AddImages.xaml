@@ -7,6 +7,13 @@
 	Title="AddImages" Height="375.582" Width="610.448" Loaded="Page_Loaded">
 
     <Grid Margin="0,0,0,10">
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="FontWeight" Value="Black"/>
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="FontSize" Value="23"/>
+            </Style>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="62*"/>
             <RowDefinition Height="63*"/>

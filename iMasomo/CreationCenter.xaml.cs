@@ -22,7 +22,7 @@ namespace iMasomo
     /// </summary>
     public partial class CreationCenter : Page
     {
-        string fileName = Environment.CurrentDirectory + @"\Resources\myImage.bin";
+        string fileName = Environment.CurrentDirectory + @"\myImage.bin";
         private static Random random = new Random();
         public CreationCenter()
         {
@@ -102,8 +102,8 @@ namespace iMasomo
 
         private string GetRandomFileName()
         {
-            string[] alphanumeric = { "a", "b","c","d","e","f","g","h","i","j","k","l" +
-                                 "m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1"+
+            string[] alphanumeric = { "a", "b","c","d","e","f","g","h","i","j","k","l",
+                                 "m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1",
                                     "2","3","4","5","6","7","8","9"};
             string randomString="Mchoro_";
             for(int i=0;i<5;i++)

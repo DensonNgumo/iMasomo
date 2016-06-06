@@ -7,6 +7,13 @@
 	Title="AddStories" Height="512.686" Width="804.104">
 
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="TextBox">
+                <Setter Property="FontWeight" Value="Black"/>
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="FontSize" Value="23"/>
+            </Style>
+        </Grid.Resources>
         <TextBlock Text="ADD HADITHI" HorizontalAlignment="Center" FontSize="28" Margin="316,43,316,399"/>
         <TextBlock Text="Enter the Hadithi Title:" VerticalAlignment="Center" Margin="0,140,601,323" Height="50" FontSize="20"/>
         <TextBox x:Name="titleTxtBox" Margin="208,140,10,323"/>

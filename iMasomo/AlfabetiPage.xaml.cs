@@ -58,5 +58,55 @@ namespace iMasomo
             SilabiPage silabiPage = new SilabiPage();
             this.NavigationService.Navigate(silabiPage);
         }
+
+        private void lblB_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\b.mp3");
+        }
+
+        private void lblCh_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\ch.mp3");
+        }
+
+        private void lblDh_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\dh.mp3");
+        }
+
+        private void lblE_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\e.mp3");
+        }
+
+        private void lblGh_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\gh.mp3");
+        }
+
+        private void lblH_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\h.mp3");
+        }
+
+        private void lblJ_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\j.mp3");
+        }
+
+        private void lblP_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\p.mp3");
+        }
+
+        private void lblU_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\u.mp3");
+        }
+
+        private void lblA_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Sound.PlaySound(@"\Media\a.mp3");
+        }
     }
 }

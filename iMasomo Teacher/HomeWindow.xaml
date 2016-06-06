@@ -5,6 +5,7 @@
                 Title="iMasomo Admin" Height="600" Width="1150" x:Name="homeWindow" 
         WindowStartupLocation="CenterOwner" Topmost="False"  Icon="pack://application:,,,/Resources/iMasomoAdmin.png"
         Closing="homeWindow_Closing">
+   
     <Grid x:Name="mainGrid">
         <Grid.Resources>
             <Style TargetType="TextBlock">

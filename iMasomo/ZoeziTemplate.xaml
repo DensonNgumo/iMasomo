@@ -19,6 +19,8 @@
             </Style>
             <Style TargetType="TextBox">
                 <EventSetter Event="TextChanged" Handler="answerTxtBox_TextChanged"/>
+                <Setter Property="FontWeight" Value="Black"/>
+                <Setter Property="FontSize" Value="23"/>
             </Style>
         </Grid.Resources>
         <Grid.RowDefinitions>
@@ -34,8 +36,8 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="0.2*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="questionTxtBlock" Text="Andika majina ya nambari yafuatayo:" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Row="0" 
-                   Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" Style="{x:Null}"/>
+        <TextBlock x:Name="questionTxtBlock" Text="Andika majina ya nambari yafuatayo:" FontFamily="Comic Sans MS" VerticalAlignment="Center" TextWrapping="Wrap" Grid.Row="0" 
+                   Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="24" Style="{x:Null}" Foreground="DarkMagenta"/>
         <TextBlock x:Name="qn1TxtBlock" Text="a)." Grid.Row="1" Grid.Column="0" Margin="10,0,0,0"/>
         <TextBlock x:Name="qn2TxtBlock" Text="b)."  Grid.Row="2" Grid.Column="0" Margin="10,0,0,0"/>
         <TextBlock x:Name="qn3TxtBlock" Text="c)."  Grid.Row="3" Grid.Column="0" Margin="10,0,0,0"/>
@@ -48,6 +50,8 @@
         <Image x:Name="img2" Grid.Row="2" Grid.Column="2" Source="/Images/tick.png" Margin="5,21,10,23"/>
         <Image x:Name="img3" Grid.Row="3" Grid.Column="2" Source="/Images/tick.png" Margin="5,21,10,23"/>
         <Image x:Name="img4" Grid.Row="4" Grid.Column="2" Source="/Images/tick.png" Margin="5,21,10,23"/>
-        <Button x:Name="evaluateBtn" Content="Bonyeza" HorizontalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="2" Margin="276,0,265,0" Width="238" Click="evaluateBtn_Click"/>
+        <Button x:Name="evaluateBtn" Content="Bonyeza" FontFamily="Comic Sans MS" HorizontalAlignment="Center" 
+                Grid.Row="5" Grid.ColumnSpan="2" Margin="270,10,230,10" Width="208" Click="evaluateBtn_Click"
+                FontWeight="Black" FontSize="22"/>
     </Grid>
 </Page>

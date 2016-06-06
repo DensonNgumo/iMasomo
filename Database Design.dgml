@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Database" Category="Database" Bounds="-283.971282788026,-246.206931715482,1004.66084218092,624.930026487194" Group="Expanded" Label="iMasomoDB.db" UseManualLocation="True" />
+    <Node Id="hadithi_details" Category="Table" Bounds="-56.6166626964515,203.064212622816,223.434734291705,141.919990057073" Group="Expanded" Label="hadithi_details" UseManualLocation="True" />
+    <Node Id="hadithi_details_hadithi_id" Category="Field Primary" Bounds="-36.6223370939182,243.050803428229,71.5994700107025,25.95972352" Description="bigint" Label="hadithi_id" />
+    <Node Id="hadithi_details_hadithi_title" Category="Field Optional" Bounds="64.9327748841562,243.050133842914,81.8465180107025,25.95972352" Description="nvarchar(50)" Label="hadithi_title" />
+    <Node Id="hadithi_details_location_path" Category="Field Optional" Bounds="-36.6246348225105,298.994527301962,91.3837704907025,25.95972352" Description="nvarchar(200)" Label="location_path" />
+    <Node Id="image_details" Category="Table" Bounds="-153.883486771916,-24.8226590058396,283.716682027181,197.880405895996" Group="Expanded" Label="image_details" UseManualLocation="True" />
+    <Node Id="image_details_category" Category="Field Optional" Bounds="-53.883477387761,15.1774409941604,66.07,25.96" Description="nvarchar(50)" Label="category" />
+    <Node Id="image_details_image_id" Category="Field Primary" Bounds="42.186528588598,15.1774427275588,67.6466666666667,25.96" Description="bigint" Label="image_id" />
+    <Node Id="image_details_image_type" Category="Field Optional" Bounds="-32.1268146883793,71.1375409941604,80.8766666666667,25.96" Description="nvarchar(50)" Label="image_type" />
+    <Node Id="image_details_kiswahili_tag" Category="Field Optional" Bounds="-133.883474361434,127.097646890156,86.4733333333334,25.96" Description="nvarchar(50)" Label="kiswahili_tag" />
+    <Node Id="image_details_path" Category="Field Optional" Bounds="-133.883486771916,15.1774409941604,50,25.96" Description="nvarchar(100)" Label="path" />
+    <Node Id="image_details_utangulizi" Category="Field Optional" Bounds="-133.883484152491,71.1375409941604,71.7566666666667,25.96" Description="nvarchar(50)" Label="utangulizi" />
+    <Node Id="kike_kiume" Category="Table" Bounds="221.747907028069,-192.449532275391,213.767560713704,141.916139135742" Group="Expanded" Label="kike_kiume" UseManualLocation="True" />
+    <Node Id="kike_kiume_id" Category="Field Primary" Bounds="241.750985222242,-152.448837738037,50,25.96" Description="bigint" Label="id" />
+    <Node Id="kike_kiume_kike_image_id" Category="Field Optional" Bounds="321.755667741773,-152.449432275391,93.7598,25.9552" Description="bigint" Label="kike_image_id" />
+    <Node Id="kike_kiume_kiume_image_id" Category="Field Optional" Bounds="241.747907028069,-96.4886931396485,104.867316666667,25.9552" Description="bigint" Label="kiume_image_id" />
+    <Node Id="michoro" Category="Table" Bounds="239.887970178156,211.578832521315,90.0000119145902,141.92030017395" Group="Expanded" Label="michoro" UseManualLocation="True" />
+    <Node Id="michoro_id" Category="Field Primary" Bounds="259.887970178156,251.578929084059,50,25.96" Description="bigint" Label="id" />
+    <Node Id="michoro_path" Category="Field Optional" Bounds="259.887970178156,307.539029258009,50,25.96" Description="nvarchar(100)" Label="path" />
+    <Node Id="salamu_info" Category="Table" Bounds="-263.967586146817,216.803087866211,177.34000116984,141.920313525391" Group="Expanded" Label="salamu_info" UseManualLocation="True" />
+    <Node Id="salamu_info_jibu" Category="Field Optional" Bounds="-243.961801761924,256.803187866211,50,25.96" Description="nvarchar(100)" Label="jibu" />
+    <Node Id="salamu_info_salamu" Category="Field Optional" Bounds="-163.961814037823,256.803187866211,57.34,25.96" Description="nvarchar(100)" Label="salamu" />
+    <Node Id="salamu_info_salamu_id" Category="Field Primary" Bounds="-243.961815207664,312.763301391602,72.2933333333333,25.96" Description="bigint" Label="salamu_id" />
+    <Node Id="umoja_wingi" Category="Table" Bounds="183.409738477522,0.994666524661511,221.00949588418,141.892993027734" Group="Expanded" Label="umoja_wingi" UseManualLocation="True" />
+    <Node Id="umoja_wingi_id" Category="Field Primary" Bounds="203.412027598668,40.9948129300786,50,25.96" Description="bigint" Label="id" />
+    <Node Id="umoja_wingi_umoja_image_id" Category="Field Optional" Bounds="203.409738458943,96.9580595663482,105.818787226666,25.92951808" Description="bigint" Label="umoja_image_id" />
+    <Node Id="umoja_wingi_wingi_image_id" Category="Field Optional" Bounds="283.412063419763,40.9947617304302,101.007160986667,25.9535411200001" Description="bigint" Label="wingi_image_id" />
+    <Node Id="video_details" Category="Table" Bounds="516.710205078125,21.6735418176161,183.980020751953,141.92032878418" Group="Expanded" Label="video_details" UseManualLocation="True" />
+    <Node Id="video_details_title" Category="Field Optional" Bounds="536.710205078125,61.673641817616,50,25.96" Description="nvarchar(50)" Label="title" />
+    <Node Id="video_details_video_id" Category="Field Primary" Bounds="616.710225830078,61.6736418176161,63.98,25.96" Description="bigint" Label="video_id" />
+    <Node Id="video_details_video_tag" Category="Field Optional" Bounds="536.710223795573,117.633770601796,71.2466666666667,25.96" Description="nvarchar(50)" Label="video_tag" />
+    <Node Id="vihusishi" Category="Table" Bounds="-207.005000710857,-198.378105146724,184.360000305176,141.915502636719" Group="Expanded" Label="vihusishi" UseManualLocation="True" />
+    <Node Id="vihusishi_id" Category="Field Primary" Bounds="-187.005000710857,-158.378005146724,50,25.96" Description="bigint" Label="id" />
+    <Node Id="vihusishi_image_id" Category="Field Foreign" Bounds="-187.005000198161,-102.417902510005,67.73355,25.9552" Description="bigint" Label="image_id" />
+    <Node Id="vihusishi_maelezo" Category="Field Optional" Bounds="-107.005000405681,-158.378005146724,64.36,25.96" Description="nvarchar(255)" Label="maelezo" />
+    <Node Id="vitenzi" Category="Table" Bounds="7.35509797525648,-197.245262882212,184.392809052813,141.918445829863" Group="Expanded" Label="vitenzi" UseManualLocation="True" />
+    <Node Id="vitenzi_id" Category="Field Primary" Bounds="27.3550979752565,-157.245162882212,50.02334816,25.95907072" Description="bigint" Label="id" />
+    <Node Id="vitenzi_image_id" Category="Field Foreign" Bounds="27.393149866871,-101.285987772349,67.6529328533333,25.95907072" Description="bigint" Label="image_id" />
+    <Node Id="vitenzi_maelezo" Category="Field Optional" Bounds="107.378459348069,-157.245162882212,64.36944768,25.95907072" Description="nvarchar(255)" Label="maelezo" />
+    <Node Id="word_details" Category="Table" Bounds="472.306006381096,-206.206984282227,202.43009358724,197.880427050781" Group="Expanded" Label="word_details" UseManualLocation="True" />
+    <Node Id="word_details_alphabet" Category="Field Optional" Bounds="588.376099968336,-110.246761779785,66.36,25.96" Description="nvarchar(2147483647)" Label="alphabet" />
+    <Node Id="word_details_category" Category="Field Optional" Bounds="492.306042595289,-110.246763127442,66.0699999999999,25.96" Description="nvarchar(2147483647)" Label="category" />
+    <Node Id="word_details_sound_path" Category="Field Optional" Bounds="492.306006381096,-54.2866572314457,81.7666666666667,25.96" Description="nvarchar(2147483647)" Label="sound_path" />
+    <Node Id="word_details_word" Category="Field Optional" Bounds="492.306099968336,-166.206884282227,50,25.96" Description="nvarchar(2147483647)" Label="word" />
+    <Node Id="word_details_word_id" Category="Field Primary" Bounds="572.306099968336,-166.206882934571,61.8966666666666,25.96" Description="bigint" Label="word_id" />
+  </Nodes>
+  <Links>
+    <Link Source="Database" Target="hadithi_details" Category="Contains" />
+    <Link Source="Database" Target="image_details" Category="Contains" />
+    <Link Source="Database" Target="kike_kiume" Category="Contains" />
+    <Link Source="Database" Target="michoro" Category="Contains" />
+    <Link Source="Database" Target="salamu_info" Category="Contains" />
+    <Link Source="Database" Target="umoja_wingi" Category="Contains" />
+    <Link Source="Database" Target="video_details" Category="Contains" />
+    <Link Source="Database" Target="vihusishi" Category="Contains" />
+    <Link Source="Database" Target="vitenzi" Category="Contains" />
+    <Link Source="Database" Target="word_details" Category="Contains" />
+    <Link Source="hadithi_details" Target="hadithi_details_hadithi_id" Category="Contains" />
+    <Link Source="hadithi_details" Target="hadithi_details_hadithi_title" Category="Contains" />
+    <Link Source="hadithi_details" Target="hadithi_details_location_path" Category="Contains" />
+    <Link Source="image_details" Target="image_details_category" Category="Contains" />
+    <Link Source="image_details" Target="image_details_image_id" Category="Contains" />
+    <Link Source="image_details" Target="image_details_image_type" Category="Contains" />
+    <Link Source="image_details" Target="image_details_kiswahili_tag" Category="Contains" />
+    <Link Source="image_details" Target="image_details_path" Category="Contains" />
+    <Link Source="image_details" Target="image_details_utangulizi" Category="Contains" />
+    <Link Source="kike_kiume" Target="kike_kiume_id" Category="Contains" />
+    <Link Source="kike_kiume" Target="kike_kiume_kike_image_id" Category="Contains" />
+    <Link Source="kike_kiume" Target="kike_kiume_kiume_image_id" Category="Contains" />
+    <Link Source="kike_kiume_kike_image_id" Target="image_details_image_id" Bounds="106.478104469132,-126.494232275391,239.502852894146,137.198087847768" />
+    <Link Source="michoro" Target="michoro_id" Category="Contains" />
+    <Link Source="michoro" Target="michoro_path" Category="Contains" />
+    <Link Source="salamu_info" Target="salamu_info_jibu" Category="Contains" />
+    <Link Source="salamu_info" Target="salamu_info_salamu" Category="Contains" />
+    <Link Source="salamu_info" Target="salamu_info_salamu_id" Category="Contains" />
+    <Link Source="umoja_wingi" Target="umoja_wingi_id" Category="Contains" />
+    <Link Source="umoja_wingi" Target="umoja_wingi_umoja_image_id" Category="Contains" />
+    <Link Source="umoja_wingi" Target="umoja_wingi_wingi_image_id" Category="Contains" />
+    <Link Source="umoja_wingi_wingi_image_id" Target="image_details_image_id" Bounds="118.788452024629,32.4392006552301,164.623586378522,16.4773589403518" />
+    <Link Source="video_details" Target="video_details_title" Category="Contains" />
+    <Link Source="video_details" Target="video_details_video_id" Category="Contains" />
+    <Link Source="video_details" Target="video_details_video_tag" Category="Contains" />
+    <Link Source="vihusishi" Target="vihusishi_id" Category="Contains" />
+    <Link Source="vihusishi" Target="vihusishi_image_id" Category="Contains" />
+    <Link Source="vihusishi" Target="vihusishi_maelezo" Category="Contains" />
+    <Link Source="vihusishi_image_id" Target="image_details_image_id" Category="Foreign Key" Label="FK_vihusishi_0_0" />
+    <Link Source="vitenzi" Target="vitenzi_id" Category="Contains" />
+    <Link Source="vitenzi" Target="vitenzi_image_id" Category="Contains" />
+    <Link Source="vitenzi" Target="vitenzi_maelezo" Category="Contains" />
+    <Link Source="vitenzi_image_id" Target="image_details_image_id" Category="Foreign Key" Label="FK_vitenzi_0_0" />
+    <Link Source="word_details" Target="word_details_alphabet" Category="Contains" />
+    <Link Source="word_details" Target="word_details_category" Category="Contains" />
+    <Link Source="word_details" Target="word_details_sound_path" Category="Contains" />
+    <Link Source="word_details" Target="word_details_word" Category="Contains" />
+    <Link Source="word_details" Target="word_details_word_id" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+    <Category Id="Database" />
+    <Category Id="Field Foreign" />
+    <Category Id="Field Optional" />
+    <Category Id="Field Primary" />
+    <Category Id="Foreign Key" />
+    <Category Id="Table" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Description" Label="Description" Description="Description" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Table" ValueLabel="True">
+      <Condition Expression="HasCategory('Table')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Schema" ValueLabel="True">
+      <Condition Expression="HasCategory('Schema')" />
+      <Setter Property="Background" Value="#FF7F9169" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field" ValueLabel="True">
+      <Condition Expression="HasCategory('Field')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Database" ValueLabel="True">
+      <Condition Expression="HasCategory('Database')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+</DirectedGraph>

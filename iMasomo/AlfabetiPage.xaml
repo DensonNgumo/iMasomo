@@ -54,18 +54,18 @@
         <Button x:Name="silabiBtn" Content="Silabi za sauti mbili" Cursor="Hand" FontSize="22" FontFamily="Comic Sans MS" Margin="485,86,0,0" Click="silabiBtn_Click" Height="38" VerticalAlignment="Top"/>
         <Button x:Name="videoBtn" Content="Video ya Vokali na Mwandiko" Cursor="Hand" FontSize="22" FontFamily="Comic Sans MS" Tag="KICD_Vokali.mp4" Margin="485,145,0,0" Click="videoBtn_Click"/>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="35,63,10,255" x:Name="labelStackPanel">
-            <Label Width="42" Tag="irabu" Content="a" Style="{StaticResource irabuLabelStyle}"/>
-            <Label Width="46" Content="b" Style="{StaticResource konsonantiLabelStyle}"/>
-            <Label Width="64" Content="ch" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label x:Name="lblA" Width="42" Tag="irabu" Content="a" Style="{StaticResource irabuLabelStyle}" MouseEnter="lblA_MouseEnter"/>
+            <Label x:Name="lblB" Width="46" Content="b" Style="{StaticResource konsonantiLabelStyle}" MouseEnter="lblB_MouseEnter"/>
+            <Label x:Name="lblCh" Width="64" Content="ch" Style="{StaticResource konsonantiLabelStyle}" MouseEnter="lblCh_MouseEnter"/>
             <Label Width="47" Content="d" Style="{StaticResource konsonantiLabelStyle}"/>
-            <Label Width="73" Content="dh" Style="{StaticResource konsonantiLabelStyle}"/>
-            <Label Width="46" Tag="irabu" Content="e" Style="{StaticResource irabuLabelStyle}"/>
+            <Label x:Name="lblDh" Width="73" Content="dh" Style="{StaticResource konsonantiLabelStyle}" MouseEnter="lblDh_MouseEnter"/>
+            <Label x:Name="lblE" Width="46" Tag="irabu" Content="e" Style="{StaticResource irabuLabelStyle}" MouseEnter="lblE_MouseEnter"/>
             <Label Width="34" Content="f" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="48" Content="g" Style="{StaticResource konsonantiLabelStyle}"/>
-            <Label Width="74" Content="gh" Style="{StaticResource konsonantiLabelStyle}"/>
-            <Label Width="46" Content="h" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label x:Name="lblGh" Width="74" Content="gh" Style="{StaticResource konsonantiLabelStyle}" MouseEnter="lblGh_MouseEnter"/>
+            <Label x:Name="lblH" Width="46" Content="h" Style="{StaticResource konsonantiLabelStyle}" MouseEnter="lblH_MouseEnter"/>
             <Label Width="28" Tag="irabu" Content="i" Style="{StaticResource irabuLabelStyle}"/>
-            <Label Width="31" Content="j" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label x:Name="lblJ" Width="31" Content="j" Style="{StaticResource konsonantiLabelStyle}" MouseEnter="lblJ_MouseEnter"/>
             <Label Width="44" Content="k" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="30" Content="l" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Content="m" Style="{StaticResource konsonantiLabelStyle}"/>
@@ -76,13 +76,13 @@
             <Label Width="76" Content="ng" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="72" Content="ny" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="49" Tag="irabu" Content="o" Style="{StaticResource irabuLabelStyle}"/>
-            <Label Width="56" Content="p" Style="{StaticResource konsonantiLabelStyle}"/>
+            <Label x:Name="lblP" Width="56" Content="p" Style="{StaticResource konsonantiLabelStyle}" MouseEnter="lblP_MouseEnter"/>
             <Label Width="44" Content="r" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="45" Content="s" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="63" Content="sh" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="38" Content="t" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Width="65" Content="th" Style="{StaticResource konsonantiLabelStyle}"/>
-            <Label Width="49" Tag="irabu" Content="u" Style="{StaticResource irabuLabelStyle}"/>
+            <Label x:Name="lblU" Width="49" Tag="irabu" Content="u" Style="{StaticResource irabuLabelStyle}" MouseEnter="lblU_MouseEnter"/>
             <Label Width="49" Content="v" Style="{StaticResource konsonantiLabelStyle}"/>
             <Label Content="w" Style="{StaticResource konsonantiLabelStyle}"/>
 
